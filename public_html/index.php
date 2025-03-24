@@ -29,7 +29,7 @@ const PATH = array(
 // Email
 define('EMAIL', array(
 	'notify_sender'		=> 'notify@animalvoice.jp',
-	'notify_receiver'	=> production() ? 'animalvoicejapan.gmail.com' : 'm_walters92@hotmail.com',
+	'notify_receiver'	=> production() ? 'animalvoicejapan@gmail.com' : 'm_walters92@hotmail.com',
 	'news_sender'		=> 'hello@animalvoice.jp',
 ));
 

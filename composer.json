@@ -1,0 +1,20 @@
+{
+    "name": "mark/animalvoice.jp",
+    "authors": [
+        {
+            "name": "Mark Walters",
+            "email": "m_walters92@hotmail.com"
+        }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "aws/aws-sdk-php": "^3.342",
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}

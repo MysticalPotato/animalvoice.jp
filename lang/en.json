@@ -1,0 +1,544 @@
+{
+    "meta": {
+        "website_name": "Animal Voice",
+        "description": ""
+    },
+    "global": {
+        "privacy_policy": "privacy Policy",
+        "newsletter_title": "Stay informed",
+        "newsletter_description": "Get notified about big events, workshops, lectures and when new groups are formed.",
+        "newsletter_privacy": "Your data is in safe hands. Check out our [privacy policy] for more info.",
+        "placeholder_email": "Email Address",
+        "placeholder_password": "Password"
+    },
+    "nav": {
+        "resources": "Resources",
+        "guidelines": "Guidelines",
+        "training": "Training",
+        "videos": "Video examples",
+        "handouts": "Handouts",
+        "general": "General",
+        "why_vegan": "Why Vegan?",
+        "about": "About",
+        "contact": "Contact us",
+        "get_involved": "Get involved",
+        "join": "Join us",
+        "new_group": "Start a group",
+        "donate": "Donate",
+        "back": "Back",
+        "groups": "Groups",
+        "users": "Users",
+        "posts": "Posts",
+        "applications": "Applications",
+        "subscribers": "Subscribers",
+        "settings": "Settings",
+        "logout": "Log out"
+    },
+    "button": {
+        "join_short": "Join",
+        "join_long": "Join us",
+        "send": "Send",
+        "show_me": "Show me",
+        "get_involved": "Get involved",
+        "page_next": "Next:",
+        "edit": "Edit",
+        "delete": "Delete",
+        "approve": "Approve",
+        "reject": "Reject",
+        "open": "Open",
+        "update": "Update",
+        "apply": "Apply",
+        "order": "Order online"
+    },
+    "form": {
+        "name": "Name",
+        "username": "Username",
+        "first_name": "First name",
+        "last_name": "Last name",
+        "email": "Email",
+        "prefecture": "Prefecture",
+        "select_prefecture": "Select a prefecture",
+        "city": "City",
+        "city_hint": "The name of the city where you will mainly operate.",
+        "how_find_website": "How did you find this website?",
+        "introduce_yourself": "Tell us a bit about yourself",
+        "introduce_yourself_hint": "Please include why you are vegan and what made you decide to start a group.",
+        "outreach_experience": "Have you done outreach before?",
+        "outreach_experience_hint": "Your answer may include activities other than cubes.",
+        "homepage": "Homepage",
+        "insta_account": "Instagram account",
+        "insta_post": "Instagram post",
+        "insta_image": "Instagram image",
+        "group_name": "Group name",
+        "organizer_first_name": "Organizer first name",
+        "organizer_last_name": "Organizer last name",
+        "organizer_email": "Organizer email",
+        "enabled": "Enabled",
+        "subject": "Subject",
+        "message": "Message"
+    },
+    "home": {
+        "page_title": "Animal Voice",
+        "page_description": "A collective of independent groups doing \"Cube Of Truth\" style animal rights activism in Japan.",
+        "banner": "Making a change by showing the truth.",
+        "activity_title": "Our activism",
+        "activity_subtitle": "What we do",
+        "expose_title": "Expose",
+        "expose_description": "We fight for animals by showing the public the truth of what happens behind closed doors of animal farms, slaughterhouses, pet breeders, zoos, aquariums and other industries that exploit animals.",
+        "advocate_title": "Advocate",
+        "advocate_description": "We advocate for veganism, by engaging the public in conversation (outreach), challenging their beliefs and supply them with the means to transition to a lifestyle free of animal abuse.",
+        "learn_about_us": "Learn more about us",
+        "find_group_title": "Find a group",
+        "find_group_subtitle": "Get involved",
+        "find_group_description": "Join us on the street and become a voice for the animals! Find a group near you, or start your own. We offer resources to help you prepare. Not sure yet? We welcome everyone who just wants to watch or hold one of the screens. Together we will change Japan into a country free of animal exploitation!",
+        "social_title": "Connect with us!",
+        "social_subtitle": "Follow us",
+        "join_title": "Join us now!",
+        "join_subtitle": "Get involved",
+        "join_description": "Imagine the thousends of animals you'll save by just convincing one person to stop exploiting animals. Together we will change Japan into a country free of animal exploitation!"
+    },
+    "about": {
+        "page_title": "About Us | Animal Voice",
+        "page_description": "Learn about who Animal Voice is and the type of activism we do to bring an end to animal exploitation.",
+        "header_title": "Who we are",
+        "description": "We are a collective of independent groups doing \"cubes of truth\", a form of animal rights activism, in which we go into public spaces carrying TV screens displaying the horrors of factory farming and other industries that exploit animals, while wearing masks and engaging with bystanders. We want to see a world without animal exploitation, and we hope to achieve this by inspiring the public to adopt a vegan lifestyle through meaningful conversation and by showing the truth. With this website we wish make it easier for people to find and join groups in their area and supply them with the means to do effective outreach.",
+        "description_short": "We want to see more activists on the street in Japan, so we offer groups more visibility and provide resources that will help animal rights activists do more effective outreach.",
+        "homepage": "Homepage"
+    },
+    "vegan": {
+        "page_title": "Why Vegan | Animal Voice",
+        "page_description": "Find out why you should go vegan. Watch recommended videos and find resources that help you make the transition.",
+        "header_title": "Why vegan?",
+        "header_description": "Watch any of the videos below to find out why you should go vegan. You will also find some handy links to websites and apps that can help you make the change.",
+        "vegan_21": "Challenge yourself to live vegan for 21 days with VEGAN21! Click [here] to sign up",
+        "recommended_videos": "Recommended videos",
+        "video_duration": "%s min",
+        "tab_videos": "Videos",
+        "tab_netflix": "Netflix",
+        "tab_websites": "Websites",
+        "tab_apps": "Apps",
+        "dominion_title": "Dominion",
+        "dominion_description": "Dominion uses drones, hidden and handheld cameras to expose the dark underbelly of modern animal agriculture, questioning the morality and validity of humankind's dominion over the animal kingdom.",
+        "nekoyaki_title": "Why vegan?",
+        "nekoyaki_description": "Everything you need to know to understand the philosophy and ethics of veganism, from sentience, to speciesism, to what the life of an animal looks like today.",
+        "gary_speech_title": "Gary Yourofsky",
+        "gary_speech_description": "Millions of people have been convinced to go vegan after listening to animal rights activist Gary Yourofsky. ",
+        "ed_speech_title": "Eye-Opening Speech",
+        "ed_speech_description": "Watch the eye-opening speech that was given to thousands of students in universities across the UK by Ed Winters, a best-selling author, vegan educator, public speaker and content creator.",
+        "seaspiracy_title": "Seaspiracy",
+        "seaspiracy_description": "Passionate about ocean life, a filmmaker sets out to document the harm that humans do to marine species and uncovers alarming global corruption.",
+        "the_game_changers_title": "The Game Changers",
+        "the_game_changers_description": "Meeting visionary scientists and top athletes, a UFC fighter embarks on a quest to find the optimal diet for human performance and health.",
+        "what_the_health_title": "What The Health",
+        "what_the_health_description": "This film examines the link between diet and disease, and the billions of dollars at stake in the healthcare, pharmaceutical and food industries.",
+        "cowspiracy_title": "Cowspiracy",
+        "cowspiracy_description": "Learn how factory farming is decimating the planet's natural resources and why this crisis has been largely ignored by major environmental groups.",
+        "3_min_challenge_title": "3 Minute Challenge",
+        "3_min_challenge_description": "Prepare to have your entire perspective on life changed in just 3 short minutes.",
+        "dont_watch_title": "Don't Watch",
+        "dont_watch_description": "This is a great watch if you're short on time. It's not as in-depth as Dominion, but it does a great job of revealing the shocking truth about how animals are exploited in animal agriculture.",
+        "vegan_elly_title": "What is veganism?",
+        "vegan_elly_description": "A short 12 minute video explaining the basic principles of veganism and the positive effect it has on our environment.",
+        "dairy_is_scary_title": "Dairy Is Scary!",
+        "dairy_is_scary_description": "A short, but very informative video about how dairy is made and what it does to the animals.",
+        "vegemap_title": "VegeMap",
+        "vegemap_description": "A map with vegan friendly restaurants all over Japan!",
+        "vegewel_title": "Vegewel",
+        "vegewel_description": "Search for restaurants, shop online, and read articles, based on plant-based living. This service strives to realize a society of understanding and respect towards diverse dietary needs and lifestyles.",
+        "happycow_title": "HappyCow",
+        "happycow_description": "Reviews of vegan restaurants, guide to healthy vegetarian food, natural food stores, vegan-friendly options nearby, recipes, and travel.",
+        "vegan_japan_title": "Vegan Japan",
+        "vegan_japan_description": "Among the many cooking recipe apps available, this is a recipe app specifically for vegans.",
+        "ve_title": "Ve",
+        "ve_description": "A recipe sharing and community app for vegans and vegetarians!",
+        "hachidory_title": "Hachidory",
+        "hachidory_description": "Find restaurants, hotels, and more. Hachidory supports your vegan lifestyle.",
+        "vegan_guide_title": "Vegan Guide",
+        "vegan_guide_description": "An information site developed and operated by VCook that solves all the worries of vegan lifestyle. It features over 400 articles on nutrition, vegan recipes, restaurants, interviews, etc.",
+        "vegan21_title": "Vegan 21",
+        "vegan21_description": "To protect animals, protect the future of the Earth, and protect yourself, sign up for Vegan 21 and take on the challenge of going vegan for 21 days."
+    },
+    "activism": {
+        "page_title": "Join Us | Animal Voice",
+        "page_description": "Find out how you can join us in 3 simple steps. Find groups, start your own or access our resources on doing effective outreach.",
+        "header_title": "Join in 3 simple steps",
+        "step": "Step %s",
+        "find_group_title": "Find a group",
+        "no_groups": "No groups",
+        "start_group_here": "No groups near you? Start one [here]",
+        "resources_title": "Prepare yourself",
+        "guidelines_description": "What are the roles? What should you wear? And what else can you do to prepare yourself?",
+        "training_description": "How about protein? Do plants feel pain? Learn how to respond to common arguments.",
+        "videos_description": "Watching videos of people doing effective outreach is one of the best ways to prepare yourself.",
+        "handouts_description": "Download cards and flyers that you can print at home or order them from a print shop.",
+        "start_group_title": "Start a group",
+        "start_group_subtitle": "New group",
+        "how_to_start_title": "How to get started",
+        "how_to_start_content_1": "Starting your own group can be scary. Maybe you're thinking you don't have the necessarily skills. Don't be afraid! After filling the form we'll get in touch and first put your group on the website, so other activists can find you. We don't expect you to do activism on your own, so you can wait until enough people have joined your group. We do recommend to at least join another group once so you know what to expect.",
+        "how_to_start_content_2": "After submitting the form, you'll also have to set up a page where you will announce your activities and allow other activists to contact you. We recommend Instagram, but you're free to use any other service as well. You will also need equipment. Check out the [Guidelines] for more info."
+    },
+    "guidelines": {
+        "page_title": "Guidelines | Animal Voice",
+        "page_description": "Read about our rules and the equipment we use while doing outreach.",
+        "header_description": "How to behave, what to wear and answers to frequently asked questions.",
+        "disclaimer_title": "Important",
+        "disclaimer_content": "If this will be your first time joining a cube, you might have some worries. Maybe you're a bit nervous about talking to random strangers. It's important that you know that nobody expects you to do anything you're uncomfortable with. If you only want to hold one of the screens, that's completely fine! We offer our support and guidance so that you can become an effective voice for the animals at your own pace.",
+        "rules_title": "Rules of conduct",
+        "rules_list": [
+            "Doing outreach can be tough and sometimes disheartening. It's important to always stay professional and show respect. Our professionalism directly influences the way the public responds to us.",
+            "Be considerate of your environment. Stay at least 50 cm away from the braille blocks and try to not hinder people who are just passing by or trying to catch their train.",
+            "If you're dealing with a difficult person / anti-vegan, please ask the organizer for help. If the organizer isn't present, try to involve other volunteers. Never deal with difficult situations alone.",
+            "If you get approached by the police, ask them to wait while you look for the organizer. They have dealt with the police before and know how to respond in order to quickly resolve any issues they might have.",
+            "If you're arriving late or leaving early, let someone know about it. If it's your first time, make sure you arrive at least 10 minutes beforehand, so you have some time to introduce yourself to the organizer(s) and get informed about the group's etiquette.",
+            "We only engage with people who stopped to watch the footage. Approach them alone, as more than one person can easily feel intimidating. Don't join other conversations without being asked to.",
+            "Volunteers standing in the Cube (holding TV screens) are required to wear masks, stand still and not interact with bystanders. It can be uncomfortable to hold a screen for a long time, so please take turns with people doing outreach or take breaks.",
+            "If you need a break or go to the restroom, try to make eye contact with one of the other members and raise your hand. If nobody sees you, try to put the screen down yourself and let someone know you stepped out of the cube.",
+            "You don't have to be vegan, but you must have the intention to move towards veganism in order to join. If you're not vegan, we will ask you to do something other than outreach."
+        ],
+        "rules_disclaimer": "Rules may vary slightly from group to group, so please ask your organizer about them.",
+        "rules_content_1": "Doing outreach can be tough and sometimes disheartening. It's important to always stay professional and show respect, even if it goes against your best judgement. Our professionalism directly influences the way the public responds to us. We understand that everyone can let their emotions get the best of them sometimes, but if you're repeatedly and intentionally causing friction between yourself and the public or members of the team, we might ask you to leave.",
+        "rules_content_2": "Volunteers standing in the Cube (holding TV screens) are required to wear masks, stand still and not interact with bystanders. If you need a break or go to the restroom, try to make eye contact with one of the other members and raise your hand. If nobody sees you, try to put the screen down yourself and let someone know you stepped out of the cube.",
+        "rules_content_3": "When you join one of our groups, we ask you to be on time. If it's your first time, make sure you arrive at least 10 minutes beforehand, so you have some time to introduce yourself to the organizer(s) and get informed about the group's etiquette. Rules may vary slightly from group to group, so please ask your organizer about them.",
+        "equipment_title": "About equipment",
+        "equipment_list": [
+            "We ask all our volunteers to wear black clothing as much as possible.",
+            "Volunteers standing in the cube are required to wear masks. We recommend the anonymous mask, but masks depicting farm animals are also appropriate. Masks can often be borrowed from other members, but not everyone is keen on sharing, so consider getting your own mask as well, by going here.",
+            "Cards and flyers are often given to you by the organizer(s), so you're not required to bring your own. However, handouts are not free, so please consider bringing your own after you joined a couple of times. Handouts can be found here and don't cost much to print.",
+            "If you happen to own a portable TV screen that you're willing to use for outreach, please let your organizer know about it. We can provide you the footage that we use."
+        ],
+        "equipment_content_1": "We ask all our volunteers to wear black clothing as much as possible to maintain anonymity and allow the public to focus on the footage we're showing.",
+        "equipment_content_2": "Volunteers standing in the cube are required to wear masks. They can be borrowed during the event or bought [here]. We prefer the anonymous mask, but if you want to use a different one, be sure to check with the organizer.",
+        "equipment_content_3": "If you're going to do outreach, make sure you have some cards on you. They can be found [here] and they don't cost much to print. If you have a different card / flyer you'd like to give out, please discuss it with the organizer first.",
+        "equipment_content_4": "This is not required, but if you happen to own a portable TV screen that you're willing to use for outreach, please let your organizer know about it. We will provide you with the footage."
+    },
+    "training": {
+        "page_title": "Training | Animal Voice",
+        "page_description": "How to do effective outreach? Learn what to say and how to respond to the most common arguments against veganism.",
+        "how_to_start": "How to start",
+        "common_excuses": "Common excuses"
+    },
+    "videos": {
+        "page_title": "Video examples | Animal Voice",
+        "page_description": "Video examples of effective outreach in Japan and overseas.",
+        "outreach_japan": "Outreach in Japan"
+    },
+    "handouts": {
+        "page_title": "Handouts | Animal Voice",
+        "page_description": "Download or order cards and flyers with resources to give it out while doing outreach.",
+        "header_description": "For your convenience, you can order most of these handouts directly from a print shop, but you're also free to download them to print them yourself or change them to your liking.",
+        "information_cards": "Information cards",
+        "on_the_back": "On the back",
+        "download": "Download as",
+        "dominion_title": "Dominion",
+        "dominion_description": "What The Health, Cowspiracy, Seaspiracy, The Game Changers, Happy Cow, Bosh TV, Challenge 22"
+    },
+    "contact": {
+        "page_title": "Contact Us | Animal Voice",
+        "page_description": "Get in touch if you have questions, feedback or something else you'd like to share with us.",
+        "form_title": "Get in touch",
+        "form_subtitle": "Contact us",
+        "form_description": "Do you have questions, feedback or something else? We'd love to hear from you!"
+    },
+    "privacy": {
+        "page_title": "Privacy Policy | Animal Voice",
+        "page_description": "",
+        "main_title": "About your data",
+        "main_subtitle": "Privacy Policy",
+        "last_updated": "Last updated date: %s"
+    },
+    "organizer": {
+        "page_title": "Organizer | Animal Voice",
+        "page_description": "Start a group in your own area by becoming an organizer.",
+        "form_title": "New organizer",
+        "form_subtitle": "Application form",
+        "form_description": "Fill out the form and we'll get back at you as soon as possible."
+    },
+    "donate": {
+        "page_title": "Donate | Animal Voice",
+        "page_description": "Support our activism by helping us out financially or by donating equipment.",
+        "main_title": "Give a donation",
+        "main_subtitle": "Help us",
+        "main_description": "We don't yet have a system in place for receiving donations. If you'd like to help us out financially or have televisions or batteries you'd like to give away, please [contact] us."
+    },
+    "admin": {
+        "page_title": "Admin | Animal Voice",
+        "page_description": ""
+    },
+    "response": {
+        "thank_you": "Thank you!",
+        "form_submitted": "Form submitted!",
+        "max_length": "A value of no more than %s characters is required.",
+        "email_format": "Email addresses should follow the format user@domain.com.",
+        "valid_url": "A valid url is required",
+        "incomplete": "Please fill in all required fields.",
+        "fix_issues": "Please fix all issues and try again.",
+        "invalid_prefecture": "Invalid prefecture.",
+        "file_type_2": "The file must be a %s or %s.",
+        "file_size": "File can not be bigger than %s.",
+        "image_size": "Image should be %s by %s pixels.",
+        "name_exists": "This name already exists.",
+        "email_exists": "A user with this email already exists.",
+        "no_match": "Input doesn't match required value.",
+        "bad_credentials": "The Email Address or Password you entered is incorrect.",
+        "technical_error": "Something went wrong. Please contact your administrator."
+    },
+    "region": {
+        "hokkaido": "Hokkaido",
+        "tohoku": "Tohoku",
+        "kanto": "Kanto",
+        "chubu": "Chubu",
+        "kinki": "Kinki",
+        "chugoku": "Chugoku",
+        "shikoku": "Shikoku",
+        "kyushu-okinawa": "Kyushu - Okinawa"
+    },
+    "prefecture": {
+        "hokkaido": "Hokkaido",
+        "aomori": "Aomori",
+        "iwate": "Iwate",
+        "miyagi": "Miyagi",
+        "akita": "Akita",
+        "yamagata": "Yamagata",
+        "fukushima": "Fukushima",
+        "ibaraki": "Ibaraki",
+        "tochigi": "Tochigi",
+        "gunma": "Gunma",
+        "saitama": "Saitama",
+        "chiba": "Chiba",
+        "tokyo": "Tokyo",
+        "kanagawa": "Kanagawa",
+        "niigata": "Niigata",
+        "toyama": "Toyama",
+        "ishikawa": "Ishikawa",
+        "fukui": "Fukui",
+        "yamanashi": "Yamanashi",
+        "nagano": "Nagano",
+        "gifu": "Gifu",
+        "shizuoka": "Shizuoka",
+        "aichi": "Aichi",
+        "mie": "Mie",
+        "shiga": "Shiga",
+        "kyoto": "Kyoto",
+        "osaka": "Osaka",
+        "hyogo": "Hyogo",
+        "nara": "Nara",
+        "wakayama": "Wakayama",
+        "tottori": "Tottori",
+        "shimane": "Shimane",
+        "okayama": "Okayama",
+        "hiroshima": "Hiroshima",
+        "yamaguchi": "Yamaguchi",
+        "tokushima": "Tokushima",
+        "kagawa": "Kagawa",
+        "ehime": "Ehime",
+        "kochi": "Kochi",
+        "fukuoka": "Fukuoka",
+        "saga": "Saga",
+        "nagasaki": "Nagasaki",
+        "kumamoto": "Kumamoto",
+        "oita": "Oita",
+        "miyazaki": "Miyazaki",
+        "kagoshima": "Kagoshima",
+        "okinawa": "Okinawa"
+    },
+    "rules": [
+        {
+            "title": "Good behaviour",
+            "description": "Doing outreach can be tough and sometimes disheartening. It's important to always stay professional and show respect. Our professionalism directly influences the way the public responds to us."
+        },
+        {
+            "title": "Arriving on time",
+            "description": "If it's your first time, make sure you arrive at least 10 minutes beforehand, so you have some time to introduce yourself to the organizer(s) and get informed about the group's etiquette."
+        },
+        {
+            "title": "Standing in the cube",
+            "description": "Volunteers standing in the Cube (holding TV screens) are required to wear masks, stand still and not interact with bystanders."
+        },
+        {
+            "title": "Leaving the cube",
+            "description": "If you need a break or go to the restroom, try to make eye contact with one of the other members and raise your hand. If nobody sees you, try to put the screen down yourself and let someone know you stepped out of the cube."
+        }
+    ],
+    "equipment": [
+        {
+            "title": "Clothing",
+            "description": "We ask all our volunteers to wear black clothing as much as possible."
+        },
+        {
+            "title": "Masks",
+            "description": "Volunteers standing in the cube are required to wear masks. We recommend the anonymous mask, but masks depicting farm animals are also appropriate. Masks can often be borrowed from other members, but not everyone is keen on sharing, so consider getting your own mask as well, by going here."
+        },
+        {
+            "title": "Handouts",
+            "description": "Cards and flyers are often given to you by the organizer(s), so you're not required to bring your own. However, handouts are not free, so please consider bringing your own after you joined a couple of times. Handouts can be found here and don't cost much to print."
+        },
+        {
+            "title": "TV screens",
+            "description": "If you happen to own a portable TV screen that you're willing to use for outreach, please let your organizer know about it. We can provide you the footage that we use."
+        }
+    ],
+    "conversation": [
+        {
+            "question": "Approach people who stopped to watch the footage. It can be a bit intimidating if you were approached by more than one person, so it's advisable to approach them alone.",
+            "answer": ""
+        },
+        {
+            "question": "Start the conversation by asking them if they've seen this kind of footage before. If they say no, explain to them that all footage is coming from standard practice high welfare factory farms and slaughterhouses.",
+            "answer": ""
+        },
+        {
+            "question": "Ask them how it makes them feel. If you get an ingenuine response or they're trying to be funny, you can stop the conversation here. We want to mainly focus on people who are open-minded and interested in the footage.",
+            "answer": ""
+        },
+        {
+            "question": "Ask them if they're against animal abuse. Most likely they'll say yes. If at this point they start to bring up excuses, then you can focus on that.",
+            "answer": ""
+        },
+        {
+            "question": "Ask if they think it's possible to be against animal abuse while consuming animal products, like meat, dairy, eggs or products like leather and fur. If they think it is, rephrase the question to make it about another injustice, like domestic violence or racism.",
+            "answer": ""
+        },
+        {
+            "question": "At this point the non-vegan will most likely come with a few excuses or questions. Scroll down to find the most common excuses and how to debunk them, to address all the non-vegan's concerns effectively.",
+            "answer": ""
+        },
+        {
+            "question": "Ask them what is stopping them from not abusing animals and going vegan today. If it's another excuse, go back and address it. If they need more information, provide them resources or share what you know that can help them.",
+            "answer": ""
+        },
+        {
+            "question": "Finally tell them it's not something to sit on. The suffering of animals is an urgent matter. You can ask them if they were in their position, how fast would they want this to change?",
+            "answer": ""
+        },
+        {
+            "question": "As a bonus question you can ask them how many more animals will have to be killed for them. If it's zero, tell them to go vegan right now.",
+            "answer": ""
+        },
+        {
+            "question": "Give them a card and encourage them to watch one of the videos / documentaries on the website and then maybe speak up for the animals.",
+            "answer": ""
+        }
+    ],
+    "excuses": [
+        {
+            "question": "Eating animals is a personal choice.",
+            "answer": "It's not a personal choice if it involves a victim. I could say it's my personal choice to kill or rape someone, but that doesn't make it okay, does it? In what other situation would we place the oppressor's desire to hurt above the suffering of the victim?"
+        },
+        {
+            "question": "I really like the taste.",
+            "answer": "Does pleasure justify hurting others? A rapist enjoys raping - does that make it ok? What will you do if I start kicking a dog for pleasure? Is one minute of your pleasure worth more than what these animals are going through? Their entire life for something that is optional to you."
+        },
+        {
+            "question": "Lions also eat other animals.",
+            "answer": "Lions also rape and kill eachother's babies. Do you really think we should base our morals on what happens in nature? We have a choice, they don't. They're in a survival situation and are obligate carnivores. Why cause unnecessary suffering when you don't have to?"
+        },
+        {
+            "question": "It's the food chain / circle of life.",
+            "answer": "The act of forcibly breeding, raising and slaughtering animals bears no resemblance to the food chain. Just as factory farming isn't part of nature, we are no longer part of the natural food chain. We just like to pretend we still are, to conveniently justify an act that is cruel and totally unnecessary."
+        },
+        {
+            "question": "You need to eat animals for nourishment.",
+            "answer": "The fact that we vegans continue to live and even win Olympic medals is proof that this excuse is not true. Both the American Dietetic Association and the British Dietetic Association have said that plant-based diets are nutritious, safe, and suitable for all ages, including pregnant women."
+        },
+        {
+            "question": "It can't be helped because it's tradition and culture.",
+            "answer": "Once upon a time slavery was part of our culture. In some parts of the world female genital mutilation is still traditional. There is bullfighting in Spain, dolphin fishing in Japan and dog meat festivals in both China and Korea. Do you think any of these things are justified because they're tradition?"
+        },
+        {
+            "question": "Our ancestors evolved by eating animals.",
+            "answer": "This is true, but many of us wouldn't be here if our ancestors also didn't murder or rape. Just because we've done something for a long time or because it was necessarily in the past, doesn't mean it's right to do these things today. If we were to accept that logic, then even modern slavery could be excused."
+        },
+        {
+            "question": "God says it's okay to eat animals.",
+            "answer": "Even though some religions say that you can eat animals, none of them actually say that you must. Most religions teach us that all life is sacred and we should minimize unnecessarily suffering. Most of the religious books were written in times that people sometimes maybe had to kill an animal in order to survive, but how would your prophet look at the world today, where everyone has the choice to not harm any animal at all, but chooses to subject an animal to lifelong exploitation and an horrific death for 5 minutes of pleasure?"
+        },
+        {
+            "question": "If we stop eating them, they will overpopulate or go extinct.",
+            "answer": "All people will not go vegan overnight. As the demand will slowly go down, less and less animals will be bred into existence. Also, none of these animals should have ever existed. Farm animals were specifically bred to grow faster and produce more milk, eggs and wool than is good for them. Their existence is one of suffering and they wouldn't be able to survive in the wild. Wild animals on the other hand are going extinct by the hundreds because of animal farming, as it requires massive amounts of land and resources."
+        },
+        {
+            "question": "Human rights issues are more important.",
+            "answer": "First off, most of these injustices aren't things you and I have any influence over, but almost everybody funds animal exploitation daily, by buying animal products. And even if you prioritize human suffering, animal farming is one of the main causes of pandemics, global warming and even world hunger, as most of our farm land is being used for growing food for livestock."
+        },
+        {
+            "question": "Vegans also kill animals.",
+            "answer": "It is true that animals also die on farms that grow crops, but it's significantly less. The amount of crops required to feed one animal for a few years, is far more than the amount of food it eventually provides, so you'll be killing way more animals by eating meat. Also, an accidental crop death and what we do to animals on farms and in slaughterhouses are not morally equal."
+        },
+        {
+            "question": "Plants feel pain too.",
+            "answer": "Plants have no central nervous system, no pain receptors, no brain. It is believed that the reason why humans and animals feel pain is to let them know they are in danger and to escape from the situation, but plants cannot escape pain because they cannot move. About 91% of the destruction of the Amazon rainforest is caused by livestock farming. If you really believe that plants can feel pain, you would be even hurting more plants by consuming animal products."
+        },
+        {
+            "question": "They're just animals.",
+            "answer": "We are animals. They may not be as intelligent, but they feel and suffer in the same way as we do. Cows who had their babies taken away will cry and mourn for days, and animals such as dogs are known to feel anxious when their human companions leave them. Cows are the same as dogs, and pigs are even more intelligent. They are all equally deserving of life."
+        },
+        {
+            "question": "Humans are more intelligent than animals.",
+            "answer": "If you base someone's value on intelligence, would you say you are more deserving of life than someone with a learning disability? And shouldn't we be farming dogs then, as they're less intelligent than pigs? The reason it would be bad to take your life, is because your life matters to you. Just as an animal values its own life, we can't draw arbitrary lines based on intelligence."
+        },
+        {
+            "question": "We bred them for a purpose.",
+            "answer": "What if I had kids for the purpose of exploiting them? Can I do anything I want to them, just because I brought them into existence? When slavery was still legal, we were breeding people for this very purpose. It ended because we realised that they were people just like you and me, and just as much deserving of life without oppression and suffering."
+        },
+        {
+            "question": "Why not just treat animals better?",
+            "answer": "This would be the same as giving pillows to prisoners being waterboarded. Yes, it's an improvement to have better welfare standards, but it's just a better way of doing the wrong thing. No matter how wonderful their life was, it becomes cruel when they're slaughtered. You could also argue it would even be more of an injustice if the animals were treated better and valued their lives more."
+        },
+        {
+            "question": "My meat comes from a farm that kills humanely.",
+            "answer": "Even on farms with higher welfare standards, animals are still enslaved, get forcefully impregnated, have their children stolen and are sent to a murder factory at a fraction of their life. Humane means kind, merciful or compassionate. How do you humanely enslave and murder when you don't need to?"
+        },
+        {
+            "question": "Morality is subjective.",
+            "answer": "If morality were truly subjective, all judgments of right and wrong would be accepted and there would be no need for justice or prisons. Every crime would be permissible based on individual subjectivity. One could say that animals do not live under a set moral code, but animals also behave ethically. They display emotions like sadness, grief, regret and guilt, which they wouldn't be feeling without some code of ethics."
+        },
+        {
+            "question": "It's enough if I reduce / eat less.",
+            "answer": "Would you want someone harming you to stop abusing immediately or to take baby steps? Would you accept if someone just beats his children less or only on weekends? In what other scenario where there is an injustice would you consider it to be a sound solution to end it gradually instead of immediately? Reducing won't matter to that one animal that still gets exploited by you."
+        },
+        {
+            "question": "Isn't vegetarian enough?",
+            "answer": "Unfortunately, most vegetarians still pay for animal exploitation, by consuming milk, eggs and other animal products. In the egg industry, the males are considered a waste product and are thrown into a grinder on their first day of life. The females are genetically engineered to lay 300 eggs a year, which causes them to be in constant pain. In the dairy industry, babies are taken from their mothers after they're born, and are either put into the same cycle of forceful impregnation and exploitation or killed immediately for veil if they're born a male. Eventually all these animals end up in slaughterhouses."
+        },
+        {
+            "question": "You can never be 100% vegan.",
+            "answer": "Image somebody saw many children drowning in the sea, but did not save anyone because it seemed impossible to save all of them. The claim that there is no point in trying, because it's impossible to be 100% vegan is simply not true. For those few animals that weren't exploited for you, it made all the difference in the world."
+        },
+        {
+            "question": "What if you were stranded on a deserted island?",
+            "answer": "In a survival situation even eating another person could be justified, but you're not in a survival situation. You have the choice between many healthy alternatives, so why would you choose the option that slaughters innocent animals, destroys our planet, keeps children dying of hunger and even compromises your own health?"
+        },
+        {
+            "question": "What about the ranch jobs?",
+            "answer": "What we're seeing in other countries at the moment, is that as the demand for animal products declines, governments are helping farmers transition into other forms of farming. The shift towards veganism is very gradual, so it's very unlikely that farmers are suddenly without work. But if you were to accept that what we do to animals is an injustice, this would not be reason enough to justify its continuation. Many years ago people were using the same argument to not end slavery, as it would put the slavers out of work."
+        },
+        {
+            "question": "Even soybean farming is destroying the environment.",
+            "answer": "Soybean cultivation causes environmental problems such as rainforest destruction and habitat loss. However, almost 80% of the world's soybean crop is fed to livestock, so it's animal farming that makes soybeans such a problem for the environment."
+        },
+        {
+            "question": "Avocados and almonds are bad for the environment.",
+            "answer": "Vegans don't replace the meat in their diet with avocados and almonds, so it's not like we'd be eating more of those foods than you are. Also, the environmental impact is nothing compared to that of animal farming, for which we need to grow massive amounts of crops for feed and get comparably way less food in return from harvesting their flesh and secretions."
+        },
+        {
+            "question": "It's too difficult to change.",
+            "answer": "It's hard when you think about yourself, but it's easy when you think about the victims of your choices. It's much harder for the animals that you're not vegan than it will ever be for you to change your habits. The easiest way to change is by looking at what you already eat and replacing the things which aren't vegan with products that are."
+        },
+        {
+            "question": "Being vegan is too expensive.",
+            "answer": "Research has shown that vegans on average spend 30% less on groceries. The misconception that vegan food is expensive comes from meat replacement products sometimes being more expensive than its fleshy counterpart. However, beans, lentils and grains are globally among the cheapest foods found in supermarkets."
+        },
+        {
+            "question": "Veganism is a bit extreme.",
+            "answer": "In your opinion, which is more extreme, killing someone or not killing someone? a food system that forcibly impregnates females and takes their babies away, mutilates sentient beings or a system that doesn't? eating a diet that causes heart disease and then needing to have open-heart surgery and be on medication for your entire life, or eating a diet that prevents heart disease in the first place?"
+        },
+        {
+            "question": "Humans are omnivores. We have canine teeth.",
+            "answer": "There is plenty of evidence that suggests we are herbivores by nature. Kids do not get hungry when they see an animal, nor do they have an instinct to hunt. We can easily get sick from eating raw flesh, and even after cooking it, we are slowly clogging our arteries. As for canines, they're not exclusive to animals that eat other animals. The canines of gorilla's and hippos are among the largest and they're 100% herbivorous."
+        },
+        {
+            "question": "I'm just one person. The system is not going to change.",
+            "answer": "Veganism is one of the biggest and fastest growing justice movements of our time. In Europe we're already seeing a huge shift towards plant-based options in all the big supermarkets. This system will come to an end, because no evil can last forever. The question is, on what side of history do you want to be on?"
+        }
+    ]
+}

@@ -58,6 +58,9 @@
 		<script type="text/javascript" src="<?= PATH['javascript'] ?>forms.js"></script>
 
 		<!-- 100% privacy-first analytics -->
-		<script async data-hostname="dev.animalvoice.jp" src="https://scripts.simpleanalyticscdn.com/latest<?= production() ? '' : '.dev' ?>.js"></script>
+		<script async
+			data-hostname="<?= production() ? 'animalvoice.jp' : 'dev.animalvoice.jp' ?>"
+			src="<?= production() ? 'https://scripts.simpleanalyticscdn.com/latest.js' : 'https://scripts.simpleanalyticscdn.com/latest.dev.js' ?>"
+		></script>
 	</body>
 </html>

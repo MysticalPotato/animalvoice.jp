@@ -1,32 +1,32 @@
 name: Deploy to Production Server
 
 on:
-  push:
-    branches:
-      - ${{ secrets.MAIN_BRANCH }}
-  workflow_dispatch:
-  
-jobs:
-  run_pull:
-    name: run pull
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Install SSH key and passphrase
-      run: |
-        # Install SSH key
-        install -m 600 -D /dev/null ~/.ssh/id_rsa
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        
-        # Add SSH passphrase handling
-        echo "${{ secrets.SSH_PASSPHRASE }}" | ssh-add ~/.ssh/id_rsa
-        
-        # Add the server to known hosts to prevent SSH warnings
-        ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+    push:
+        branches:
+            - main
+    workflow_dispatch:
 
-    - name: Connect and pull
-      run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull"
-        
-    - name: Cleanup SSH
-      run: rm -rf ~/.ssh
+jobs:
+    run_pull:
+        name: run pull
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Install SSH key and passphrase
+              run: |
+                  # Install SSH key
+                  install -m 600 -D /dev/null ~/.ssh/id_rsa
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+
+                  # Add SSH passphrase handling
+                  echo "${{ secrets.SSH_PASSPHRASE }}" | ssh-add ~/.ssh/id_rsa
+
+                  # Add the server to known hosts to prevent SSH warnings
+                  ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+
+            - name: Connect and pull
+              run: |
+                  ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull"
+
+            - name: Cleanup SSH
+              run: rm -rf ~/.ssh

@@ -25,10 +25,10 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 		<meta property="og:site_name" content="<?= __('meta.website_name') ?>">
 		<meta property="og:title" content="<?= $meta_title ?>">
 		<meta property="og:description" content="<?= $meta_description ?>">
-		<meta property="og:url" content="<?= host() . uri() ?>">
+		<meta property="og:url" content="<?= protocol() . host() . uri() ?>">
 		<meta property="og:type" content="website">
 		<meta property="og:locale" content="<?= locale() ?>">
-		<meta property="og:image" content="<?= host() . PATH['images'] ?>og-image.png">
+		<meta property="og:image" content="<?= protocol() . host() . PATH['images'] ?>og-image.png">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="630">
 

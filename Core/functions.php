@@ -74,6 +74,10 @@ function uri() {
 	return parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 }
 
+function protocol() {
+	return production() ? 'https://' : '';
+}
+
 function locale() {
 	return App::currentLocale();
 }

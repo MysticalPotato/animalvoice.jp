@@ -42,7 +42,7 @@
 					<hr class="dark">
 					
 					<div id="footer-bottom-part">
-						<a class="insta-link" href="https://www.instagram.com/animal_voice_japan/" target="instagram">
+						<a class="insta-link" href="https://www.instagram.com/animalvoice.jp/" target="instagram">
 						<picture>
 							<source srcset="<?= PATH['images'] ?>icon-instagram.svg" type="image/svg+xml">
 							<img src="<?php echo PATH['images'] ?>icon-instagram.png" alt="Instagram icon">

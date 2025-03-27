@@ -18,35 +18,44 @@
 					</div>
 				</div>
 
-				<div class="business-cards column-wrapper">
-					<div class="column row">
+				<div class="business-cards grid grid--2-cols">
+					<?php foreach($cards as $card) : ?>
+
+					<div class="business-card">
 						<div class="card-container">
-							<div class="card business-card">
+							<div class="card">
 								<div class="card__face card__face--front">
-									<img src="<?= PATH['images'] ?>card-dominion-front.webp" alt="Dominion card front"/>
+									<img src="<?= $card['img_front'] ?>" alt="<?= $card['title'] ?> card front"/>
 								</div>
 								
 								<div class="card__face card__face--back">
-									<img src="<?= PATH['images'] ?>card-dominion-back.webp" alt="Dominion card back"/>
+									<img src="<?= $card['img_back'] ?>" alt="<?= $card['title'] ?> card back"/>
 								</div>
 							</div>
 						</div>
 
 						<div class="business-card-info">
-							<h3><?= __('handouts.dominion_title') ?></h3>
+							<h3><?= $card['title'] ?></h3>
 							<p><span class="bold"><?= __('handouts.on_the_back') ?></span><br>
-								<?= __('handouts.dominion_description') ?>
+								<?= $card['description'] ?>
 							</p>
 
 							<div class="btns">
-								<p><?= __('handouts.download') ?> <a href="<?= PATH['files'] ?>business-card-dominion.zip">PDF</a></p>
-								<a class="btn cta-btn" href="<?= $dominion_order_url ?>" target="up-t"><?= __('button.order') ?></a>
+								<p>
+									<?= __('handouts.download') ?>
+									<?php if(isset($card['ai'])) : ?>
+
+										<a href="<?= $card['ai'] ?>">AI</a>,
+
+									<?php endif; ?>
+									<a href="<?= $card['pdf'] ?>">PDF</a>
+								</p>
+								<a class="btn cta-btn" href="<?= $card['order_url'] ?>" target="up-t"><?= __('button.order') ?></a>
 							</div>
 						</div>
 					</div>
 
-					<div class="column"></div>
-					<div class="column"></div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>

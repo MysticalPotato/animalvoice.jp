@@ -1340,8 +1340,21 @@ form.regular-form .hint {
     background-image: linear-gradient(0deg, rgba(42, 62, 102, 0.5) 20%, rgba(37, 42, 52, 0) 70%),
         url("../../assets/images/hero-handouts.webp");
 }
+#handouts .card-container {
+    height: 312px;
+    align-self: center;
+}
 #handouts .card-container:hover .card {
     transform: rotateY(-180deg);
+}
+#handouts .business-card {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+#handouts .card {
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 #handouts .business-card img {
     height: 312px;
@@ -1351,12 +1364,14 @@ form.regular-form .hint {
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    height: 312px;
     padding: 0.5em 0;
     box-sizing: border-box;
 }
 #handouts .business-card-info * {
     margin: 0;
+}
+#handouts .business-card-info .btns {
+    margin-top: auto;
 }
 #handouts .business-card-info .btns .btn {
     display: inline-block;
@@ -1364,9 +1379,6 @@ form.regular-form .hint {
 }
 #handouts .business-cards {
     flex-wrap: wrap;
-}
-#handouts .business-cards .column {
-    min-width: 520px;
 }
 
 /*MARKDOWN*/

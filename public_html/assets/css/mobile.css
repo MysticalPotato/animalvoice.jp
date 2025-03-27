@@ -180,9 +180,6 @@
     #nav.extend #mobile-menu {
         display: block !important;
     }
-    .branding-title {
-        display: none;
-    }
     #mobile-menu {
         display: none !important;
         position: relative;
@@ -432,5 +429,11 @@
     }
     #handouts .business-card-info {
         height: initial;
+    }
+}
+
+@media (max-width: 340px) {
+    .branding-title {
+        display: none;
     }
 }

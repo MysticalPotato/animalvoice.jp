@@ -202,19 +202,6 @@
 
 				<div id="tab-netflix" class="tab-content column-wrapper">
 					<div class="column">
-						<a href="https://www.netflix.com/title/81157840" target="thegamechangers">
-							<img class="stretch" src="<?= PATH['images'] ?>the_game_changers.webp" alt="The Game Changers"/>
-						</a>
-						
-						<div class="text-container">
-							<div class="row">
-								<h3><?= __('vegan.the_game_changers_title') ?></h3>
-							</div>
-							<p><?= __('vegan.the_game_changers_description') ?></p>
-						</div>
-					</div>
-
-					<div class="column">
 						<a href="https://www.netflix.com/title/81014008" target="seaspiracy">
 							<img class="stretch" src="<?= PATH['images'] ?>seaspiracy.webp" alt="Seaspiracy"/>
 						</a>
@@ -250,6 +237,19 @@
 								<h3><?= __('vegan.cowspiracy_title') ?></h3>
 							</div>
 							<p><?= __('vegan.cowspiracy_description') ?></p>
+						</div>
+					</div>
+
+					<div class="column">
+						<a href="https://www.netflix.com/title/80091936" target="okja">
+							<img class="stretch" src="<?= PATH['images'] ?>okja.webp" alt="Okja"/>
+						</a>
+						
+						<div class="text-container">
+							<div class="row">
+								<h3><?= __('vegan.okja_title') ?></h3>
+							</div>
+							<p><?= __('vegan.okja_description') ?></p>
 						</div>
 					</div>
 				</div>

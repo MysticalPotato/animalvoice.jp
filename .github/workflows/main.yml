@@ -12,27 +12,15 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Install SSH key and passphrase
+            - name: Install SSH key
               run: |
-                  # Start the SSH agent
-                  eval "$(ssh-agent -s)"
-
-                  # Install SSH key
                   install -m 600 -D /dev/null ~/.ssh/id_rsa
                   echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-
-                  # Add SSH passphrase handling
-                  echo "${{ secrets.SSH_PASSPHRASE }}" | ssh-add -v ~/.ssh/id_rsa
-
-                  # Verify the agent is running and the key is loaded
-                  ssh-add -l
-
-                  # Add the server to known hosts to prevent SSH warnings
                   ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
             - name: Connect and pull
               run: |
-                  ssh -A -v -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
                     cd ${{ secrets.WORK_DIR }}
                     && git checkout ${{ secrets.MAIN_BRANCH }}
                     && git pull origin ${{ secrets.MAIN_BRANCH }}

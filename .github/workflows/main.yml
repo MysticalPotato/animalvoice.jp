@@ -20,11 +20,7 @@ jobs:
 
             - name: Connect and pull
               run: |
-                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-                    cd ${{ secrets.WORK_DIR }}
-                    && git checkout ${{ secrets.MAIN_BRANCH }}
-                    && git pull origin ${{ secrets.MAIN_BRANCH }}
-                  "
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull origin ${{ secrets.MAIN_BRANCH }} && exit"
 
             - name: Cleanup SSH
               run: rm -rf ~/.ssh

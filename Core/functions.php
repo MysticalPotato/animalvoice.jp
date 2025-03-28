@@ -74,6 +74,11 @@ function uri() {
 	return parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 }
 
+function url($route = null) {
+	// return url of current route if route is not specified
+	return protocol() . host() . ($route ?? uri());
+}
+
 function protocol() {
 	return production() ? 'https://' : '';
 }

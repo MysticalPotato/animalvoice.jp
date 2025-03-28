@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://animalvoice.jp</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-home.webp</image:loc>
+            <image:caption>Person wearing a Guy Fawkes mask</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-home-mobile.webp</image:loc>
+            <image:caption>Person wearing a Guy Fawkes mask</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/home-expose.webp</image:loc>
+            <image:caption>Masked person holding TV screen</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/home-advocate.webp</image:loc>
+            <image:caption>Person doing outreach</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/home-join.webp</image:loc>
+            <image:caption>Person holding TV screen with hidden face and arrow pointing at the face saying "you?"</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/vegan</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/vegan" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/vegan" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-vegan.webp</image:loc>
+            <image:caption>High focus picture of a chicken</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/about</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/about" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-about.webp</image:loc>
+            <image:caption>Masked person holding tv screen</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/activism</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/activism" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/activism" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-activism.webp</image:loc>
+            <image:caption>People looking at masked person showing factory farm footage</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-activism-2.webp</image:loc>
+            <image:caption>Row of masked people showing factory farm footage</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/activism-new.webp</image:loc>
+            <image:caption>Group photo</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/guidelines</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/guidelines" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/guidelines" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-guidelines.webp</image:loc>
+            <image:caption>People looking at an animal rights flyer</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/guidelines-roc.webp</image:loc>
+            <image:caption>Two people looking at masked person holding TV screen</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/training</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/training" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/training" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-training.webp</image:loc>
+            <image:caption>Person dressed in black doing outreach</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/videos</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/videos" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/videos" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-videos.webp</image:loc>
+            <image:caption>Masked people showing footage of factory farms</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/handouts</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/handouts" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/handouts" />
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/hero-handouts.webp</image:loc>
+            <image:caption>People doing outreach handing out cards</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/privacy</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.1</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/privacy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/privacy" />
+        
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/organizer</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.1</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/organizer" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/organizer" />
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/donate</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/donate" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/donate" />
+    </url>
+    <url>
+        <loc>https://animalvoice.jp/contact</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/contact" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/contact" />
+    </url>
+</urlset>

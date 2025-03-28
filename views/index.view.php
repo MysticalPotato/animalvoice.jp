@@ -41,7 +41,7 @@
 							<h2 class="flash-icon"><?= __('home.advocate_title') ?></h2>
 							<p><?= __('home.advocate_description') ?></p>
 						</div>
-						<img class="stretch" src="<?= PATH['images']?>home-advocate.webp" alt="Three people talking in front of TV screen"/>
+						<img class="stretch" src="<?= PATH['images']?>home-advocate.webp" alt="Person doing outreach"/>
 					</div>
 				</div>
 				

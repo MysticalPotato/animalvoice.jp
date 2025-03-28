@@ -38,7 +38,10 @@ if (hideOnScrollDown) {
             const scrollPos = window.scrollY || document.documentElement.scrollTop;
 
             // update last change position if directen changed
-            if ((scrollPos > lastScrollPos && scrollPos < lastChangePos) || (scrollPos < lastScrollPos && scrollPos > lastChangePos)) {
+            if (
+                (scrollPos > lastScrollPos && scrollPos < lastChangePos) ||
+                (scrollPos < lastScrollPos && scrollPos > lastChangePos)
+            ) {
                 lastChangePos = scrollPos;
             }
 

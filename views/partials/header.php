@@ -25,10 +25,10 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 		<meta property="og:site_name" content="<?= __('meta.website_name') ?>">
 		<meta property="og:title" content="<?= $meta_title ?>">
 		<meta property="og:description" content="<?= $meta_description ?>">
-		<meta property="og:url" content="<?= protocol() . host() . uri() ?>">
+		<meta property="og:url" content="<?= url() ?>">
 		<meta property="og:type" content="website">
 		<meta property="og:locale" content="<?= locale() ?>">
-		<meta property="og:image" content="<?= protocol() . host() . PATH['images'] ?>og-image.png">
+		<meta property="og:image" content="<?= url(PATH['images'] . "og-image.png") ?>">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="630">
 
@@ -43,8 +43,11 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rubik:wght@300..900&family=Source+Code+Pro:wght@200..900&display=swap" rel="stylesheet">
 
 		<!--Locales-->
-		<link rel="alternate" hreflang="ja" href="<?= route(uri(), 'ja') ?>" />
-		<link rel="alternate" hreflang="en" href="<?= route(uri(), 'en') ?>" />
+		<link rel="alternate" hreflang="ja" href="<?= url(route(uri(), 'ja')) ?>" />
+		<link rel="alternate" hreflang="en" href="<?= url(route(uri(), 'en')) ?>" />
+
+		<!--Sitemap-->
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	</head>
 	
 	<body>
@@ -100,7 +103,7 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 						</div>
 						
 						<div class="nav-folder-content-item">
-							<a class="nav-link" onclick="openFolder('resources');">
+							<a href="#" class="nav-link" onclick="openFolder('resources');">
 								<span><?= __('nav.resources') ?></span>
 								<span class="chevron chevron-right"></span>
 							</a>
@@ -116,7 +119,7 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 				<div class="nav-folder" data-folder="resources">
 					<div class="nav-folder-content">
 						<div class="nav-folder-content-item nav-folder-controls">
-							<a class="nav-link" onclick="openFolder('default');">
+							<a href="#" class="nav-link" onclick="openFolder('default');">
 								<span class="chevron chevron-left"></span>
 								<span><?= __('nav.back') ?></span>
 							</a>

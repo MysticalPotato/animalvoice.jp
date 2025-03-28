@@ -103,7 +103,7 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 						</div>
 						
 						<div class="nav-folder-content-item">
-							<a href="#" class="nav-link" onclick="openFolder('resources');">
+							<a href="#" class="nav-link" onclick="openFolder(event, 'resources');">
 								<span><?= __('nav.resources') ?></span>
 								<span class="chevron chevron-right"></span>
 							</a>
@@ -119,7 +119,7 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 				<div class="nav-folder" data-folder="resources">
 					<div class="nav-folder-content">
 						<div class="nav-folder-content-item nav-folder-controls">
-							<a href="#" class="nav-link" onclick="openFolder('default');">
+							<a href="#" class="nav-link" onclick="openFolder(event, 'default');">
 								<span class="chevron chevron-left"></span>
 								<span><?= __('nav.back') ?></span>
 							</a>

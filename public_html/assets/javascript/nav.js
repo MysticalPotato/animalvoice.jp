@@ -7,7 +7,8 @@ function showMenu() {
     openFolder("default");
 }
 
-function openFolder(folder) {
+function openFolder(e, folder) {
+    e.preventDefault();
     // $("#mobile-menu>.nav-folder").removeClass("active");
     // $("#mobile-menu").find("[data-folder='" + folder + "']").addClass("active");
     [].forEach.call(document.querySelectorAll("#mobile-menu > .nav-folder"), function (el) {

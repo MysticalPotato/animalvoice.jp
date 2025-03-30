@@ -1,4 +1,7 @@
-RewriteEngine On 
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www.animalvoice.jp [NC]
+RewriteRule ^(.*)$ https://animalvoice.jp/$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -6,6 +6,11 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 <html lang="<?= locale() ?>">
 	<head>
 		<title><?= $meta_title ?></title>
+
+		<link rel="canonical" href="<?= url(route(uri(), 'ja')) ?>">
+		<link rel="alternate" hreflang="ja" href="<?= url(route(uri(), 'ja')) ?>" />
+		<link rel="alternate" hreflang="en" href="<?= url(route(uri(), 'en')) ?>" />
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 		
 		<meta name="description" content="<?= $meta_description ?>">
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" charset="utf-8">
@@ -41,13 +46,6 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rubik:wght@300..900&family=Source+Code+Pro:wght@200..900&display=swap" rel="stylesheet">
-
-		<!--Locales-->
-		<link rel="alternate" hreflang="ja" href="<?= url(route(uri(), 'ja')) ?>" />
-		<link rel="alternate" hreflang="en" href="<?= url(route(uri(), 'en')) ?>" />
-
-		<!--Sitemap-->
-		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	</head>
 	
 	<body>

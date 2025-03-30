@@ -4,7 +4,7 @@ use Core\App;
 use Core\Database;
 use Core\Session;
 
-$groups = App::resolve(Database::class)->query('SELECT id, name, enabled, homepage, viewed FROM groups')->get();
+$groups = App::resolve(Database::class)->query('SELECT id, name, enabled, homepage FROM groups')->get();
 $groups = array_reverse($groups);
 
 // get id for newly created group if present

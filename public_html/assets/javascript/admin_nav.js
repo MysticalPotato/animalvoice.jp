@@ -10,4 +10,6 @@ if (window.innerWidth < 990) {
 }
 
 // hide menu on page load
-document.body.classList.remove("show-nav");
+window.onload = function () {
+    document.body.classList.remove("show-nav");
+};

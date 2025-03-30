@@ -165,7 +165,8 @@ function route($uri, string|array $param = []) {
 function __(string $translationStr) {
 	$keys = explode('.', $translationStr, 2);
 	$messages = App::resolve(Localization::class)->messages();
-	return count($keys) > 1 ? $messages[$keys[0]][$keys[1]] : $messages[$keys[0]];
+	$val = count($keys) > 1 ? $messages[$keys[0]][$keys[1]] : $messages[$keys[0]];
+	return is_string($val) ? htmlspecialchars($val) : $val;
 }
 
 function insertVars(string $text, string|array $vars) {

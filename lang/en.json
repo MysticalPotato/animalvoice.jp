@@ -48,7 +48,8 @@
         "open": "Open",
         "update": "Update",
         "apply": "Apply",
-        "order": "Order online"
+        "order": "Order online",
+        "sign_in": "Sign in"
     },
     "form": {
         "name": "Name",
@@ -266,7 +267,20 @@
     },
     "admin": {
         "page_title": "Admin | Animal Voice",
-        "page_description": ""
+        "page_description": "",
+        "sign_in": "Sign in to your account",
+        "create_group": "Add group",
+        "edit_group": "Edit group",
+        "delete_group": "Delete group",
+        "create_user": "Add user",
+        "edit_user": "Edit user",
+        "delete_user": "Delete user",
+        "create_post": "Add post",
+        "edit_post": "Edit post",
+        "delete_post": "Delete post"
+    },
+    "warning": {
+        "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!"
     },
     "response": {
         "thank_you": "Thank you!",

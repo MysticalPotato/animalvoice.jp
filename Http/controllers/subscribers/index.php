@@ -4,6 +4,7 @@ use Core\App;
 use Core\Database;
 
 $subscribers = App::resolve(Database::class)->query('SELECT * FROM subscribers')->get();
+$subscribers = array_reverse($subscribers);
 
 view('subscribers/index.view.php', [
 	'meta_title' => __('admin.page_title'),

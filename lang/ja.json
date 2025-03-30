@@ -41,14 +41,15 @@
         "show_me": "見る",
         "get_involved": "参加する",
         "page_next": "次は",
-        "edit": "変更",
-        "delete": "消す",
+        "edit": "編集",
+        "delete": "削除",
         "approve": "許す",
         "reject": "断る",
         "open": "開く",
         "update": "保存",
         "apply": "申し込む",
-        "order": "オンラインで注文"
+        "order": "オンラインで注文",
+        "sign_in": "サインイン"
     },
     "form": {
         "name": "名前",
@@ -260,7 +261,20 @@
     },
     "admin": {
         "page_title": " アドミン | アニマル・ボイス",
-        "page_description": ""
+        "page_description": "",
+        "sign_in": "サインインする",
+        "create_group": "グループを追加",
+        "edit_group": "グループを編集",
+        "delete_group": "グループを削除",
+        "create_user": "ユーザーを追加",
+        "edit_user": "ユーザーを編集",
+        "delete_user": "ユーザーを削除",
+        "create_post": "ポストを追加",
+        "edit_post": "ポストを編集",
+        "delete_post": "ポストを削除"
+    },
+    "warning": {
+        "group_disabled": "グループをウェブサイトに表示するには、グループを使用可能にしてホームページを作成する必要があります。"
     },
     "response": {
         "thank_you": "ありがとう御座います！",

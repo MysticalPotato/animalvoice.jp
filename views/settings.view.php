@@ -1,9 +1,9 @@
 <?php require base_path('views/partials/admin_head.php') ?>
-<?php require base_path('views/partials/admin_nav.php') ?>
 
-<div class="main">
-	<div id="settings" class="content">
-        <h2><?= __('nav.settings') ?></h2>
+<div id="settings" class="content">
+	<div class="header">
+		<h2><?= __('nav.settings') ?></h2>
+		<?php require base_path('views/partials/admin_menu_btn.php') ?>
 	</div>
 </div>
 

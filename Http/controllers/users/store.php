@@ -27,11 +27,11 @@ $form = UserForm::validate($attributes = [
 $encrypted = password_hash($attributes['password'], PASSWORD_BCRYPT);
 
 // insert into database
-App::resolve(Database::class)->query('INSERT INTO users(username, email, password) VALUES(:username, :email, :password)', [
+$id = App::resolve(Database::class)->query('INSERT INTO users(username, email, password) VALUES(:username, :email, :password)', [
 	'username'		=> $attributes['username'],
 	'email'         => $attributes['email'],
 	'password'		=> $encrypted,
-]);
+])->id();
 
 // create mailable
 $mailable = new NewUserMailable($attributes);
@@ -40,4 +40,6 @@ $mailable = new NewUserMailable($attributes);
 Mail::to($attributes['email'])->send($mailable);
 
 // redirect if everything went right
-redirect(route('/admin/users'));
+redirect(route('/admin/users'), [
+	'new_item_id' => $id
+]);

@@ -26,11 +26,13 @@ $imagePosted = $attributes['image']['size'] > 0 ? true : false;
 $imageName = $imagePosted ? basename(uploadFile($_FILES['image'], uniqid())) : '';
 
 // insert into database
-App::resolve(Database::class)->query('INSERT INTO posts(account, url, image) VALUES(:account, :url, :image)', [
+$id =App::resolve(Database::class)->query('INSERT INTO posts(account, url, image) VALUES(:account, :url, :image)', [
 	'account'       => $attributes['account'],
 	'url'           => $attributes['url'],
 	'image'         => $imageName,
-]);
+])->id();
 
 // redirect if everything went right
-redirect(route('/admin/posts'));
+redirect(route('/admin/posts'), [
+	'new_item_id' => $id
+]);

@@ -34,7 +34,7 @@ $form = GroupForm::validate($attributes = [
 ]);
 
 // insert into database
-App::resolve(Database::class)->query('INSERT INTO groups(
+$id = App::resolve(Database::class)->query('INSERT INTO groups(
 	name,
 	region,
 	prefecture,
@@ -61,7 +61,9 @@ App::resolve(Database::class)->query('INSERT INTO groups(
 	'organizer_first_name'	=> $attributes['organizer_first_name'],
 	'organizer_last_name'	=> $attributes['organizer_last_name'],
 	'organizer_email'		=> $attributes['organizer_email'],
-]);
+])->id();
 
 // redirect if everything went right
-redirect(route('/admin/groups'));
+redirect(route('/admin/groups'), [
+	'new_item_id' => $id
+]);

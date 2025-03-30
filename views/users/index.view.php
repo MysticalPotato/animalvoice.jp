@@ -1,23 +1,26 @@
 <?php require base_path('views/partials/admin_head.php') ?>
-<?php require base_path('views/partials/admin_nav.php') ?>
 
-<div class="main">
-	<div class="content">
+<div class="content">
+	<div class="header">
 		<h2><?= __('nav.users') ?></h2>
-		<a href="<?= route('/admin/users/create') ?>">Add user</a>
-		<div class="list">
-		<?php foreach($users as $user) : ?>
-			
-			<div class="list-item">
-				<span class="name"><?= htmlspecialchars($user['username']) ?></span>
-				
-				<div class="btns">
-					<a href="<?= route("/admin/users/{$user['id']}") ?>"><?= __('button.open') ?></a>
-				</div>
+		<?php require base_path('views/partials/admin_menu_btn.php') ?>
+	</div>
+	
+	<a href="<?= route('/admin/users/create') ?>"><?= __('admin.create_user') ?></a>
+	<div class="list">
+	<?php foreach($users as $user) : ?>
+		
+		<div class="list-item <?= implode(' ', $user['classes']) ?>">
+			<div class="tags">
+				<span class="tag tag--name"><?= htmlspecialchars($user['username']) ?></span>
 			</div>
 			
-		<?php endforeach; ?>
+			<div class="btns">
+				<a href="<?= route("/admin/users/{$user['id']}") ?>"><?= __('button.open') ?></a>
+			</div>
 		</div>
+		
+	<?php endforeach; ?>
 	</div>
 </div>
 

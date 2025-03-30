@@ -1,10 +1,42 @@
+/*
+COLORS
+
+black:              #343a40     filter: brightness(0) saturate(100%) invert(20%) sepia(12%) saturate(572%) hue-rotate(169deg) brightness(91%) contrast(87%);
+grey:               #868e96
+grey tint:          #ced4da
+
+green:              #37b24d
+green shade:        #2b8a3e
+green tint:         #51cf66
+white (green)       #ebfbee
+
+red:                #f03e3e
+red shade:          #c92a2a
+
+purple:             #7048e8
+purple shade:       #5f3dc4
+white (purple):     #f3f0ff     filter: brightness(0) saturate(100%) invert(99%) sepia(88%) saturate(2561%) hue-rotate(181deg) brightness(110%) contrast(102%);
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 body {
+    position: relative;
     margin: 0;
     font-size: 16px;
     background-color: #fff;
-    color: #232323;
+    color: #343a40;
     font-family: "Inter", "Noto Sans JP", monospace;
     font-optical-sizing: auto;
+    overflow-x: hidden;
 }
 button {
     font-family: inherit;
@@ -14,8 +46,9 @@ button {
     width: fit-content;
 }
 a {
+    word-wrap: break-word;
     text-decoration: none;
-    color: rgb(0, 102, 204);
+    color: #868e96;
 }
 .main form {
     display: flex;
@@ -23,7 +56,7 @@ a {
     gap: 24px;
 }
 input[type="checkbox"] {
-    accent-color: #ad54ff;
+    accent-color: #37b24d;
 }
 input[type="text"],
 input[type="email"],
@@ -39,11 +72,11 @@ input[type="file"] {
 }
 input[type="file"]::file-selector-button {
     font-family: inherit;
-    border: solid 1px #ddd;
+    border: none;
     font-size: 1em;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 10px 24px;
-    color: #232323;
+    color: #343a40;
     box-sizing: border-box;
     transition: 0.2s;
     margin-right: 1em;
@@ -51,17 +84,17 @@ input[type="file"]::file-selector-button {
 }
 select,
 input[type="file"]::file-selector-button {
-    background-color: #f4f4f4;
+    background-color: #e9ecef;
 }
 input[type="file"]::file-selector-button:hover {
-    background-color: #eaeaea;
+    background-color: #ced4da;
 }
 .input-tag {
     display: inline-block;
     margin-bottom: 1em;
 }
 .grey {
-    color: #aaa;
+    color: #868e96;
 }
 .required {
     color: #aaa;
@@ -72,7 +105,7 @@ input[type="file"]::file-selector-button:hover {
 }
 .sidebar {
     position: fixed;
-    background-color: #f4f4f4;
+    background-color: #7048e8;
     height: 100%;
     width: 300px;
     display: flex;
@@ -88,7 +121,7 @@ input[type="file"]::file-selector-button:hover {
     font-size: 2.5em;
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    color: #9d9d9d;
+    color: #f3f0ff;
 }
 .nav-btn-container {
     display: flex;
@@ -104,30 +137,43 @@ input[type="file"]::file-selector-button:hover {
     padding: 15px 20px;
     border-radius: 10px;
     box-sizing: border-box;
-    color: #353535;
+    color: #f3f0ff;
     transition: all 0.3s;
 }
 .nav-btn:hover,
 .nav-btn.active {
-    background-color: #ddd;
+    background-color: #5f3dc4;
 }
 .nav-btn img {
     height: 18px;
-    filter: brightness(0) saturate(100%) invert(15%) sepia(13%) saturate(23%) hue-rotate(4deg)
-        brightness(102%) contrast(86%);
+    filter: brightness(0) saturate(100%) invert(99%) sepia(88%) saturate(2561%) hue-rotate(181deg)
+        brightness(110%) contrast(102%);
 }
 .main {
     padding: 40px;
     margin-left: 340px;
 }
-.main .content {
+.content {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    max-width: 600px;
+    width: 600px;
 }
-.main .content.show {
+.content.show {
     display: flex;
+}
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+.header .back-btn {
+    color: #343a40;
+    font-size: 1.5rem;
+}
+.menu-btn {
+    display: none;
 }
 .btns {
     display: flex;
@@ -137,44 +183,46 @@ input[type="file"]::file-selector-button:hover {
     font-size: 1em;
     border-radius: 8px;
     padding: 10px 24px;
-    color: #fff;
+    color: #f3f0ff;
     font-weight: 600;
     box-sizing: border-box;
     transition: 0.2s;
-    background-color: #ad54ff;
+    background-color: #7048e8;
 }
 .btn:hover {
-    background-color: #9d4beb;
+    background-color: #5f3dc4;
 }
-.btn.good-btn {
-    background-color: green;
+.btn--good {
+    color: #ebfbee;
+    background-color: #37b24d;
 }
-.btn.good-btn:hover {
-    background-color: rgb(0, 109, 0);
+.btn--good:hover {
+    background-color: #2b8a3e;
 }
-.btn.bad-btn {
-    background-color: red;
+.btn--bad {
+    color: #fff5f5;
+    background-color: #f03e3e;
 }
-.btn.bad-btn:hover {
-    background-color: rgb(216, 0, 0);
+.btn--bad:hover {
+    background-color: #c92a2a;
 }
 .submit-btn {
     margin-top: 20;
 }
 .back-btn {
-    color: #888;
+    color: #868e96;
 }
 .logout-btn {
-    margin: 0;
+    margin-top: 50px;
     /* margin: 0 0 24px 0; */
 }
 .logout-btn button {
-    background-color: #828282;
-    color: #fff;
+    background-color: #845ef7;
+    color: #f3f0ff;
     font-size: 1em;
 }
 .logout-btn button:hover {
-    background-color: #727272;
+    background-color: #7048e8;
 }
 .logout-btn button img {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(19deg)
@@ -186,7 +234,7 @@ input[type="file"]::file-selector-button:hover {
     align-items: center;
     padding: 20px 0;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ced4da;
     gap: 2em;
 }
 .list-item:last-child {
@@ -195,8 +243,50 @@ input[type="file"]::file-selector-button:hover {
 }
 .list-item .tags {
     display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
+    gap: 2rem;
+    align-items: center;
+    flex: 1;
+}
+.list-item .tag--new {
+    color: #51cf66;
+}
+.list-item .tag--date {
+    margin-left: auto;
+}
+.list-item .tag--preview {
+    width: 40px;
+    border-radius: 8px;
+}
+.list-item.disabled .tag--name {
+    color: #ced4da;
+}
+.list-item.new-item {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
 .list-item .btns a {
     margin-left: 1em;
@@ -204,6 +294,11 @@ input[type="file"]::file-selector-button:hover {
 .field-tag {
     font-weight: bold;
     margin-bottom: 1em;
+}
+.insta-picture {
+    border-radius: 10px;
+    max-width: 320px;
+    width: 100%;
 }
 .form-response {
     display: block;
@@ -225,7 +320,7 @@ input[type="file"]::file-selector-button:hover {
 }
 .warning {
     padding: 20px;
-    background-color: #e4c6ff;
+    background-color: #d0bfff;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -233,6 +328,57 @@ input[type="file"]::file-selector-button:hover {
 }
 .warning img {
     height: 26px;
-    filter: brightness(0) saturate(100%) invert(9%) sepia(23%) saturate(9%) hue-rotate(26deg)
-        brightness(100%) contrast(88%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(12%) saturate(572%) hue-rotate(169deg)
+        brightness(91%) contrast(87%);
+}
+
+@media (max-width: 990px) {
+    body {
+        font-size: 14px;
+    }
+    .sidebar {
+        top: 0;
+        left: 0;
+        transition: 0.4s;
+        transition-timing-function: ease-out;
+    }
+    .sidebar {
+        width: 100%;
+        transform: translate(120%);
+        box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+    .show-nav .sidebar {
+        transform: translate(0);
+    }
+    .main {
+        /* position: absolute; */
+        width: 100%;
+        margin: 0;
+        padding: 30px;
+    }
+    /* .show-nav .main {
+        transform: translate(-100%);
+    } */
+    .content {
+        width: 100%;
+    }
+    .nav-btn:hover {
+        background-color: initial;
+    }
+    .nav-btn.active:not(:hover) {
+        background-color: initial;
+    }
+    .menu-btn {
+        display: block;
+        padding: 10px;
+        position: absolute;
+        right: -10px;
+    }
+    .menu-btn img {
+        width: 18px;
+    }
+    .list-item .tag--date {
+        display: none;
+    }
 }

@@ -1,33 +1,13 @@
-var btnContainer = document.getElementById("nav-btn-container");
-var btns = btnContainer.getElementsByClassName("nav-btn");
+document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("show-nav");
+});
 
-function removeClass(elems, className) {
-	[].forEach.call(document.querySelectorAll(elems), function(el) {
-		el.classList.remove(className);
-	});
+// do only on mobile
+if (window.innerWidth < 990) {
+    [].forEach.call(document.getElementsByClassName("nav-btn"), function (el) {
+        el.href = el.href + "?nav=close";
+    });
 }
 
-function showAndHide(idName, className) {
-	[].forEach.call(document.getElementsByClassName(className), function(el) {
-		el.classList.remove('show');
-	});
-	document.getElementById(idName).classList.add('show');
-}
-
-function showContent(idName) {
-	showAndHide(idName, 'content');
-}
-
-for (var i = 0; i < btns.length; i++) {
-	btns[i].addEventListener('click', function(e) {
-		e.preventDefault();
-		removeClass('.nav-btn', 'active')
-		this.classList.toggle('active');
-		
-		// hide current and show right content
-		var attr = e.target.getAttribute('attr');
-		showContent(attr);
-	})
-}
-
-showContent('new-group');
+// hide menu on page load
+document.body.classList.remove("show-nav");

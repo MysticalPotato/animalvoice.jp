@@ -62,6 +62,10 @@ function redirect($path, $flashData = []) {
 	exit();
 }
 
+function last_route() {
+	return isset($_SERVER['HTTP_REFERER']) ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH) : '/';
+}
+
 function old($key, $default = '') {
 	return Session::get('old')[$key] ?? $default;
 }
@@ -83,7 +87,11 @@ function protocol() {
 	return production() ? 'https://' : '';
 }
 
-function locale() {
+function locale(string $uri = null) {
+	if($uri) {
+		$arr = explode('/', trim($uri, '/'));
+		return App::hasLocale($arr[0]) ? $arr[0] : null;
+	}
 	return App::currentLocale();
 }
 

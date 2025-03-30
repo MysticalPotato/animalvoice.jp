@@ -8,7 +8,7 @@ $cards = [
 		'img_back'		=> PATH['images'] . 'card-main-back.webp',
 		'ai'			=> PATH['files'] . 'business-card-main.ai',
 		'pdf'			=> PATH['files'] . 'business-card-main-pdf.zip',
-		'order_url'		=> 'https://up-t.jp/market/67e4dfc91561e',
+		'order_url'		=> 'https://up-t.jp/market/67e90613955d2',
 	],
 	[
 		'title'			=> __('handouts.dominion_title'),

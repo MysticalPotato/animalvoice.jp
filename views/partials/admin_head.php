@@ -1,3 +1,17 @@
+<?php
+
+use Core\App;
+use Core\Database;
+
+// check for new applications
+$result = App::resolve(Database::class)->query("SELECT * FROM applications WHERE viewed = :viewed", [
+	'viewed' => 0
+])->get();
+
+$new_applications = count($result);
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -50,6 +64,11 @@
 						<a id="applications-btn" class="nav-btn <?= $current_tab === 'applications' ? 'active' : '' ?>" href="<?= route('/admin/applications') ?>" attr="applications">
 							<img src="<?= PATH['images'] ?>admin-icon-spark.png"/>
 							<span><?= __('nav.applications') ?></span>
+							<?php if($new_applications > 0) : ?>
+
+							<span class="counter"><?= $new_applications ?></span>
+
+							<?php endif; ?>
 						</a>
 
 						<a id="posts-btn" class="nav-btn <?= $current_tab === 'posts' ? 'active' : '' ?>" href="<?= route('/admin/posts') ?>" attr="posts">

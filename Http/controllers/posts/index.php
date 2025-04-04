@@ -10,6 +10,7 @@ $posts = array_reverse($posts);
 // get id for newly created post if present
 $new_post_id = Session::get('new_item_id') ?? null;
 
+// prepare classes for each post
 foreach($posts as &$post) {
 	$post['classes'] = [];
 

@@ -10,6 +10,7 @@ $users = array_reverse($users);
 // get id for newly created user if present
 $new_user_id = Session::get('new_item_id') ?? null;
 
+// prepare classes for each user
 foreach($users as &$user) {
 	$user['classes'] = [];
 

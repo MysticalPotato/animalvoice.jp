@@ -10,6 +10,7 @@ $groups = array_reverse($groups);
 // get id for newly created group if present
 $new_group_id = Session::get('new_item_id') ?? null;
 
+// prepare classes for each group
 foreach($groups as &$group) {
 	$group['classes'] = [];
 

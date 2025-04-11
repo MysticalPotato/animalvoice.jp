@@ -69,10 +69,16 @@ App::resolve(Database::class)->query('INSERT INTO applications(
 
 // create mailable
 $mailable = new ApplicationMailable($attributes);
+
+// get recipients
+$users = App::resolve(Database::class)->query("SELECT email FROM users")->getOrFail();
+$recipients = [];
+foreach ($users as $user) {
+	$recipients[] = $user['email'];
+}
 	
 // send email
-$recipient = EMAIL['notify_receiver'];
-Mail::to($recipient)->replyTo($attributes['email'])->send($mailable);
+Mail::to($recipients)->replyTo($attributes['email'])->send($mailable);
 
 // redirect if everything went right
 redirect($_SERVER['HTTP_REFERER'], [

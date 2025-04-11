@@ -8,7 +8,7 @@
 	</div>
 	
 	<?php if(array_key_exists('summary', $errors)) : ?>
-		<span class="form-response"><?= $errors['summary'] ?></span>
+		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>
 	
 	<form method="POST" action="<?= route('/admin/groups') ?>" enctype="multipart/form-data">

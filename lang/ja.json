@@ -278,8 +278,10 @@
     },
     "response": {
         "thank_you": "ありがとう御座います！",
-        "form_submitted": "フォームを送信しました!",
+        "form_submitted": "フォームを送信しました！",
+        "settings_saved": "設定を保存しました！",
         "max_length": "%s 文字以内の値が必要です。",
+        "invalid_number": "%s 桁以内の番号が必要です。",
         "email_format": "電子メール アドレスは、user@domain.com の形式に従う必要があります。",
         "valid_url": "有効なURLが必要です",
         "incomplete": "必須項目をすべて入力してください。",

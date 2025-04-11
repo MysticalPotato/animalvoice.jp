@@ -285,7 +285,9 @@
     "response": {
         "thank_you": "Thank you!",
         "form_submitted": "Form submitted!",
+        "settings_saved": "Settings saved!",
         "max_length": "A value of no more than %s characters is required.",
+        "invalid_number": "A number of no more than %s digits is required.",
         "email_format": "Email addresses should follow the format user@domain.com.",
         "valid_url": "A valid url is required",
         "incomplete": "Please fill in all required fields.",

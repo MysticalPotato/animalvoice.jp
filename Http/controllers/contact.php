@@ -29,9 +29,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	// create mailable
 	$mailable = new ContactMailable($attributes);
+
+	//get contact email
+	$result = App::resolve(Database::class)->query("SELECT value FROM settings WHERE name = :name", [
+		'name' => 'contact_email',
+	])->findOrFail();
 	
 	// send email
-	$recipient = EMAIL['notify_receiver'];
+	$recipient = $result['value'];
 	Mail::to($recipient)->replyTo($attributes['email'])->send($mailable);
 
 	// reload page if everything went right

@@ -7,6 +7,11 @@ class Validator {
 	public static function string($value, $min = 0, $max = INF) {
 		return is_string($value) && strlen($value) >= $min && strlen($value) <= $max;
 	}
+
+	public static function int($value, $min = 0, $max = INF) {
+		$length = strlen((string)abs((int)$value));
+		return (is_int($value) || (is_string($value) && ctype_digit($value))) && $length >= $min && $length <= $max;
+	}
 	
 	public static function url($value) {
 		return filter_var($value, FILTER_VALIDATE_URL);

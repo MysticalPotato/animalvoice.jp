@@ -10,8 +10,8 @@ green shade:        #2b8a3e
 green tint:         #51cf66
 white (green)       #ebfbee
 
-red:                #f03e3e
-red shade:          #c92a2a
+red:                #fa5252
+red shade:          #e03131
 
 purple:             #7048e8
 purple shade:       #5f3dc4
@@ -216,13 +216,13 @@ input[type="file"]::file-selector-button:hover {
 }
 .btn--bad {
     color: #fff5f5;
-    background-color: #f03e3e;
+    background-color: #fa5252;
 }
 .btn--bad:hover {
-    background-color: #c92a2a;
+    background-color: #e03131;
 }
 .submit-btn {
-    margin-top: 20;
+    margin-top: 20px;
 }
 .back-btn {
     color: #868e96;
@@ -242,6 +242,10 @@ input[type="file"]::file-selector-button:hover {
 .logout-btn button img {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(19deg)
         brightness(111%) contrast(110%);
+}
+.row {
+    display: flex;
+    justify-content: space-between;
 }
 .list-item {
     display: flex;
@@ -319,18 +323,20 @@ input[type="file"]::file-selector-button:hover {
 }
 .form-response {
     display: block;
-    background-color: #ffdede;
     margin: 0 0 20px 0;
-    color: #f00;
     padding: 10px;
     border-radius: 8px;
 }
-.form-response.ok {
-    background-color: #deffde;
-    color: #18c818;
+.form-response--ok {
+    background-color: #d3f9d8;
+    color: #2f9e44;
+}
+.form-response--bad {
+    background-color: #ffe3e3;
+    color: #e03131;
 }
 .input-error {
-    color: #f00;
+    color: #e03131;
     font-size: 0.8em;
     margin: 5px 0 0 5px;
     display: block;

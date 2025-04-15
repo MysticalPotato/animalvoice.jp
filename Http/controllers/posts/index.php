@@ -26,6 +26,9 @@ foreach($posts as &$post) {
 view('posts/index.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('nav.posts'),
+	],
 	'current_tab' => 'posts',
 	'posts' => $posts,
 ]);

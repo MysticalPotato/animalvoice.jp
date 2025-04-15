@@ -1,11 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div class="content">
-	<div class="header">
-		<h2><?= __('nav.users') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-	
 	<a href="<?= route('/admin/users/create') ?>"><?= __('admin.create_user') ?></a>
 	<div class="list">
 	<?php foreach($users as $user) : ?>

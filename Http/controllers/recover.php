@@ -61,6 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 view('recover.view.php',[
     'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+    'header' => [
+		'title' => __('admin.recover_account'),
+		'back_route' => route('/login'),
+	],
     'errors' => Session::get('errors') ?? [],
     'status' => Session::get('status') ?? '',
 ]);

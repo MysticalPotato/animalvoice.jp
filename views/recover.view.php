@@ -1,10 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div class="content">
-	<div class="header">
-		<h2><?= __('admin.recover_account') ?></h2>
-	</div>
-
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>

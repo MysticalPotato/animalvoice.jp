@@ -1,11 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div class="content">
-	<div class="header">
-		<h2><?= __('nav.groups') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-	
 	<a href="<?= route('/admin/groups/create') ?>"><?= __('admin.create_group') ?></a>
 	<div class="list">
 	<?php foreach($groups as $group) : ?>

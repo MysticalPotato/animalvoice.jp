@@ -13,6 +13,10 @@ $post = App::resolve(Database::class)->query("SELECT * FROM posts WHERE id = :id
 view('posts/delete.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('admin.delete_post'),
+		'back_route' => route("/admin/posts/{$post['id']}"),
+	],
 	'current_tab' => 'posts',
 	'errors' => Session::get('errors') ?? [],
 	'post' => $post,

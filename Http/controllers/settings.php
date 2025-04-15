@@ -57,6 +57,9 @@ foreach($result as $setting) {
 view('settings.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('nav.settings'),
+	],
 	'current_tab' => 'settings',
 	'errors' => Session::get('errors') ?? [],
 	'status' => Session::get('status') ?? '',

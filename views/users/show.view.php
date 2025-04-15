@@ -1,12 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div class="content">
-	<div class="header">
-		<a href="<?= route('/admin/users') ?>" class="back-btn"><-</a>
-		<h2><?= __('nav.users') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-
 	<?php if(!empty($status)) : ?>
         <span class="form-response form-response--ok"><?= $status ?></span>
     <?php endif; ?>

@@ -1,11 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="applications" class="content">
-	<div class="header">
-		<h2><?= __('nav.applications') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-
 	<div class="list">
 	<?php foreach($applications as $application) : ?>
 		

@@ -9,6 +9,9 @@ $subscribers = array_reverse($subscribers);
 view('subscribers/index.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('nav.subscribers'),
+	],
 	'current_tab' => 'subscribers',
 	'subscribers' => $subscribers,
 ]);

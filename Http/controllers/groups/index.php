@@ -26,6 +26,9 @@ foreach($groups as &$group) {
 view('groups/index.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title' => __('nav.groups'),
+	],
 	'current_tab' => 'groups',
 	'groups' => $groups,
 ]);

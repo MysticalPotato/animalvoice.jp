@@ -1,12 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="applications" class="content">
-	<div class="header">
-		<a href="<?= route('/admin/applications') ?>" class="back-btn"><-</a>
-		<h2><?= __('nav.applications') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-
 	<div>
 		<div class="field-tag"><?= __('form.first_name') ?></div>
 		<div><?= htmlspecialchars($application['first_name']) ?></div>

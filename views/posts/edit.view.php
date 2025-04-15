@@ -1,12 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="posts" class="content">
-	<div class="header">
-		<a href="<?= route("/admin/posts/{$post['id']}") ?>" class="back-btn"><-</a>
-		<h2><?= __('admin.edit_post') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-	
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>

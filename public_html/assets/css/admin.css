@@ -186,14 +186,14 @@ input::placeholder {
     line-height: 1.5em;
 }
 .main {
-    padding: 40px;
     margin-left: 340px;
+    width: 680px;
 }
 .content {
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 600px;
 }
 .content.show {
     display: flex;
@@ -202,11 +202,21 @@ input::placeholder {
     display: flex;
     align-items: center;
     position: relative;
-    gap: 1rem;
+    padding: 40px 30px;
+    height: 38px;
+    box-sizing: content-box;
 }
-.header .back-btn {
-    color: #343a40;
-    font-size: 1.5rem;
+.header h2 {
+    padding: 0 10px;
+}
+.header-btn {
+    padding: 10px;
+    line-height: 0;
+}
+.header-btn img {
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(12%) saturate(572%) hue-rotate(169deg)
+        brightness(91%) contrast(87%);
 }
 .menu-btn {
     display: none;
@@ -244,9 +254,6 @@ input::placeholder {
 }
 .submit-btn {
     margin-top: 20px;
-}
-.back-btn {
-    color: #868e96;
 }
 .account-btn {
     width: auto;
@@ -397,25 +404,27 @@ input::placeholder {
         /* position: absolute; */
         width: 100%;
         margin: 0;
-        padding: 30px;
     }
     /* .show-nav .main {
         transform: translate(-100%);
     } */
     .content {
         width: 100%;
+        padding: 0 30px;
+    }
+    .header {
+        padding: 30px 20px 40px 20px;
     }
     .nav-btn:hover {
         background-color: initial;
     }
-    .nav-btn.active:not(:hover) {
+    /* .nav-btn.active:not(:hover) {
         background-color: initial;
-    }
+    } */
     .menu-btn {
         display: block;
         padding: 10px;
-        position: absolute;
-        right: -10px;
+        margin-left: auto;
     }
     .menu-btn img {
         width: 18px;

@@ -11,6 +11,9 @@ $user = App::resolve(Database::class)->query("SELECT * FROM users WHERE id = :id
 view('account.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('nav.account'),
+	],
 	'current_tab' => 'account',
     'user' => $user,
 	'errors' => Session::get('errors') ?? [],

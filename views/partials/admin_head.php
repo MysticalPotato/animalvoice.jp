@@ -112,3 +112,20 @@ $new_applications = count($result);
 		</div>
 
 		<div class="main">
+			<div class="header">
+				<?php if(isset($header['back_route'])) : ?>
+					
+				<a href="<?= $header['back_route'] ?>" class="header-btn back-btn">
+					<img src="<?= PATH['images'] ?>admin-icon-arrow-left.png"/>
+				</a>
+				
+				<?php endif; ?>
+				<h2><?= $header['title'] ?></h2>
+				<?php if(isset($_SESSION['user'])) : ?>
+
+				<a id="menu-toggle" class="header-btn menu-btn">
+					<img src="<?= PATH['images'] ?>admin-icon-menu.png"/>
+				</a>
+
+				<?php endif; ?>
+			</div>

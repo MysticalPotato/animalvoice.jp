@@ -1,11 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div class="content">
-	<div class="header">
-		<h2><?= __('nav.subscribers') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-	
 	<a href="#">Download list</a>
 	<div class="list">
 	<?php foreach($subscribers as $subscriber) : ?>

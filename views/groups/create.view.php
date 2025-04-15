@@ -1,12 +1,6 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="groups" class="content">
-	<div class="header">
-		<a href="<?= route('/admin/groups') ?>" class="back-btn"><-</a>
-		<h2><?= __('admin.create_group') ?></h2>
-		<?php require base_path('views/partials/admin_menu_btn.php') ?>
-	</div>
-	
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>

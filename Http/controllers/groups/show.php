@@ -13,6 +13,10 @@ $group = App::resolve(Database::class)->query("SELECT * FROM groups WHERE id = :
 view('groups/show.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('nav.groups'),
+		'back_route' => route('/admin/groups'),
+	],
 	'current_tab' => 'groups',
 	'group' => $group,
 	'status' => Session::get('status') ?? '',

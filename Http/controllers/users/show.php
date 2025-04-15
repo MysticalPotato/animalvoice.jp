@@ -17,6 +17,10 @@ $password = Form::randomPassword();
 view('users/show.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
+	'header' => [
+		'title'	=> __('nav.users'),
+		'back_route' => route('/admin/users'),
+	],
 	'current_tab' => 'users',
 	'user' => $user,
 	'password' => $password,

@@ -36,6 +36,7 @@
 		
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.insta_image') ?></span>
+			<span class="input-hint"><?= __('admin.image_requirements') ?></span>
 			<input type="file" name="image" accept=".jpg, .png">
 			<?php if(array_key_exists('image', $errors)) : ?>
 				<span class="input-error"><?= $errors['image'] ?></span>

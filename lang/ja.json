@@ -278,7 +278,8 @@
         "edit_post": "ポストを編集",
         "delete_post": "ポストを削除",
         "delete_hint": "[%s] を完全に削除するには、「DELETE」と入力してください",
-        "recover_account": "アカウントを回復"
+        "recover_account": "アカウントを回復",
+        "image_requirements": "要件: 340x340 ピクセル、jpg または png"
     },
     "warning": {
         "group_disabled": "グループをウェブサイトに表示するには、グループを使用可能にしてホームページを作成する必要があります。",

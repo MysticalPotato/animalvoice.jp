@@ -284,7 +284,8 @@
         "edit_post": "Edit post",
         "delete_post": "Delete post",
         "delete_hint": "Type \"DELETE\" to permanently delete %s",
-        "recover_account": "Recover account"
+        "recover_account": "Recover account",
+        "image_requirements": "Requirements: 340x340 pixels, jpg or png"
     },
     "warning": {
         "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!",

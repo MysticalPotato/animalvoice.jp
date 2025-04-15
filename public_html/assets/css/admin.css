@@ -101,9 +101,13 @@ input[type="file"]::file-selector-button:hover {
 input::placeholder {
     color: #adb5bd;
 }
-.input-tag {
-    display: inline-block;
+.input-tag,
+.input-hint {
+    display: block;
     margin-bottom: 1em;
+}
+.input-hint {
+    color: #868e96;
 }
 .grey {
     color: #868e96;

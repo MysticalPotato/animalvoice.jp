@@ -27,15 +27,8 @@
 				<span class="input-error"><?= $errors['email'] ?></span>
 			<?php endif; ?>
 		</div>
-
-		<div class="form-section">
-			<span class="input-tag"><?= __('global.placeholder_password') ?></span>
-			<input type="text" name="password" value="<?= old('password', $password) ?>" maxlength="50" required>
-			<?php if(array_key_exists('password', $errors)) : ?>
-				<span class="input-error"><?= $errors['password'] ?></span>
-			<?php endif; ?>
-		</div>
 		
+		<input type="hidden" name="password" value="<?= old('password', $password) ?>">
 		<button class="btn btn--good submit-btn" type="submit">Add user</button>
 	</form>
 </div>

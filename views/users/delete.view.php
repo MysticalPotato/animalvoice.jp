@@ -13,7 +13,7 @@
 	
 	<form method="POST" action="<?= route("/admin/users/{$user['id']}") ?>">
 		<div class="form-section">
-			<span class="input-tag">Type "DELETE" to permanently delete <?= htmlspecialchars($user['username']) ?></span>
+			<span class="input-tag"><?= insertVars(__('admin.delete_hint'), htmlspecialchars($user['username'])) ?></span>
 			<input type="text" name="answer" maxlength="50" required>
 			<?php if(array_key_exists('answer', $errors)) : ?>
 				<span class="input-error"><?= $errors['answer'] ?></span>

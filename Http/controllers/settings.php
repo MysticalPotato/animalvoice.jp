@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	// redirect if everything went right
 	redirect($_SERVER['HTTP_REFERER'], [
-		'status' => __('response.settings_saved')
+		'status' => __('response.changes_saved')
 	]);
 }
 

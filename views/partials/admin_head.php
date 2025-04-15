@@ -94,11 +94,15 @@ $new_applications = count($result);
 				<?php if(isset($_SESSION['user'])) : ?>
 
 				<div class="nav-btn-container">
-					<form class="logout-btn" method="POST" action="<?= route('/sessions') ?>">
+					<a class="nav-btn account-btn" href="<?= route('/admin/account') ?>">
+						<img src="<?= PATH['images'] ?>admin-icon-user.png"/>
+						<span><?= __('nav.account') ?></span>
+					</a>
+
+					<form method="POST" action="<?= route('/sessions') ?>">
 						<input type="hidden" name="_method" value="DELETE">
-						<button class="nav-btn">
+						<button class="nav-btn logout-btn">
 							<img src="<?= PATH['images'] ?>admin-icon-power.png"/>
-							<span><?= __('nav.logout') ?></span>
 						</button>
 					</form>
 				</div>

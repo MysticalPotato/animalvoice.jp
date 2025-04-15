@@ -47,4 +47,6 @@ App::resolve(Database::class)->query('UPDATE posts SET account = :account, url =
 ]);
 
 // redirect if everything went right
-redirect(route('/admin/posts/' . $id));
+redirect(route('/admin/posts/' . $id), [
+	'status' => __('response.changes_saved')
+]);

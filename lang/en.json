@@ -32,6 +32,7 @@
         "applications": "Applications",
         "subscribers": "Subscribers",
         "settings": "Settings",
+        "account": "Account",
         "logout": "Log out"
     },
     "button": {
@@ -76,7 +77,11 @@
         "organizer_email": "Organizer email",
         "enabled": "Enabled",
         "subject": "Subject",
-        "message": "Message"
+        "message": "Message",
+        "password": "Password",
+        "password_confirm": "Password confirmation",
+        "forgot_password": "Forgot password?",
+        "recover_password_hint": "You will receive an email with a new password."
     },
     "home": {
         "page_title": "Animal Voice",
@@ -277,7 +282,9 @@
         "delete_user": "Delete user",
         "create_post": "Add post",
         "edit_post": "Edit post",
-        "delete_post": "Delete post"
+        "delete_post": "Delete post",
+        "delete_hint": "Type \"DELETE\" to permanently delete %s",
+        "recover_account": "Recover account"
     },
     "warning": {
         "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!"
@@ -285,7 +292,7 @@
     "response": {
         "thank_you": "Thank you!",
         "form_submitted": "Form submitted!",
-        "settings_saved": "Settings saved!",
+        "changes_saved": "Changes saved!",
         "max_length": "A value of no more than %s characters is required.",
         "invalid_number": "A number of no more than %s digits is required.",
         "email_format": "Email addresses should follow the format user@domain.com.",
@@ -300,7 +307,8 @@
         "email_exists": "A user with this email already exists.",
         "no_match": "Input doesn't match required value.",
         "bad_credentials": "The Email Address or Password you entered is incorrect.",
-        "technical_error": "Something went wrong. Please contact your administrator."
+        "technical_error": "Something went wrong. Please contact your administrator.",
+        "password_no_match": "Password doesn't match"
     },
     "region": {
         "hokkaido": "Hokkaido",

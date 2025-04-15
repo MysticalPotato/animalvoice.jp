@@ -13,7 +13,7 @@
 	
 	<form method="POST" action="<?= route("/admin/posts/{$post['id']}") ?>">
 		<div class="form-section">
-			<span class="input-tag">Type "DELETE" to permanently delete <?= htmlspecialchars(instaPostId($post['url'])) ?></span>
+			<span class="input-tag"><?= insertVars(__('admin.delete_hint'), htmlspecialchars(instaPostId($post['url']))) ?></span>
 			<input type="text" name="answer" maxlength="50" required>
 			<?php if(array_key_exists('answer', $errors)) : ?>
 				<span class="input-error"><?= $errors['answer'] ?></span>

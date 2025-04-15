@@ -1,46 +1,81 @@
 <?php
 
 use Core\App;
+use Core\Mail;
 use Core\Database;
 use Core\Response;
 use Http\Forms\UserForm;
+use Http\Mailables\NewUserMailable;
 
 $id = (int) $routeParams['id'];
 
-// all variables that should be in POST, not what is required
-if(!isset($_POST['username'], $_POST['email'], $_POST['password'])) {
-	http_response_code(Response::BAD_REQUEST);
-	die();
+// get current user id
+$current_user_id = $_SESSION['user']['id'];
+
+// abort if not current user and not admin
+if($id !== $current_user_id) {
+	$user = App::resolve(Database::class)->query("SELECT * FROM users WHERE id = :id", [
+		'id' => $current_user_id
+	])->findOrFail();
+
+	if(!$user['admin']) {
+		abort(Response::FORBIDDEN);
+	}
+}
+
+// filter allowed keys
+$allowed = ['username', 'email', 'password', 'password_confirm'];
+$_POST = array_intersect_key($_POST, array_flip($allowed));
+
+// filter empty values
+$_POST = array_filter($_POST);
+
+// stop here if no allowed keys
+if(!$_POST) {
+	abort(Response::BAD_REQUEST);
 }
 
 // clean input
 $_POST = cleanInput($_POST);
 
 // validate form
-$form = UserForm::validate($attributes = [
-    'id'			=> $id,
-	'username'		=> $_POST['username'],
-	'email'         => $_POST['email'],
-	'password'      => $_POST['password'],
-]);
+$form = UserForm::validate($attributes = [...$_POST, 'id' => $id,]);
 
-// encrypt the password
-$encrypted = password_hash($attributes['password'], PASSWORD_BCRYPT);
+// unset password confirm
+unset($attributes['password_confirm']);
 
-// get password if empty
-if($attributes['password'] === '') {
-	$encrypted = App::resolve(Database::class)->query("SELECT password FROM users WHERE id = :id", [
-		'id' => $id
-	])->findOrFail();
+// insert all attributes one by one into database
+foreach($attributes as $key => $value) {
+	if($key === 'password') {
+
+		// send new password to user if different user than current
+		if($id !== $current_user_id) {
+			$user = App::resolve(Database::class)->query("SELECT * FROM users WHERE id = :id", [
+				'id' => $id
+			])->findOrFail();
+
+			// override password with new password
+			$user['password'] = $value;
+
+			$mailable = new NewUserMailable($user);
+			Mail::to($user['email'])->send($mailable);
+		}
+
+		// encrypt password for database
+		$value = password_hash($value, PASSWORD_BCRYPT);
+	}
+
+	// insert into database
+	App::resolve(Database::class)->query("UPDATE users SET $key = :{$key} WHERE id = :id", [
+		'id'		=> $id,
+		$key		=> $value,
+	]);
 }
 
-// insert into database
-App::resolve(Database::class)->query('UPDATE users SET username = :username, email = :email, password = :password WHERE id = :id', [
-    'id'			=> $id,
-	'username'		=> $attributes['username'],
-	'email'         => $attributes['email'],
-	'password'      => $encrypted,
-]);
+// set redirect route to account if current user
+$route = $id !== $current_user_id ? route('/admin/users/' . $id) : route('/admin/account');
 
 // redirect if everything went right
-redirect(route('/admin/users/' . $id));
+redirect($route, [
+	'status' => __('response.changes_saved')
+]);

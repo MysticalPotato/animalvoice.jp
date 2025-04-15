@@ -2,14 +2,20 @@
 
 <div class="content">
 	<div class="header">
-		<h2><?= __('admin.sign_in') ?></h2>
+		<h2><?= __('admin.recover_account') ?></h2>
 	</div>
 
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>
 
-	<form method="POST" action="sessions">
+    <?php if(!empty($status)) : ?>
+        <span class="form-response form-response--ok"><?= $status ?></span>
+    <?php endif; ?>
+
+	<form method="POST" action="<?= route('/admin/recover') ?>">
+		<p class="grey"><?= __('form.recover_password_hint') ?></p>
+
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.email') ?></span>
 			<input type="text" name="email" value="<?= old('email') ?>" placeholder="email@example.com" maxlength="50" required>
@@ -17,19 +23,9 @@
 				<span class="input-error"><?= $errors['email'] ?></span>
 			<?php endif; ?>
 		</div>
-
-		<div class="form-section">
-			<span class="input-tag"><?= __('form.password') ?></span>
-			<input type="password" name="password" placeholder="<?= __('global.placeholder_password') ?>" maxlength="50" required>
-			<?php if(array_key_exists('password', $errors)) : ?>
-				<span class="input-error"><?= $errors['password'] ?></span>
-			<?php endif; ?>
-		</div>
 		
-		<button class="btn btn--good submit-btn" type="submit"><?= __('button.sign_in') ?></button>
+		<button class="btn btn--good submit-btn" type="submit"><?= __('button.send') ?></button>
 	</form>
-
-	<a href="<?= route('/admin/recover') ?>"><?= __('form.forgot_password') ?></a>
 </div>
 
 <?php require base_path('views/partials/admin_footer.php') ?>

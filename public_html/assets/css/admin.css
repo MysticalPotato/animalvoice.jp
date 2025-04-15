@@ -3,7 +3,9 @@ COLORS
 
 black:              #343a40     filter: brightness(0) saturate(100%) invert(20%) sepia(12%) saturate(572%) hue-rotate(169deg) brightness(91%) contrast(87%);
 grey:               #868e96
+grey (between):     #adb5bd
 grey tint:          #ced4da
+grey tint:          #e9ecef
 
 green:              #37b24d
 green shade:        #2b8a3e
@@ -38,12 +40,19 @@ body {
     font-optical-sizing: auto;
     overflow-x: hidden;
 }
+hr {
+    border: none;
+    border-top: 1px solid #ced4da;
+}
 button {
     font-family: inherit;
     cursor: pointer;
     border: none;
     outline: inherit;
     width: fit-content;
+    background: none;
+    font-size: inherit;
+    color: #868e96;
 }
 a {
     word-wrap: break-word;
@@ -65,7 +74,7 @@ select {
     width: 100%;
     padding: 10px 12px;
     border-radius: 10px;
-    border: solid 1px #ddd;
+    border: solid 1px #ced4da;
 }
 input[type="file"] {
     width: 100%;
@@ -89,6 +98,9 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
     background-color: #ced4da;
 }
+input::placeholder {
+    color: #adb5bd;
+}
 .input-tag {
     display: inline-block;
     margin-bottom: 1em;
@@ -97,10 +109,10 @@ input[type="file"]::file-selector-button:hover {
     color: #868e96;
 }
 .required {
-    color: #aaa;
+    color: #adb5bd;
 }
 .optional {
-    color: #aaa;
+    color: #adb5bd;
     margin-left: 1em;
 }
 .sidebar {
@@ -115,6 +127,7 @@ input[type="file"]::file-selector-button:hover {
 }
 .sidebar-bottom {
     padding-bottom: 30px;
+    margin-top: 50px;
 }
 .sidebar-header {
     margin: 40px;
@@ -128,6 +141,10 @@ input[type="file"]::file-selector-button:hover {
     flex-direction: column;
     margin: 0 15px;
     gap: 5px;
+}
+.sidebar-bottom .nav-btn-container {
+    flex-direction: row;
+    gap: 10px;
 }
 .nav-btn {
     display: flex;
@@ -227,21 +244,20 @@ input[type="file"]::file-selector-button:hover {
 .back-btn {
     color: #868e96;
 }
-.logout-btn {
-    margin-top: 50px;
-    /* margin: 0 0 24px 0; */
-}
-.logout-btn button {
+.account-btn {
+    width: auto;
+    flex: 1;
     background-color: #845ef7;
-    color: #f3f0ff;
-    font-size: 1em;
 }
-.logout-btn button:hover {
-    background-color: #7048e8;
+.account-btn:hover {
+    background-color: #7950f2;
 }
-.logout-btn button img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7465%) hue-rotate(19deg)
-        brightness(111%) contrast(110%);
+.logout-btn {
+    background-color: #fa5252;
+    height: 100%;
+}
+.logout-btn:hover {
+    background-color: #f03e3e;
 }
 .row {
     display: flex;
@@ -323,7 +339,6 @@ input[type="file"]::file-selector-button:hover {
 }
 .form-response {
     display: block;
-    margin: 0 0 20px 0;
     padding: 10px;
     border-radius: 8px;
 }

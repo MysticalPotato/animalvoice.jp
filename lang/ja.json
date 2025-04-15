@@ -32,6 +32,7 @@
         "applications": "申し込み",
         "subscribers": "登録者",
         "settings": "設定",
+        "account": "アカウント",
         "logout": "ログアウト"
     },
     "button": {
@@ -76,7 +77,11 @@
         "organizer_email": "主催者のメールアドレス",
         "enabled": "使用可能",
         "subject": "件名",
-        "message": "メッセージ"
+        "message": "メッセージ",
+        "password": "パスワード",
+        "password_confirm": "パスワードを確認",
+        "forgot_password": "パスワードを忘れた場合",
+        "recover_password_hint": "新しいパスワードが記載されたメールが届きます。"
     },
     "home": {
         "page_title": "アニマル・ボイス",
@@ -271,7 +276,9 @@
         "delete_user": "ユーザーを削除",
         "create_post": "ポストを追加",
         "edit_post": "ポストを編集",
-        "delete_post": "ポストを削除"
+        "delete_post": "ポストを削除",
+        "delete_hint": "[%s] を完全に削除するには、「DELETE」と入力してください",
+        "recover_account": "アカウントを回復"
     },
     "warning": {
         "group_disabled": "グループをウェブサイトに表示するには、グループを使用可能にしてホームページを作成する必要があります。"
@@ -279,7 +286,7 @@
     "response": {
         "thank_you": "ありがとう御座います！",
         "form_submitted": "フォームを送信しました！",
-        "settings_saved": "設定を保存しました！",
+        "changes_saved": "変更を保存しました！",
         "max_length": "%s 文字以内の値が必要です。",
         "invalid_number": "%s 桁以内の番号が必要です。",
         "email_format": "電子メール アドレスは、user@domain.com の形式に従う必要があります。",
@@ -294,7 +301,8 @@
         "email_exists": "このメールアドレスを持つユーザーは既に存在します。",
         "no_match": "入力が必要な値と一致しません。",
         "bad_credentials": "入力したメールアドレスまたはパスワードが正しくありません。",
-        "technical_error": "問題が発生しました。管理者に問い合わせてください。"
+        "technical_error": "問題が発生しました。管理者に問い合わせてください。",
+        "password_no_match": "パスワードが一致しません。"
     },
     "region": {
         "hokkaido": "北海道",

@@ -34,7 +34,7 @@ $router->get(       '/admin/users/create'	    , 'users/create.php'        )->onl
 $router->post(      '/admin/users'			    , 'users/store.php'         )->only('admin');
 $router->get(       '/admin/users/{id}'         , 'users/show.php'          )->only('admin');
 $router->get(       '/admin/users/{id}/edit'    , 'users/edit.php'          )->only('admin');
-$router->patch(     '/admin/users/{id}'         , 'users/update.php'        )->only('admin');
+$router->patch(     '/admin/users/{id}'         , 'users/update.php'        )->only('auth');
 $router->get(       '/admin/users/{id}/delete'  , 'users/delete.php'        )->only('admin');
 $router->delete(    '/admin/users/{id}'         , 'users/destroy.php'       )->only('admin');
 
@@ -55,7 +55,12 @@ $router->delete(    '/admin/posts/{id}'         , 'posts/destroy.php'       )->o
 $router->get(       '/admin/subscribers'        , 'subscribers/index.php'   )->only('auth');
 $router->post(      '/admin/subscribers'        , 'subscribers/store.php'   );
 
-$router->get(       '/admin/settings'           , 'settings.php'             )->only('auth');
-$router->post(      '/admin/settings'           , 'settings.php'             )->only('auth');
+$router->get(       '/admin/settings'           , 'settings.php'            )->only('auth');
+$router->post(      '/admin/settings'           , 'settings.php'            )->only('auth');
+
+$router->get(       '/admin/account'            , 'account.php'             )->only('auth');
+
+$router->get(       '/admin/recover'            , 'recover.php'             )->only('guest');
+$router->post(      '/admin/recover'            , 'recover.php'             )->only('guest');
 
 $router->prefix('{locale}');

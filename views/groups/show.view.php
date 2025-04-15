@@ -7,6 +7,10 @@
 		<?php require base_path('views/partials/admin_menu_btn.php') ?>
 	</div>
 
+	<?php if(!empty($status)) : ?>
+        <span class="form-response form-response--ok"><?= $status ?></span>
+    <?php endif; ?>
+
 	<?php if(!$group['enabled'] || !$group['homepage']) : ?>
 		<div class="warning">
 			<img src="<?= PATH['images'] ?>admin-icon-warning.png"/>

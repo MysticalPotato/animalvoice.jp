@@ -8,7 +8,7 @@ use Http\Forms\UserForm;
 use Http\Mailables\NewUserMailable;
 
 // all variables that should be in POST, not what is required
-if(!isset($_POST['username'], $_POST['email'], $_POST['password']) && $_POST['password'] === '') {
+if(!isset($_POST['username'], $_POST['email'], $_POST['password'])) {
 	http_response_code(Response::BAD_REQUEST);
 	die();
 }

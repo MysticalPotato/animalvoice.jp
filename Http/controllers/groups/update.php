@@ -64,4 +64,6 @@ WHERE
 ]);
 
 // redirect if everything went right
-redirect(route('/admin/groups/' . $id));
+redirect(route('/admin/groups/' . $id), [
+	'status' => __('response.changes_saved')
+]);

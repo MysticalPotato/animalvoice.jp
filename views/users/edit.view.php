@@ -27,14 +27,6 @@
 				<span class="input-error"><?= $errors['email'] ?></span>
 			<?php endif; ?>
 		</div>
-
-		<div class="form-section">
-			<span class="input-tag"><?= __('global.placeholder_password') ?> <span class="optional">(optional)</span></span>
-			<input type="text" name="password" value="<?= old('password') ?>" maxlength="50">
-			<?php if(array_key_exists('password', $errors)) : ?>
-				<span class="input-error"><?= $errors['password'] ?></span>
-			<?php endif; ?>
-		</div>
 		
 		<input type="hidden" name="_method" value="PATCH">
 		<button class="btn btn--good submit-btn" type="submit"><?= __('button.update') ?></button>

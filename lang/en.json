@@ -287,7 +287,8 @@
         "recover_account": "Recover account"
     },
     "warning": {
-        "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!"
+        "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!",
+        "post_disabled": "In order for the post to show on the website, the post needs to be enabled!"
     },
     "response": {
         "thank_you": "Thank you!",

@@ -11,6 +11,13 @@
         <span class="form-response form-response--ok"><?= $status ?></span>
     <?php endif; ?>
 
+	<?php if(!$post['enabled']) : ?>
+		<div class="warning">
+			<img src="<?= PATH['images'] ?>admin-icon-warning.png"/>
+			<span><?= __('warning.post_disabled') ?></span>
+		</div>
+	<?php endif; ?>
+
 	<div>
 		<div class="field-tag"><?= __('form.enabled') ?></div>
 		<div><?= $post['enabled'] ? 'Yes' : 'No' ?></div>

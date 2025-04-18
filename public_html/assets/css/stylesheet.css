@@ -1131,6 +1131,12 @@ form.regular-form .hint {
 
 /*VEGAN*/
 
+.duration-display {
+    display: none !important;
+}
+.recommended-videos .duration-display {
+    display: flex !important;
+}
 #vegan-top-header .header-img {
     background-image: url("../../assets/images/hero-vegan.webp");
     background-image: linear-gradient(0deg, rgba(42, 62, 102, 0.5) 20%, rgba(37, 42, 52, 0) 70%),
@@ -1153,47 +1159,47 @@ form.regular-form .hint {
         brightness(95%) contrast(97%);
     opacity: 0.4;
 }
-.recommended-videos .text-container {
+.vegan-resources .text-container {
     padding: 0 0.5rem;
     width: 100%;
     box-sizing: border-box;
 }
-.recommended-videos img.thumb {
+.vegan-resources img.thumb {
     display: none;
     height: 2.4em;
     margin-right: 1.5rem;
     filter: brightness(0) saturate(100%) invert(16%) sepia(10%) saturate(1034%) hue-rotate(182deg)
         brightness(95%) contrast(97%);
 }
-.recommended-videos img.medal {
+.vegan-resources img.medal {
     height: 52px;
     margin-right: 1.5rem;
 }
-.recommended-videos img.medal-gold {
+.vegan-resources img.medal-gold {
     filter: brightness(0) saturate(100%) invert(69%) sepia(69%) saturate(358%) hue-rotate(8deg)
         brightness(84%) contrast(89%);
 }
-.recommended-videos img.medal-silver {
+.vegan-resources img.medal-silver {
     filter: brightness(0) saturate(100%) invert(66%) sepia(0%) saturate(0%) hue-rotate(119deg)
         brightness(91%) contrast(89%);
 }
-.recommended-videos img.medal-bronze {
+.vegan-resources img.medal-bronze {
     filter: brightness(0) saturate(100%) invert(58%) sepia(11%) saturate(1174%) hue-rotate(328deg)
         brightness(91%) contrast(89%);
 }
-.recommended-videos .duration-display {
+.vegan-resources .duration-display {
     opacity: 0.4;
     margin-left: auto;
     font-weight: bold;
     align-self: flex-start;
 }
-.recommended-videos .duration-display img {
+.vegan-resources .duration-display img {
     height: 32px;
     margin-right: 1rem;
     filter: brightness(0) saturate(100%) invert(14%) sepia(26%) saturate(439%) hue-rotate(182deg)
         brightness(97%) contrast(94%);
 }
-.recommended-videos .duration-stamp {
+.vegan-resources .duration-stamp {
     margin-right: 1.5rem;
     font-weight: bold;
     color: #fff;
@@ -1201,7 +1207,7 @@ form.regular-form .hint {
     border-radius: 50px;
     padding: 12px 18px 12px 12px;
 }
-.recommended-videos .duration-stamp img {
+.vegan-resources .duration-stamp img {
     height: 32px;
     margin-right: 1rem;
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(254deg)

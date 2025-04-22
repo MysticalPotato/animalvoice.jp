@@ -135,10 +135,10 @@ $recommended = [
 
 // show these 4 resources on the videos tab
 $videos = [
-	$resources['3_min_challenge'],
-	$resources['ed_speech'],
 	$resources['dairy_is_scary'],
 	$resources['gary_speech'],
+	$resources['ed_speech'],
+	$resources['3_min_challenge'],
 ];
 
 // show these 4 resources on the netflix tab
@@ -164,6 +164,25 @@ $apps = [
 	$resources['ve'],
 	[]
 ];
+
+// show different resources if english
+if(locale() === 'en') {
+
+	// show these 3 resources in the recommended section
+	$recommended = [
+		$resources['dominion'],
+		$resources['dont_watch'],
+		$resources['gary_speech'],
+	];
+
+	// show these 4 resources on the videos tab
+	$videos = [
+		$resources['dairy_is_scary'],
+		$resources['ed_speech'],
+		$resources['3_min_challenge'],
+		$resources['vegan_elly'],
+	];
+}
 
 view('vegan.view.php', [
 	'meta_title' => __('vegan.page_title'),

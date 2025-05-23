@@ -52,6 +52,7 @@
 				<input type="hidden" name="organizer_first_name" value="<?= $application['first_name'] ?>">
 				<input type="hidden" name="organizer_last_name" value="<?= $application['last_name'] ?>">
 				<input type="hidden" name="organizer_email" value="<?= $application['email'] ?>">
+				<input type="hidden" name="send_welcome_email" value="1">
 				<button class="btn btn--good"><?= __('button.approve') ?></button>
 			</form>
 		<?php endif; ?>

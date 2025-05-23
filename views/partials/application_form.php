@@ -38,6 +38,7 @@
 
         <div class="form-section">
             <span class="input-tag"><?= __('form.prefecture') ?> <span class="highlight">*</span></span>
+            <span class="hint"><?= __('form.prefecture_hint') ?></span>
             <select name="prefecture" required>
                 <option disabled selected value><?= __('form.select_prefecture') ?></option>
                 <?php foreach(__('prefecture') as $key => $item) : ?>

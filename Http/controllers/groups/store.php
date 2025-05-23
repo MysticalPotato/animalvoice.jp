@@ -1,9 +1,11 @@
 <?php
 
 use Core\App;
+use Core\Mail;
 use Core\Database;
 use Core\Response;
 use Http\Forms\GroupForm;
+use Http\Mailables\NewGroupMailable;
 
 // all variables that should be in POST, not what is required
 if(!isset(
@@ -62,6 +64,12 @@ $id = App::resolve(Database::class)->query('INSERT INTO groups(
 	'organizer_last_name'	=> $attributes['organizer_last_name'],
 	'organizer_email'		=> $attributes['organizer_email'],
 ])->id();
+
+// send welcome email
+if(isset($_POST['send_welcome_email']) && (int) $_POST['send_welcome_email'] === 1) {
+	$mailable = new NewGroupMailable($attributes);
+	Mail::to($attributes['organizer_email'])->send($mailable);
+}
 
 // redirect if everything went right
 redirect(route('/admin/groups'), [

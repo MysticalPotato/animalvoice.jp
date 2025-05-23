@@ -31,7 +31,7 @@
 			<?php endif; ?>
 		</div>
 		
-		<button class="btn btn--good submit-btn" type="submit">Add post</button>
+		<button class="btn btn--good submit-btn" type="submit"><?= __('admin.create_post') ?></button>
 	</form>
 </div>
 

@@ -23,7 +23,7 @@
 		</div>
 		
 		<input type="hidden" name="password" value="<?= old('password', $password) ?>">
-		<button class="btn btn--good submit-btn" type="submit">Add user</button>
+		<button class="btn btn--good submit-btn" type="submit"><?= __('admin.create_user') ?></button>
 	</form>
 </div>
 

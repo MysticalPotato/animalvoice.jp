@@ -17,34 +17,40 @@ class GroupForm extends Form {
         $min_url_len = 1;
         $max_url_len = 200;
 
-        // make sure name doesn't exist yet
-        $result = App::resolve(Database::class)->query('SELECT * FROM groups WHERE name = :name AND id<>:id', [
-            'name' => $attributes['name'],
-            'id' => $attributes['id'] ?? 0
-        ])->find();
+        // optional
+        if(isset($attributes['name']) && $attributes['name'] !== '') {
 
-        if($result) {
-            $this->errors['name'] = __('response.name_exists');
-        }
-
-        elseif(!Validator::string($attributes['name'], $min_txt_len, $max_txt_len)) {
-            $this->errors['name'] = insertVars(__('response.max_length'), $max_txt_len);
-        }
-
-        if(!Validator::string($attributes['prefecture'])) {
-            $this->errors['name'] = insertVars(__('response.max_length'), $max_txt_len);
-        }
-
-        if(!Validator::string($attributes['prefecture']) || !getRegion($attributes['prefecture'])) {
-            $this->errors['prefecture'] = __('response.invalid_prefecture');
-        }
-
-        if(!Validator::string($attributes['city'], $min_txt_len, $max_txt_len)) {
-            $this->errors['city'] = insertVars(__('response.max_length'), $max_txt_len);
+            // make sure name doesn't exist yet
+            $result = App::resolve(Database::class)->query('SELECT * FROM groups WHERE name = :name AND id<>:id', [
+                'name' => $attributes['name'],
+                'id' => $attributes['id'] ?? 0
+            ])->find();
+    
+            if($result) {
+                $this->errors['name'] = __('response.name_exists');
+            }
+    
+            elseif(!Validator::string($attributes['name'], $min_txt_len, $max_txt_len)) {
+                $this->errors['name'] = insertVars(__('response.max_length'), $max_txt_len);
+            }
         }
 
         // optional
-        if($attributes['homepage'] !== '') {
+        if(isset($attributes['prefecture']) && $attributes['prefecture'] !== '') {
+            if(!Validator::string($attributes['prefecture']) || !getRegion($attributes['prefecture'])) {
+                $this->errors['prefecture'] = __('response.invalid_prefecture');
+            }
+        }
+
+        // optional
+        if(isset($attributes['city']) && $attributes['city'] !== '') {
+            if(!Validator::string($attributes['city'], $min_txt_len, $max_txt_len)) {
+                $this->errors['city'] = insertVars(__('response.max_length'), $max_txt_len);
+            }
+        }
+
+        // optional
+        if(isset($attributes['homepage']) && $attributes['homepage'] !== '') {
             if(!Validator::string($attributes['homepage'], $min_url_len, $max_url_len)) {
                 $this->errors['homepage'] = insertVars(__('response.max_length'), $max_url_len);
             }
@@ -55,21 +61,21 @@ class GroupForm extends Form {
         }
 
         // optional
-        if($attributes['organizer_first_name'] !== '') {
+        if(isset($attributes['organizer_first_name']) && $attributes['organizer_first_name'] !== '') {
             if(!Validator::string($attributes['organizer_first_name'], $min_txt_len, $max_txt_len)) {
                 $this->errors['organizer_first_name'] = insertVars(__('response.max_length'), $max_txt_len);
             }
         }
 
         // optional
-        if($attributes['organizer_last_name'] !== '') {
+        if(isset($attributes['organizer_last_name']) && $attributes['organizer_last_name'] !== '') {
             if(!Validator::string($attributes['organizer_last_name'], $min_txt_len, $max_txt_len)) {
                 $this->errors['organizer_last_name'] = insertVars(__('response.max_length'), $max_txt_len);
             }
         }
 
         // optional
-        if($attributes['organizer_email'] !== '') {
+        if(isset($attributes['organizer_email']) && $attributes['organizer_email'] !== '') {
             if(!Validator::string($attributes['organizer_email'], $min_txt_len, $max_txt_len)) {
                 $this->errors['organizer_email'] = insertVars(__('response.max_length'), $max_txt_len);
             }

@@ -31,6 +31,7 @@
         "posts": "ポスト",
         "applications": "申し込み",
         "subscribers": "登録者",
+        "mailer": "メーラー",
         "settings": "設定",
         "account": "アカウント",
         "logout": "ログアウト"
@@ -59,6 +60,7 @@
         "last_name": "苗字",
         "email": "メールアドレス",
         "prefecture": "都道府県",
+        "prefecture_hint": "主に活動する都道府県",
         "select_prefecture": "都道府県を選んで下さい",
         "city": "町",
         "city_hint": "主に活動する都市名。",
@@ -78,10 +80,14 @@
         "enabled": "使用可能",
         "subject": "件名",
         "message": "メッセージ",
+        "recipient": "送り先",
         "password": "パスワード",
         "password_confirm": "パスワードを確認",
         "forgot_password": "パスワードを忘れた場合",
-        "recover_password_hint": "新しいパスワードが記載されたメールが届きます。"
+        "recover_password_hint": "新しいパスワードが記載されたメールが届きます。",
+        "send_welcome_email": "ウェルカムメールを送信",
+        "subscribers": "登録者",
+        "organizers": "主催者"
     },
     "home": {
         "page_title": "アニマル・ボイス",

@@ -31,6 +31,7 @@
         "posts": "Posts",
         "applications": "Applications",
         "subscribers": "Subscribers",
+        "mailer": "Mailer",
         "settings": "Settings",
         "account": "Account",
         "logout": "Log out"
@@ -59,6 +60,7 @@
         "last_name": "Last name",
         "email": "Email",
         "prefecture": "Prefecture",
+        "prefecture_hint": "The prefecture where you will mainly operate.",
         "select_prefecture": "Select a prefecture",
         "city": "City",
         "city_hint": "The name of the city where you will mainly operate.",
@@ -77,11 +79,15 @@
         "organizer_email": "Organizer email",
         "enabled": "Enabled",
         "subject": "Subject",
+        "recipient": "Recipient",
         "message": "Message",
         "password": "Password",
         "password_confirm": "Password confirmation",
         "forgot_password": "Forgot password?",
-        "recover_password_hint": "You will receive an email with a new password."
+        "recover_password_hint": "You will receive an email with a new password.",
+        "send_welcome_email": "Send welcome email",
+        "subscribers": "Subscribers",
+        "organizers": "Organizers"
     },
     "home": {
         "page_title": "Animal Voice",

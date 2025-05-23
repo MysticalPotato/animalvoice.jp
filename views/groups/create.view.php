@@ -71,8 +71,14 @@
 				<span class="input-error"><?= $errors['organizer_email'] ?></span>
 			<?php endif; ?>
 		</div>
+
+		<div class="form-section">
+			<span class="input-tag"><?= __('form.send_welcome_email') ?></span>
+			<input type="hidden" name="send_welcome_email" value="0">
+			<input type="checkbox" name="send_welcome_email" value="1" <?= old('send_welcome_email') === '1' ? 'checked' : '' ?>>
+		</div>
 		
-		<button class="btn btn--good submit-btn" type="submit">Add group</button>
+		<button class="btn btn--good submit-btn" type="submit"><?= __('admin.create_group') ?></button>
 	</form>
 </div>
 

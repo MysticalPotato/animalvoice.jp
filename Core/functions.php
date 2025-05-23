@@ -295,3 +295,7 @@ function getRegion($prefecture) {
 	];
 	return array_key_exists($prefecture, $prefectures) ? $prefectures[$prefecture] : '';
 }
+
+function googleTranslate($str, $lang) {
+	return 'hell yeah!';
+}

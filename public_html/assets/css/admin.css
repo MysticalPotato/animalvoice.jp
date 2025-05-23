@@ -70,6 +70,7 @@ input[type="checkbox"] {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+textarea,
 select {
     width: 100%;
     padding: 10px 12px;
@@ -100,6 +101,12 @@ input[type="file"]::file-selector-button:hover {
 }
 input::placeholder {
     color: #adb5bd;
+}
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    height: 200px;
 }
 .input-tag,
 .input-hint {
@@ -190,7 +197,7 @@ input::placeholder {
     width: 680px;
 }
 .content {
-    padding: 0 40px;
+    padding: 0 40px 40px 40px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -410,7 +417,7 @@ input::placeholder {
     } */
     .content {
         width: 100%;
-        padding: 0 30px;
+        padding: 0 30px 30px 30px;
     }
     .header {
         padding: 30px 20px 40px 20px;

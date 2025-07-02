@@ -12,6 +12,9 @@ $router->get(       '/privacy'				    , 'privacy.php'             );
 $router->get(       '/organizer'                , 'organizer.php'           );
 $router->get(       '/donate'                   , 'donate.php'              );
 
+$router->get(       '/unsubscribe'              , 'unsubscribe.php'         );
+$router->post(      '/unsubscribe'              , 'unsubscribe.php'         );
+
 $router->get(       '/contact'				    , 'contact.php'             );
 $router->post(      '/contact'				    , 'contact.php'             );
 
@@ -56,6 +59,16 @@ $router->get(       '/admin/subscribers'        , 'subscribers/index.php'   )->o
 $router->post(      '/admin/subscribers'        , 'subscribers/store.php'   );
 
 $router->get(       '/admin/mailer'             , 'mailer.php'              )->only('auth');
+
+// $router->get(       '/admin/emails'			    , 'emails/index.php'        )->only('auth');
+// $router->get(       '/admin/emails/create'	    , 'emails/create.php'       )->only('auth');
+// $router->post(      '/admin/emails'			    , 'emails/store.php'        )->only('auth');
+// $router->get(       '/admin/emails/{id}'        , 'emails/show.php'         )->only('auth');
+// $router->post(      '/admin/emails/{id}'        , 'emails/show.php'         )->only('auth'); // send email
+// $router->get(       '/admin/emails/{id}/edit'   , 'emails/edit.php'         )->only('auth');
+// $router->patch(     '/admin/emails/{id}'        , 'emails/update.php'       )->only('auth');
+// $router->get(       '/admin/emails/{id}/delete' , 'emails/delete.php'       )->only('auth');
+// $router->delete(    '/admin/emails/{id}'        , 'emails/destroy.php'      )->only('auth');
 
 $router->get(       '/admin/settings'           , 'settings.php'            )->only('auth');
 $router->post(      '/admin/settings'           , 'settings.php'            )->only('auth');

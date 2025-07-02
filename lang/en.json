@@ -31,7 +31,7 @@
         "posts": "Posts",
         "applications": "Applications",
         "subscribers": "Subscribers",
-        "mailer": "Mailer",
+        "emails": "Emails",
         "settings": "Settings",
         "account": "Account",
         "logout": "Log out"
@@ -51,7 +51,10 @@
         "update": "Update",
         "apply": "Apply",
         "order": "Order online",
-        "sign_in": "Sign in"
+        "sign_in": "Sign in",
+        "save": "Save",
+        "preview": "Preview",
+        "unsubscribe": "Unsubscribe"
     },
     "form": {
         "name": "Name",
@@ -248,6 +251,13 @@
         "dominion_title": "Dominion",
         "dominion_description": "What The Health, Cowspiracy, Seaspiracy, The Game Changers, Happy Cow, Bosh TV, Challenge 22"
     },
+    "unsubscribe": {
+        "page_title": "Unsubscribe | Animal Voice",
+        "page_description": "Unsubscribe to stop receiving our newsletter.",
+        "form_title": "Unsubscribe",
+        "form_subtitle": "Newsletter",
+        "form_description": "To unsubscribe, please fill in your email address. You will stop receiving our newsletter."
+    },
     "contact": {
         "page_title": "Contact Us | Animal Voice",
         "page_description": "Get in touch if you have questions, feedback or something else you'd like to share with us.",
@@ -290,14 +300,22 @@
         "edit_post": "Edit post",
         "delete_post": "Delete post",
         "delete_hint": "Type \"DELETE\" to permanently delete %s",
+        "create_email": "Create email",
+        "edit_email": "Edit email",
+        "delete_email": "Delete email",
         "recover_account": "Recover account",
-        "image_requirements": "Requirements: 340x340 pixels, jpg or png"
+        "image_requirements": "Requirements: 340x340 pixels, jpg or png",
+        "x_people": "%s people",
+        "confirmation_notice": "This email will be sent to all %s. Please confirm the information below is correct before pressing send.",
+        "confirmation_label": "I confirm it is correct.",
+        "date_sent": "Date sent"
     },
     "warning": {
         "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!",
         "post_disabled": "In order for the post to show on the website, the post needs to be enabled!"
     },
     "response": {
+        "invalid_value": "Invalid value.",
         "thank_you": "Thank you!",
         "form_submitted": "Form submitted!",
         "changes_saved": "Changes saved!",
@@ -316,7 +334,10 @@
         "no_match": "Input doesn't match required value.",
         "bad_credentials": "The Email Address or Password you entered is incorrect.",
         "technical_error": "Something went wrong. Please contact your administrator.",
-        "password_no_match": "Password doesn't match"
+        "password_no_match": "Password doesn't match",
+        "email_size": "Content size is too large. Try to shorten it or use lower resolution images.",
+        "email_sent": "Email sent!",
+        "unsubscribed": "You're successfully unsubscribed from the newsletter."
     },
     "region": {
         "hokkaido": "Hokkaido",

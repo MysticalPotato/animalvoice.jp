@@ -31,7 +31,7 @@
         "posts": "ポスト",
         "applications": "申し込み",
         "subscribers": "登録者",
-        "mailer": "メーラー",
+        "emails": "メール",
         "settings": "設定",
         "account": "アカウント",
         "logout": "ログアウト"
@@ -51,7 +51,10 @@
         "update": "保存",
         "apply": "申し込む",
         "order": "オンラインで注文",
-        "sign_in": "サインイン"
+        "sign_in": "サインイン",
+        "save": "保存",
+        "preview": "プレビュー",
+        "unsubscribe": "配信停止"
     },
     "form": {
         "name": "名前",
@@ -242,6 +245,13 @@
         "dominion_title": "ドミニオン",
         "dominion_description": "What The Health, Cowspiracy, Seaspiracy, ゲームチェンジャー, Happy Cow, Bosh TV, Challenge 22"
     },
+    "unsubscribe": {
+        "page_title": "配信停止 | アニマル・ボイス",
+        "page_description": "ニュースレターの受信を停止するには登録を解除してください。",
+        "form_title": "配信停止",
+        "form_subtitle": "ニュースレター",
+        "form_description": "配信停止をご希望の場合は、メールアドレスをご入力ください。これにより、ニュースレターの配信が停止されます。"
+    },
     "contact": {
         "page_title": "問い合わせ | アニマル・ボイス",
         "page_description": "ご質問、ご意見、その他共有したいことがありましたら、ご連絡ください。",
@@ -284,14 +294,22 @@
         "edit_post": "ポストを編集",
         "delete_post": "ポストを削除",
         "delete_hint": "[%s] を完全に削除するには、「DELETE」と入力してください",
+        "create_email": "メールを作成",
+        "edit_email": "メールを編集",
+        "delete_email": "メールを削除",
         "recover_account": "アカウントを回復",
-        "image_requirements": "要件: 340x340 ピクセル、jpg または png"
+        "image_requirements": "要件: 340x340 ピクセル、jpg または png",
+        "x_people": "%s人",
+        "confirmation_notice": "このメールはすべての%sに送信されます。送信ボタンを押す前に、以下の情報が正しいことをご確認ください。",
+        "confirmation_label": "間違いありません。",
+        "date_sent": "送信日"
     },
     "warning": {
         "group_disabled": "グループをウェブサイトに表示するには、グループを使用可能にしてホームページを作成する必要があります。",
         "post_disabled": "ポストをウェブサイトに表示するには、ポストを使用可能にする必要があります。"
     },
     "response": {
+        "invalid_value": "無効な値です。",
         "thank_you": "ありがとう御座います！",
         "form_submitted": "フォームを送信しました！",
         "changes_saved": "変更を保存しました！",
@@ -310,7 +328,10 @@
         "no_match": "入力が必要な値と一致しません。",
         "bad_credentials": "入力したメールアドレスまたはパスワードが正しくありません。",
         "technical_error": "問題が発生しました。管理者に問い合わせてください。",
-        "password_no_match": "パスワードが一致しません。"
+        "password_no_match": "パスワードが一致しません。",
+        "email_size": "コンテンツのサイズが大きすぎます。短くするか、解像度の低い画像を使用してください。",
+        "email_sent": "メールを送りました！",
+        "unsubscribed": "ニュースレターの購読を解除しました。"
     },
     "region": {
         "hokkaido": "北海道",

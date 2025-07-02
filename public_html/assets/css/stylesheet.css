@@ -378,6 +378,9 @@ section.bg-animals {
 .content-wrapper .content .column-wrapper.reverse {
     flex-direction: row-reverse;
 }
+.content-wrapper .content .column-wrapper.start {
+    justify-content: flex-start;
+}
 .content-wrapper .content .column-wrapper.small-gap {
     gap: 3rem 2vw;
 }

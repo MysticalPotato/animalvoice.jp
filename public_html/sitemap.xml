@@ -156,4 +156,12 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/contact" />
         <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/contact" />
     </url>
+    <url>
+        <loc>https://animalvoice.jp/unsubscribe</loc>
+        <lastmod>2025-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.1</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/unsubscribe" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://animalvoice.jp/en/unsubscribe" />
+    </url>
 </urlset>

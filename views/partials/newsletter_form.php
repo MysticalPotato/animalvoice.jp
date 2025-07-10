@@ -7,6 +7,9 @@
 		<span class="error-message"></span>
 		<div class="field-btn-wrapper">
 			<input id="newsletter-email" type="email" name="email" size="50" placeholder="<?= __('global.placeholder_email') ?>" required>
+
+			<?php require base_path('views/partials/robot_blocker.php') ?>
+			
 			<button id="newsletter-submit" class="btn cta-btn" type="submit">
 				<span class="btn-value"><?= __('button.send') ?></span>
 				<span class="btn-spinner"><i class="fa fa-refresh fa-spin"></i></span>

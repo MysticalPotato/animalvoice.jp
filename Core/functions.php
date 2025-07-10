@@ -99,6 +99,11 @@ function production() {
 	return $_SERVER['SERVER_NAME'] === DOMAIN ? true : false;
 }
 
+function email(string $identity = 'general') {
+	// AWS won't send if not from animalvoice.jp, so override with sandobx if local
+	return EMAIL[array_key_exists($identity, EMAIL) && production() ? $identity : 'sandbox'];
+}
+
 function localNmbr(int $nmbr) {
 	if(locale() === 'ja') {
 		$jaNmbrs = ['０', '１', '２', '３', '４', '５', '６', '７', '８', '９'];
@@ -241,6 +246,26 @@ function resizeAndCrop($path, $width, $height) {
 	$image = $ext === 'jpg' ? imagecreatefromjpeg($path) : imagecreatefrompng($path);
 	
 	//
+}
+
+function startJob(string $job, array $args = []): bool {
+	$script = base_path("Http/Jobs/{$job}.php");
+	if (!file_exists($script)) {
+		return false;
+	}
+
+	// Escape all arguments
+    $escapedArgs = array_map('escapeshellarg', $args);
+    $argString = implode(' ', $escapedArgs);
+
+	if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+		// Windows background execution
+        pclose(popen("start /B php \"$script\" $argString", "r"));
+	} else {
+		// Unix/Linux/Mac background execution
+        shell_exec("php " . escapeshellarg($script) . " $argString > /dev/null 2>/dev/null &");
+	}
+	return true;
 }
 
 function getRegion($prefecture) {

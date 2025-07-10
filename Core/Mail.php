@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\App;
+use Core\Database;
 use Core\MailException;
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -12,14 +14,15 @@ use Aws\Ses\SesClient;
 use Aws\Exception\AwsException;
 
 Class Mail {
-    protected $method = 'default';
-    protected $sender = EMAIL['notify_sender'];
+    protected $sender = null;
     protected $reply_to = null;
 
     protected $errors = [];
 
     public function __construct(protected array $recipients) {
         // to create an instance call Mail::to()
+        // set default sender
+        $this->sender = email();
     }
 
     public static function to(array|string $recipients) {
@@ -38,25 +41,50 @@ Class Mail {
         return $this;
     }
 
-    public function with(string $method) {
-        // see send() for accepted methods
-        $this->method = $method;
-        return $this;
-    }
-
     public function send($mailable) {
-        switch ($this->method) {
+        // switch ($this->method) {
 
-            case 'default':
-                $this->sendDefault($mailable);
-                break;
+        //     case 'default':
+        //         $this->sendDefault($mailable);
+        //         break;
 
-            case 'AWS':
-                $this->sendAWS($mailable);
-                break;
+        //     case 'AWS':
+        //         $this->sendAWS($mailable);
+        //         break;
 
-            default:
-               return false;
+        //     default:
+        //        return false;
+        // }
+
+        // Check database for sending method
+        $result = App::resolve(Database::class)->query("SELECT value FROM settings WHERE name = :name", [
+            'name' => 'amazon_ses_enabled'
+        ])->find();
+        
+        $method = $result && $result['value'] === '1' ? 'amazon' : 'default';
+
+        // Make directory if it doesn't exist
+        $dir = base_path('storage/temp');
+        if (!file_exists($dir)) {
+            mkdir($dir, 0777, true);
+        }
+
+        // Save subject and content to a temp file
+        $job_id = uniqid('email_', true);
+        file_put_contents("{$dir}/{$job_id}.json", json_encode([
+            'method'        => $method,
+            'template'      => $mailable->template,
+            'subject'       => $mailable->subject,
+            'preheader'     => $mailable->preheader,
+            'body'          => $mailable->body,
+            'sender'        => $this->sender,
+            'reply_to'      => $this->reply_to,
+            'recipients'    => $this->recipients
+        ]));
+
+        // Start job and throw exception if job doesn't exist
+        if(!startJob('send_email', [$job_id])) {
+            $this->errors['summary'] = __('response.technical_error');
         }
 
         if($this->failed()) {
@@ -72,45 +100,9 @@ Class Mail {
         return $this->errors;
     }
 
-    protected function sendDefault($mailable) {
-        try {
-            $mail = new PHPMailer(true);
 
-            // allow smtp for gmail
-            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            // $mail->isSMTP();                                            //Send using SMTP
-            // $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
-            // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            // $mail->Username   = '****@gmail.com';                       //SMTP username
-            // $mail->Password   = '**** **** **** ****';                  //SMTP password
-            // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
-            // $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-            $mail->isHTML();
-            $mail->setFrom($this->sender, __('meta.website_name'));
-
-            foreach($this->recipients as $r) {
-                $mail->addAddress($r);
-            }
-
-            if($this->reply_to) {
-                $mail->addReplyTo($this->reply_to);
-            }
-
-            $mail->Subject = $mailable->subject;
-            $mail->Body = $mailable->html;
-            $mail->AltBody = $mailable->text;
-            $mail->CharSet = 'utf-8';
-            
-            $mail->send();
-            // echo 'Message has been sent';
-
-        } catch (Exception $e) {
-            $this->errors['summary'] = __('response.technical_error');
-            $this->errors['raw'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }
-    }
-
+    // OUT OF USE --> Switched to SMTP!
+    
     public function sendAWS($mailable) {
         // Create an SesClient. Change the value of the region parameter if you're 
         // using an AWS Region other than US West (Oregon). Change the value of the
@@ -144,10 +136,12 @@ Class Mail {
         $html_body =  $mailable->html;
         $char_set = 'UTF-8';
 
-        try {
-            $result = $SesClient->sendEmail([
+        foreach ($this->recipients as $recipient_email) {
+            $unsubscribe_url = 'https://animalvoice.jp/unsubscribe?email=' . urlencode($recipient_email);
+
+            $requestParam = [
                 'Destination' => [
-                    'ToAddresses' => $recipient_emails,
+                    'ToAddresses' => [$recipient_email],
                 ],
                 'ReplyToAddresses' => [$this->reply_to ?? $sender_email],
                 'Source' => $sender_email,
@@ -170,13 +164,30 @@ Class Mail {
                 // If you aren't using a configuration set, comment or delete the
                 // following line
                 // 'ConfigurationSetName' => $configuration_set,
-            ]);
-            $messageId = $result['MessageId'];
-            // echo("Email sent! Message ID: $messageId"."\n");
+            ];
 
-        } catch (AwsException $e) {
-            $this->errors['summary'] = __('response.technical_error');
-            $this->errors['raw'] = $e->getMessage() . "\r\n" . "The email was not sent. Error message: " . $e->getAwsErrorMessage();
+            if(true) {
+                $requestParam['Headers'] = [
+                    [
+                        'Name' => 'List-Unsubscribe',
+                        'Value' => '<' . $unsubscribe_url . '>',
+                    ],
+                    [
+                        'Name' => 'List-Unsubscribe-Post',
+                        'Value' => 'List-Unsubscribe=One-Click',
+                    ],
+                ];
+            }
+
+            try {
+                $result = $SesClient->sendEmail($requestParam);
+                // $messageId = $result['MessageId'];
+                // echo("Email sent! Message ID: $messageId"."\n");
+
+            } catch (AwsException $e) {
+                $this->errors['summary'] = __('response.technical_error');
+                $this->errors['raw'] = $e->getMessage() . "\r\n" . "The email was not sent. Error message: " . $e->getAwsErrorMessage();
+            }
         }
     }
 }

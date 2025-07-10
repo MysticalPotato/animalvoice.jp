@@ -13,7 +13,8 @@ class NewUserMailable extends Mailable {
         $email = $attributes['email'];
         $password = $attributes['password'];
 
-        $this->text = "{$username}様"
+        // NO BEING USED
+        $this->body = "{$username}様"
             . "\r\n"
             . "\r\n" . "アニマル・ボイスのログイン詳細は次のとおりです。"
             . "\r\n"
@@ -25,9 +26,10 @@ class NewUserMailable extends Mailable {
             . "\r\n" . "https://animalvoice.jp/admin"
         ;
 
+        // Import from markdown file
         $file = file_get_contents(base_path('storage/new_user_email_ja.md'));
         $updated = insertVars($file, [$username, $email, $password]);
         $Parsedown = new \Parsedown();
-        $this->html = $Parsedown->text($updated);
+        $this->body = $Parsedown->text($updated);
     }
 }

@@ -52,8 +52,7 @@ class ApplicationMailable extends Mailable {
         </div>
 
         <?php
-        $this->html = ob_get_contents();
-        $this->text = strip_tags($this->html);
+        $this->body = ob_get_contents();
         ob_end_clean();
     }
 }

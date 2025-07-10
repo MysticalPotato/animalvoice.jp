@@ -17,7 +17,6 @@ class NewGroupMailable extends Mailable {
 
         $Parsedown = new \Parsedown();
 
-        $this->html = $Parsedown->text($updated);
-        $this->text = strip_tags($this->html);
+        $this->body = $Parsedown->text($updated);
     }
 }

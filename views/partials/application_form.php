@@ -89,6 +89,8 @@
                 <span class="input-error"><?= $errors['question_3'] ?></span>
             <?php endif; ?>
         </div>
+
+        <?php require base_path('views/partials/robot_blocker.php') ?>
         
         <div class="form-section">
             <button id="new-group-submit" class="btn cta-btn" type="submit">

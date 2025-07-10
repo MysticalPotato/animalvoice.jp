@@ -40,7 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Send email with new password
         $mailable = new NewUserMailable($user);
-		Mail::to($attributes['email'])->send($mailable);
+		Mail::to($attributes['email'])
+            ->from(email('noreply'))
+            ->send($mailable);
 
         // encrypt password for database
 		$encrypted = password_hash($password, PASSWORD_BCRYPT);

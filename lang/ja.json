@@ -302,7 +302,8 @@
         "x_people": "%s人",
         "confirmation_notice": "このメールはすべての%sに送信されます。送信ボタンを押す前に、以下の情報が正しいことをご確認ください。",
         "confirmation_label": "間違いありません。",
-        "date_sent": "送信日"
+        "date_sent": "送信日",
+        "send_test_email": "任意のメールアドレスにテストメールを送信します。"
     },
     "warning": {
         "group_disabled": "グループをウェブサイトに表示するには、グループを使用可能にしてホームページを作成する必要があります。",
@@ -331,7 +332,8 @@
         "password_no_match": "パスワードが一致しません。",
         "email_size": "コンテンツのサイズが大きすぎます。短くするか、解像度の低い画像を使用してください。",
         "email_sent": "メールを送りました！",
-        "unsubscribed": "ニュースレターの購読を解除しました。"
+        "unsubscribed": "ニュースレターの購読を解除しました。",
+        "already_subscribed": "あなたはすでに私たちのニュースレターを購読しています。"
     },
     "region": {
         "hokkaido": "北海道",

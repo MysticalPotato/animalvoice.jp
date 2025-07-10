@@ -7,6 +7,16 @@ use Core\Response;
 use Http\Forms\ApplicationForm;
 use Http\Mailables\ApplicationMailable;
 
+// unset form start time to prevent submission on refresh
+$form_start = $_SESSION['form_start'] ?? null;
+unset($_SESSION['form_start']);
+
+// honeypot and time-based check
+if (!empty($_POST['website']) || !isset($form_start) || time() - $form_start < 2) {
+	http_response_code(200);
+	die('Form submitted!');
+}
+
 // all variables that should be in POST, not what is required
 if(!isset(
 	$_POST['first_name'],
@@ -78,7 +88,10 @@ foreach ($users as $user) {
 }
 	
 // send email
-Mail::to($recipients)->replyTo($attributes['email'])->send($mailable);
+Mail::to($recipients)
+	->from(email('webform'))
+	->replyTo($attributes['email'])
+	->send($mailable);
 
 // redirect if everything went right
 redirect($_SERVER['HTTP_REFERER'], [

@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /captcha
 
 Sitemap: https://animalvoice.jp/sitemap.xml

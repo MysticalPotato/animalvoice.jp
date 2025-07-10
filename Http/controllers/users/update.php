@@ -58,7 +58,9 @@ foreach($attributes as $key => $value) {
 			$user['password'] = $value;
 
 			$mailable = new NewUserMailable($user);
-			Mail::to($user['email'])->send($mailable);
+			Mail::to($user['email'])
+				->from(email('noreply'))
+				->send($mailable);
 		}
 
 		// encrypt password for database

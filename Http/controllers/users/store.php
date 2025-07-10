@@ -37,7 +37,9 @@ $id = App::resolve(Database::class)->query('INSERT INTO users(username, email, p
 $mailable = new NewUserMailable($attributes);
 
 // mail the new user his login details
-Mail::to($attributes['email'])->send($mailable);
+Mail::to($attributes['email'])
+	->from(email('noreply'))
+	->send($mailable);
 
 // redirect if everything went right
 redirect(route('/admin/users'), [

@@ -37,6 +37,7 @@ $new_applications = count($result);
 		
 		<!--CSS-->
 		<link href="<?= PATH['css'] ?>admin.css?v=<?= time() ?>" rel="stylesheet" type="text/css" media="screen">
+		<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 	</head>
 	
 	<body class="<?= isset($_GET['nav']) && $_GET['nav'] === 'close' ? 'show-nav' : '' ?>">
@@ -76,9 +77,9 @@ $new_applications = count($result);
 							<span><?= __('nav.posts') ?></span>
 						</a>
 						
-						<a id="newsletter-btn" class="nav-btn <?= $current_tab === 'mailer' ? 'active' : '' ?>" href="<?= route('/admin/mailer') ?>" attr="mailer">
+						<a id="newsletter-btn" class="nav-btn <?= $current_tab === 'emails' ? 'active' : '' ?>" href="<?= route('/admin/emails') ?>" attr="emails">
 							<img src="<?= PATH['images'] ?>admin-icon-envelope.png"/>
-							<span><?= __('nav.mailer') ?></span>
+							<span><?= __('nav.emails') ?></span>
 						</a>
 
 						<a id="settings-btn" class="nav-btn <?= $current_tab === 'settings' ? 'active' : '' ?>" href="<?= route('/admin/settings') ?>" attr="settings">

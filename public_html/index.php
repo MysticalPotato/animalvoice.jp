@@ -26,10 +26,12 @@ const PATH = array(
 	"files"			=> "/assets/files/",
 );
 
-// Email
+// Email (all verified on Amazon SES)
 define('EMAIL', array(
-	'notify_sender'		=> 'notify@animalvoice.jp',
-	'news_sender'		=> 'hello@animalvoice.jp',
+	'general'			=> 'hello@animalvoice.jp',
+	'webform'			=> 'webform@animalvoice.jp',
+	'noreply'			=> 'noreply@animalvoice.jp',
+	'sandbox'			=> 'sandbox@animalvoice.jp',
 ));
 
 // Autoloader

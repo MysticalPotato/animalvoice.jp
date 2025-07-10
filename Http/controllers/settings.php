@@ -8,38 +8,33 @@ use Http\Forms\SettingsForm;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-	// all variables that should be in POST, not what is required
-	if(!isset(
-		$_POST['contact_email'],
-	)) {
-		http_response_code(Response::BAD_REQUEST);
-		die();
+	// filter allowed keys
+	$allowed = ['contact_email', 'amazon_ses_enabled'];
+	$_POST = array_intersect_key($_POST, array_flip($allowed));
+
+	// filter empty values
+	$_POST = array_filter($_POST, function($value) {
+		return $value !== false && !is_null($value) && ($value !== '' || $value === '0');
+	});
+
+	// stop here if no allowed keys
+	if(!$_POST) {
+		abort(Response::BAD_REQUEST);
 	}
 
 	// clean input
 	$_POST = cleanInput($_POST);
 
 	// validate form
-	$form = SettingsForm::validate($attributes = [
-		'contact_email'	=> $_POST['contact_email'],
-	]);
+	$form = SettingsForm::validate($attributes = $_POST);
 
-	// insert into database
-	App::resolve(Database::class)->query('UPDATE settings SET value = :value WHERE name = :name', [
-		'name' => 'contact_email',
-		'value' => $attributes['contact_email'],
-	]);
-
-	// USE FOR UPDATING MULTIPLE SETTINGS!
-	// App::resolve(Database::class)->query("UPDATE settings SET value = CASE
-	// 	WHEN name = 'contact_email'	THEN :contact_email
-	// 	WHEN name = 'notify_user'	THEN :notify_user
-	// END
-	// 	WHERE name IN ('contact_email', 'notify_user')",
-	// [
-	// 	'contact_email'	=> $attributes['contact_email'],
-	// 	'notify_user'	=> $attributes['notify_user'],
-	// ]);
+	// insert all attributes one by one into database
+	foreach($attributes as $key => $value) {
+		App::resolve(Database::class)->query("UPDATE settings SET value = :value WHERE name = :name", [
+			'name'	=> $key,
+			'value'	=> $value,
+		]);
+	}
 
 	// redirect if everything went right
 	redirect($_SERVER['HTTP_REFERER'], [

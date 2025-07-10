@@ -68,7 +68,9 @@ $id = App::resolve(Database::class)->query('INSERT INTO groups(
 // send welcome email
 if(isset($_POST['send_welcome_email']) && (int) $_POST['send_welcome_email'] === 1) {
 	$mailable = new NewGroupMailable($attributes);
-	Mail::to($attributes['organizer_email'])->send($mailable);
+	Mail::to($attributes['organizer_email'])
+		->from(email('general'))
+		->send($mailable);
 }
 
 // redirect if everything went right

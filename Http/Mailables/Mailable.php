@@ -5,7 +5,8 @@ namespace Http\Mailables;
 class Mailable {
     // A mailable needs to have a subject and a body.
 
-    public string $subject = '';
-    public string $text = '';       // plaintext body
-    public string $html = '';       // html body
+    public string $template     = '';       // newsletter or plain
+    public string $subject      = '';
+    public string $preheader    = '';
+    public string $body         = '';       // html body
 }

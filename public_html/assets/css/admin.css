@@ -40,6 +40,13 @@ body {
     font-optical-sizing: auto;
     overflow-x: hidden;
 }
+ul,
+ol {
+    padding-left: 3rem;
+}
+img {
+    max-width: 100%;
+}
 hr {
     border: none;
     border-top: 1px solid #ced4da;
@@ -53,6 +60,12 @@ button {
     background: none;
     font-size: inherit;
     color: #868e96;
+}
+button:disabled,
+button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
 }
 a {
     word-wrap: break-word;
@@ -107,6 +120,10 @@ textarea {
     max-width: 100%;
     min-height: 200px;
     height: 200px;
+}
+.email-body {
+    border-left: 1px solid #ced4da;
+    padding-left: 12px;
 }
 .input-tag,
 .input-hint {
@@ -194,7 +211,7 @@ textarea {
 }
 .main {
     margin-left: 340px;
-    width: 680px;
+    max-width: 840px; /*680*/
 }
 .content {
     padding: 0 40px 40px 40px;
@@ -258,9 +275,6 @@ textarea {
 }
 .btn--bad:hover {
     background-color: #e03131;
-}
-.submit-btn {
-    margin-top: 20px;
 }
 .account-btn {
     width: auto;
@@ -387,6 +401,45 @@ textarea {
     filter: brightness(0) saturate(100%) invert(20%) sepia(12%) saturate(572%) hue-rotate(169deg)
         brightness(91%) contrast(87%);
 }
+.confirmation-box {
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid #ced4da;
+}
+.confirmation-box form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.confirmation-box .form-section {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.confirmation-box .submit-btn {
+    flex-shrink: 0;
+}
+
+/* editorjs */
+.editor-container {
+    border-radius: 10px;
+    border: solid 1px #ced4da;
+}
+.ql-toolbar {
+    border: none !important;
+    border-bottom: solid 1px #ced4da !important;
+}
+.ql-container {
+    border: none !important;
+}
+.ql-editor {
+    padding: 10px 12px !important;
+    min-height: 200px !important;
+}
 
 @media (max-width: 990px) {
     body {
@@ -409,7 +462,7 @@ textarea {
     }
     .main {
         /* position: absolute; */
-        width: 100%;
+        max-width: 100%;
         margin: 0;
     }
     /* .show-nav .main {

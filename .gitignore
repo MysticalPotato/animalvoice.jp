@@ -1,3 +1,5 @@
 /vendor/
 /public_html/assets/uploads/
+/storage/logs/
+/storage/temp/
 /config.php

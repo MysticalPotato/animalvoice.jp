@@ -28,6 +28,10 @@
             padding: 0;
             font-family: sans-serif;
         }
+        ol, ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
 
         /* MOBILE STYLES */
         @media only screen and (max-width: 664px) {

@@ -23,4 +23,11 @@ App::resolve(Database::class)->query('DELETE FROM emails WHERE id = :id', [
 	'id' => $id
 ]);
 
+// delete uploads
+$uploads = public_path("/assets/uploads/emails/{$id}");
+if (file_exists($uploads)) {
+	array_map('unlink', glob("$uploads/*"));
+	rmdir($uploads);
+}
+
 redirect(route('/admin/emails'));

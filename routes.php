@@ -59,6 +59,9 @@ $router->delete(    '/admin/posts/{id}'         , 'posts/destroy.php'       )->o
 $router->get(       '/admin/subscribers'        , 'subscribers/index.php'   )->only('auth');
 $router->post(      '/admin/subscribers'        , 'subscribers/store.php'   );
 
+$router->post(      '/admin/uploads'            , 'uploads/store.php'       )->only('auth');
+$router->delete(    '/admin/uploads'            , 'uploads/destroy.php'     )->only('auth');
+
 $router->get(       '/admin/emails'			    , 'emails/index.php'        )->only('auth');
 $router->get(       '/admin/emails/create'	    , 'emails/create.php'       )->only('auth');
 $router->post(      '/admin/emails'			    , 'emails/store.php'        )->only('auth');

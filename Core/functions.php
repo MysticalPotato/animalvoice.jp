@@ -42,10 +42,12 @@ function authorize($condition, $status = Response::FORBIDDEN) {
 }
 
 function base_path($path) {
+	$path = ltrim($path, '/');
 	return BASE_PATH . $path;
 }
 
 function public_path($path) {
+	$path = ltrim($path, '/');
 	return PUBLIC_PATH . $path;
 }
 
@@ -74,7 +76,14 @@ function host() {
 	return $_SERVER['HTTP_HOST'];
 }
 
-function uri() {
+function uri($url = null) {
+	if($url) {
+		$base_url = url('');
+    	$base_len = strlen($base_url);
+		if (str_starts_with($url, $base_url)) {
+			return substr($url, $base_len);
+		}
+	}
 	return parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 }
 
@@ -84,7 +93,7 @@ function url($route = null) {
 }
 
 function protocol() {
-	return production() ? 'https://' : '';
+	return production() ? 'https://' : 'http://';
 }
 
 function locale(string $uri = null) {
@@ -217,8 +226,13 @@ function cleanInput($arr) {
 	return $arr;
 }
 
-function uploadFile($file, $stemName) {
-	$dir = public_path('assets/uploads/');
+// returns relative path
+function uploadFile($file, $stemName, $subDir = '') : string|false {
+	if(!empty($subDir)) {
+		$subDir = trim($subDir, '/') . '/';
+	}
+
+	$dir = public_path('assets/uploads/' . $subDir);
 	if (!file_exists($dir)) {
 		mkdir($dir, 0777, true);
 	}
@@ -228,24 +242,97 @@ function uploadFile($file, $stemName) {
 
 	if(!file_exists($path)) {
 		if(move_uploaded_file($file["tmp_name"], $path)){
-			return $path;
+			$uri = '/assets/uploads/' . $subDir . $stemName . '.' . $ext;
+			return $uri;
 		}
 	}
 	return false;
 }
 
-function deleteFile($baseName) {
-	$path = public_path('assets/uploads/') . $baseName;
+// accepts base name or url
+function deleteFile($file) {
+	$path = public_path('assets/uploads/') . $file;
 	if(file_exists($path)) {
 		unlink($path);
 	}
 }
 
-function resizeAndCrop($path, $width, $height) {
-	$ext = pathinfo($path, PATHINFO_EXTENSION);
-	$image = $ext === 'jpg' ? imagecreatefromjpeg($path) : imagecreatefrompng($path);
-	
-	//
+function resizeImage(string $file, int $w, int $h, bool $crop = false): bool {
+    list($width, $height, $type) = getimagesize($file);
+
+    $r = $width / $height;
+    if ($crop) {
+        if ($width > $height) {
+            $width = ceil($width-($width*abs($r-$w/$h)));
+        } else {
+            $height = ceil($height-($height*abs($r-$w/$h)));
+        }
+        $newwidth = $w;
+        $newheight = $h;
+    } else {
+        if ($w/$h > $r) {
+            $newwidth = $h*$r;
+            $newheight = $h;
+        } else {
+            $newheight = $w/$r;
+            $newwidth = $w;
+        }
+    }
+
+    // Select correct image create function
+    switch ($type) {
+        case IMAGETYPE_JPEG:
+            $src = imagecreatefromjpeg($file);
+            break;
+        case IMAGETYPE_PNG:
+            $src = imagecreatefrompng($file);
+            break;
+        case IMAGETYPE_GIF:
+            $src = imagecreatefromgif($file);
+            break;
+        default:
+            return false; // Unsupported image type
+    }
+
+    $dst = imagecreatetruecolor($newwidth, $newheight);
+
+    // Handle PNG transparency
+    if ($type == IMAGETYPE_PNG) {
+        imagealphablending($dst, false);
+        imagesavealpha($dst, true);
+    }
+
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+    // Stop here if resize failed
+	if (!$dst) return false;
+
+	$mime = mime_content_type($file);
+	$tempFile = $file . '.tmp';
+	$success = false;
+
+    switch ($mime) {
+        case 'image/jpeg':
+        case 'image/jpg':
+            $success = imagejpeg($dst, $tempFile, 90);
+            break;
+        case 'image/png':
+            $success = imagepng($dst, $tempFile);
+            break;
+        case 'image/gif':
+            $success = imagegif($dst, $tempFile);
+            break;
+        default:
+            imagedestroy($dst);
+            return false; // Unsupported type
+    }
+
+    imagedestroy($dst);
+	if (!$success) return false;
+
+	// overwrite the the original file with resized file
+	rename($tempFile, $file);
+	return true;
 }
 
 function startJob(string $job, array $args = []): bool {

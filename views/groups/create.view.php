@@ -78,6 +78,7 @@
 			<input type="checkbox" name="send_welcome_email" value="1" <?= old('send_welcome_email') === '1' ? 'checked' : '' ?>>
 		</div>
 		
+		<input type="hidden" name="application_id" value="<?= old('application_id') ?>">
 		<button class="btn btn--good submit-btn" type="submit"><?= __('admin.create_group') ?></button>
 	</form>
 </div>

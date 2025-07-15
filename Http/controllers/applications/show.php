@@ -9,6 +9,7 @@ $application = App::resolve(Database::class)->query("SELECT * FROM applications 
 	'id' => $id
 ])->findOrFail();
 
+// find group for group_id
 $result = App::resolve(Database::class)->query("SELECT * FROM groups WHERE id = :id", [
 	'id' => $application['group_id']
 ])->find();

@@ -42,10 +42,11 @@ $router->patch(     '/admin/users/{id}'         , 'users/update.php'        )->o
 $router->get(       '/admin/users/{id}/delete'  , 'users/delete.php'        )->only('admin');
 $router->delete(    '/admin/users/{id}'         , 'users/destroy.php'       )->only('admin');
 
-$router->get(       '/admin/applications'       , 'applications/index.php'  )->only('auth');
-$router->post(      '/admin/applications'       , 'applications/store.php'  );
-$router->get(       '/admin/applications/{id}'  , 'applications/show.php'   )->only('auth');
-$router->delete(    '/admin/applications/{id}'  , 'applications/destroy.php')->only('auth');
+$router->get(       '/admin/applications'                   , 'applications/index.php'          )->only('auth');
+$router->post(      '/admin/applications'                   , 'applications/store.php'          );
+$router->get(       '/admin/applications/{id}'              , 'applications/show.php'           )->only('auth');
+$router->delete(    '/admin/applications/{id}'              , 'applications/destroy.php'        )->only('auth');
+$router->post(      '/admin/applications/{id}/prefill-group', 'applications/prefill-group.php'  )->only('auth');
 
 $router->get(       '/admin/posts'			    , 'posts/index.php'         )->only('auth');
 $router->get(       '/admin/posts/create'	    , 'posts/create.php'        )->only('auth');

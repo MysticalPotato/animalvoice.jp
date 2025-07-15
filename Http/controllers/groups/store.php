@@ -15,7 +15,9 @@ if(!isset(
 	$_POST['homepage'],
 	$_POST['organizer_first_name'],
 	$_POST['organizer_last_name'],
-	$_POST['organizer_email']
+	$_POST['organizer_email'],
+	$_POST['send_welcome_email'],
+	$_POST['application_id'],
 )) {
 	http_response_code(Response::BAD_REQUEST);
 	die();
@@ -24,7 +26,7 @@ if(!isset(
 // clean input
 $_POST = cleanInput($_POST);
 
-// validate form
+// validate form (values not included will not be in old!)
 $form = GroupForm::validate($attributes = [
 	'name'					=> $_POST['name'],
 	'prefecture'			=> $_POST['prefecture'],
@@ -33,6 +35,8 @@ $form = GroupForm::validate($attributes = [
 	'organizer_first_name'	=> $_POST['organizer_first_name'],
 	'organizer_last_name'	=> $_POST['organizer_last_name'],
 	'organizer_email'		=> $_POST['organizer_email'],
+	'send_welcome_email'	=> $_POST['send_welcome_email'],
+	'application_id'		=> $_POST['application_id'],
 ]);
 
 // insert into database

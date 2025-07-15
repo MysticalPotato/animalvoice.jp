@@ -45,7 +45,7 @@
 		<?php if(!$approved) : ?>
 			<form method="POST" action="<?= route('/admin/groups') ?>">
 				<input type="hidden" name="_method" value="POST">
-				<input type="hidden" name="name" value="<?= __('meta.website_name') ?>　<?= $application['city'] ?>">
+				<input type="hidden" name="name" value="アニマル・ボイス　<?= $application['city'] ?>">
 				<input type="hidden" name="prefecture" value="<?= $application['prefecture'] ?>">
 				<input type="hidden" name="city" value="<?= $application['city'] ?>">
 				<input type="hidden" name="homepage" value="">
@@ -53,6 +53,7 @@
 				<input type="hidden" name="organizer_last_name" value="<?= $application['last_name'] ?>">
 				<input type="hidden" name="organizer_email" value="<?= $application['email'] ?>">
 				<input type="hidden" name="send_welcome_email" value="1">
+				<input type="hidden" name="application_id" value="<?= $application['id'] ?>">
 				<button class="btn btn--good"><?= __('button.approve') ?></button>
 			</form>
 		<?php endif; ?>

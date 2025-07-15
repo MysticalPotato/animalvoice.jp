@@ -65,6 +65,14 @@ $id = App::resolve(Database::class)->query('INSERT INTO groups(
 	'organizer_email'		=> $attributes['organizer_email'],
 ])->id();
 
+// update group_id for application
+if(isset($_POST['application_id']) && is_numeric($_POST['application_id'])) {
+	App::resolve(Database::class)->query('UPDATE applications SET group_id = :group_id WHERE id = :id', [
+		'id'		=> (int) $_POST['application_id'],
+		'group_id'	=> $id,
+	]);
+}
+
 // send welcome email
 if(isset($_POST['send_welcome_email']) && (int) $_POST['send_welcome_email'] === 1) {
 	$mailable = new NewGroupMailable($attributes);

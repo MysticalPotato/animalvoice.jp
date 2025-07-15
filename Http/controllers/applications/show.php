@@ -9,8 +9,8 @@ $application = App::resolve(Database::class)->query("SELECT * FROM applications 
 	'id' => $id
 ])->findOrFail();
 
-$result = App::resolve(Database::class)->query("SELECT * FROM groups WHERE city = :city", [
-	'city' => $application['city']
+$result = App::resolve(Database::class)->query("SELECT * FROM groups WHERE id = :id", [
+	'id' => $application['group_id']
 ])->find();
 
  // assume it has been approved if group with city exists

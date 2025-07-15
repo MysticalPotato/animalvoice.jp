@@ -29,12 +29,24 @@ $post = App::resolve(Database::class)->query("SELECT image FROM posts WHERE id =
 ])->findOrFail();
 
 // upload image if posted
-$imagePosted = $attributes['image']['size'] > 0 ? true : false;
-$imageName = $imagePosted ? basename(uploadFile($_FILES['image'], uniqid())) : $post['image'];
+$imageName = $post['image'];
+if($attributes['image']['size'] > 0) {
+	$rel_file_path = uploadFile($_FILES['image'], uniqid(), 'posts');
+	$file_path = public_path($rel_file_path);
 
-// delete old image
-if($imagePosted && $post['image'] !== '') {
-	deleteFile($post['image']);
+	$dim = getimagesize($file_path);
+	$squareWidth = 320;
+
+	if($dim[0] !== $squareWidth || $dim[1] !== $squareWidth) {
+		resizeImage($file_path, $squareWidth, $squareWidth, true);
+	}
+	
+	// delete old image
+	if($imageName !== '') {
+		deleteFile('posts/' . $imageName);
+	}
+
+	$imageName = basename($file_path);
 }
 
 // insert into database

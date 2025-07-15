@@ -7,7 +7,7 @@
 		
 		<div class="list-item <?= implode(' ', $post['classes']) ?>">
 			<div class="tags">
-				<img class="tag tag--preview" src="<?= PATH['uploads'] . htmlspecialchars(replaceEmpty($post['image'], '-')) ?>" />
+				<img class="tag tag--preview" src="<?= PATH['uploads'] . 'posts/' . htmlspecialchars(replaceEmpty($post['image'], '-')) ?>" />
 				<span class="tag tag--name<?= $post['enabled'] ? '' : ' disabled' ?>"><?= htmlspecialchars(instaPostId($post['url'])) ?></span>
 			</div>
 			

@@ -112,7 +112,7 @@
 							<div class="card insta-card">
 								<div class="card__face card__face--front">
 									
-									<img src="<?= PATH['uploads'] . htmlspecialchars($post['image']) ?>" alt="Instagram photo"/>
+									<img src="<?= PATH['uploads'] . 'posts/' . htmlspecialchars($post['image']) ?>" alt="Instagram photo"/>
 								</div>
 								
 								<div class="card__face card__face--back">

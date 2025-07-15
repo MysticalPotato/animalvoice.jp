@@ -26,7 +26,7 @@ $post = App::resolve(Database::class)->query("SELECT * FROM posts WHERE id = :id
 
 // delete image if associated with group
 if($post['image'] !== '') {
-	deleteFile($post['image']);
+	deleteFile('posts/' . $post['image']);
 }
 
 // delete from database

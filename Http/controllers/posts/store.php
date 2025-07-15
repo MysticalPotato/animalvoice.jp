@@ -22,8 +22,20 @@ $form = PostForm::validate($attributes = [
 ]);
 
 // upload image if posted
-$imagePosted = $attributes['image']['size'] > 0 ? true : false;
-$imageName = $imagePosted ? basename(uploadFile($_FILES['image'], uniqid())) : '';
+$imageName = '';
+if($attributes['image']['size'] > 0) {
+	$rel_file_path = uploadFile($_FILES['image'], uniqid(), 'posts');
+	$file_path = public_path($rel_file_path);
+
+	$dim = getimagesize($file_path);
+	$squareWidth = 320;
+
+	if($dim[0] !== $squareWidth || $dim[1] !== $squareWidth) {
+		resizeImage($file_path, $squareWidth, $squareWidth, true);
+	}
+
+	$imageName = basename($file_path);
+}
 
 // insert into database
 $id =App::resolve(Database::class)->query('INSERT INTO posts(account, url, image) VALUES(:account, :url, :image)', [

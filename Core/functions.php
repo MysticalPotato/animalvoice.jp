@@ -262,22 +262,41 @@ function resizeImage(string $file, int $w, int $h, bool $crop = false): bool {
 
     $r = $width / $height;
     if ($crop) {
-        if ($width > $height) {
-            $width = ceil($width-($width*abs($r-$w/$h)));
-        } else {
-            $height = ceil($height-($height*abs($r-$w/$h)));
-        }
-        $newwidth = $w;
-        $newheight = $h;
-    } else {
-        if ($w/$h > $r) {
-            $newwidth = $h*$r;
-            $newheight = $h;
-        } else {
-            $newheight = $w/$r;
-            $newwidth = $w;
-        }
-    }
+		$src_ratio = $width / $height;
+		$dst_ratio = $w / $h;
+
+		if ($src_ratio > $dst_ratio) {
+			// Source is wider than destination: crop width
+			$new_height = $height;
+			$new_width = $height * $dst_ratio;
+			$src_x = ($width - $new_width) / 2;
+			$src_y = 0;
+		} else {
+			// Source is taller than destination: crop height
+			$new_width = $width;
+			$new_height = $width / $dst_ratio;
+			$src_x = 0;
+			$src_y = ($height - $new_height) / 2;
+		}
+
+		$newwidth = $w;
+		$newheight = $h;
+	} else {
+		$src_x = $src_y = 0;
+		$new_width = $width;
+		$new_height = $height;
+
+		$src_ratio = $width / $height;
+		$dst_ratio = $w / $h;
+
+		if ($dst_ratio > $src_ratio) {
+			$newwidth = $w;
+			$newheight = $w / $src_ratio;
+		} else {
+			$newwidth = $h * $src_ratio;
+			$newheight = $h;
+		}
+	}
 
     // Select correct image create function
     switch ($type) {
@@ -302,7 +321,8 @@ function resizeImage(string $file, int $w, int $h, bool $crop = false): bool {
         imagesavealpha($dst, true);
     }
 
-    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+    // imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+	imagecopyresampled($dst, $src, 0, 0, $src_x, $src_y, $newwidth, $newheight, $new_width, $new_height);
 
     // Stop here if resize failed
 	if (!$dst) return false;

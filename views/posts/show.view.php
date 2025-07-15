@@ -29,7 +29,7 @@
 	
 	<div>
 		<div class="field-tag"><?= __('form.insta_image') ?></div>
-		<img class="insta-picture" src="<?= PATH['uploads'] . htmlspecialchars(replaceEmpty($post['image'], '-')) ?>"/>
+		<img class="insta-picture" src="<?= PATH['uploads'] . 'posts/' . htmlspecialchars(replaceEmpty($post['image'], '-')) ?>"/>
 	</div>
 	
 	<div>

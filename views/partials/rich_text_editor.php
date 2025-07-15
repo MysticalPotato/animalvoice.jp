@@ -29,18 +29,24 @@
             <select class="ql-color"></select>
             <select class="ql-background"></select>
         </span>
-
+        
         <span class="ql-formats">
             <button class="ql-list" value="ordered"></button>
             <button class="ql-list" value="bullet"></button>
+            <!-- <select class="ql-align"></select> -->
+            <select class="ql-align" data-format="align">
+                <option selected></option>
+                <option value="center"></option>
+                <option value="right"></option>
+            </select>
         </span>
 
+        <!-- <span class="ql-formats">
+            <button class="ql-cta-link">🖱️</button>
+        </span> -->
+        
         <span class="ql-formats">
             <button class="ql-link"></button>
-            <!-- <button class="ql-cta-link">🖱️</button> -->
-        </span>
-
-        <span class="ql-formats">
             <button class="ql-image"></button>
             <button class="ql-emoji"></button>
         </span>
@@ -142,6 +148,16 @@
                 button.style.color = '#fff';
             });
 
+            // fix list alignment issues (moved to on text-change)
+            // const alignedListItems = tempDiv.querySelectorAll('li[style*="text-align"]');
+            // alignedListItems.forEach(li => {
+            //     const parent = li.parentElement;
+            //     if (parent && (parent.tagName === 'ol' || parent.tagName === 'ul')) {
+            //         parent.style.listStylePosition = 'inside';
+            //         parent.style.paddingLeft = '0';
+            //     }
+            // });
+
             return tempDiv.innerHTML;
         }
 
@@ -150,6 +166,22 @@
             const ctaButtons = editor.querySelectorAll('a.cta-btn');
             ctaButtons.forEach(button => {
                 button.removeAttribute('style');
+            });
+        }
+
+        function fixListAlignment() {
+            document.querySelectorAll('.ql-editor ol, .ql-editor ul').forEach(list => {
+                const hasAlignedItem = Array.from(list.children).some(
+                    li => li.matches('[style*="text-align"]')
+                );
+
+                if (hasAlignedItem) {
+                    list.style.listStylePosition = 'inside';
+                    list.style.paddingLeft = '0';
+                } else {
+                    list.style.removeProperty('list-style-position');
+                    list.style.removeProperty('padding-left');
+                }
             });
         }
 
@@ -162,21 +194,6 @@
             input.onchange = async function () {
                 const file = input.files[0];
                 if (!file) return;
-
-                // // Add image validation
-                // const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
-                // const maxSizeMB = 2;
-                // // const dir = 'temp'; // Customize this as needed
-
-                // if (!validTypes.includes(file.type)) {
-                //     alert('Only JPG, PNG, or GIF images are allowed.');
-                //     return;
-                // }
-
-                // if (file.size > maxSizeMB * 1024 * 1024) {
-                //     alert(`Image must be smaller than ${maxSizeMB} MB.`);
-                //     return;
-                // }
 
                 const formData = new FormData();
                 formData.append('file', file);
@@ -198,7 +215,6 @@
                         input.value = result.url;
                         form.appendChild(input);
                     } else {
-                        // console.error(result.error);
                         alert(result.error);
                     }
                 } catch (err) {
@@ -231,6 +247,14 @@
 
         // Remove styles from CTA buttons before Quill loads
         removeBtnStyles();
+
+        // Define a custom align format using styles
+        const Parchment = Quill.import('parchment');
+        const AlignStyle = new Parchment.Attributor.Style('align', 'text-align', {
+            scope: Parchment.Scope.BLOCK,
+            whitelist: ['right', 'center', 'justify']
+        });
+        Quill.register(AlignStyle, true);
         
         // Quill 1.x
         const quill = new Quill('#editor', {
@@ -282,9 +306,18 @@
             form.submit();
         });
 
+        let fixListTimeout;
         quill.on('text-change', function (delta, oldDelta, source) {
+            // Light-weight operations: run every time
             trackImageDeletions(delta, oldDelta);
+            fixListAlignment();
             updateCharCount(quill);
+
+            // Heavier DOM update: debounce
+            clearTimeout(fixListTimeout);
+            fixListTimeout = setTimeout(() => {
+                // Move functions here
+            }, 100);
         });
 
         // Update character count on page load

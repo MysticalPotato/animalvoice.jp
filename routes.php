@@ -67,12 +67,13 @@ $router->get(       '/admin/emails'			    , 'emails/index.php'        )->only('a
 $router->get(       '/admin/emails/create'	    , 'emails/create.php'       )->only('auth');
 $router->post(      '/admin/emails'			    , 'emails/store.php'        )->only('auth');
 $router->get(       '/admin/emails/{id}'        , 'emails/show.php'         )->only('auth');
-$router->post(      '/admin/emails/{id}'        , 'emails/show.php'         )->only('auth'); // send email
+$router->post(      '/admin/emails/{id}'        , 'emails/show.php'         )->only('auth');
 $router->get(       '/admin/emails/{id}/edit'   , 'emails/edit.php'         )->only('auth');
 $router->patch(     '/admin/emails/{id}'        , 'emails/update.php'       )->only('auth');
 $router->get(       '/admin/emails/{id}/delete' , 'emails/delete.php'       )->only('auth');
 $router->delete(    '/admin/emails/{id}'        , 'emails/destroy.php'      )->only('auth');
 $router->get(       '/admin/emails/{id}/preview', 'emails/preview.php'      )->only('auth');
+$router->post(      '/admin/emails/{id}/send'   , 'emails/send.php'         )->only('auth'); // send email
 
 $router->get(       '/admin/settings'           , 'settings.php'            )->only('auth');
 $router->post(      '/admin/settings'           , 'settings.php'            )->only('auth');

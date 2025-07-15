@@ -14,7 +14,7 @@
 		<div class="confirmation-box">
 			<span><?= __('admin.send_test_email') ?></span>
 
-			<form method="POST" action="<?= route("/admin/emails/{$email['id']}") ?>">
+			<form method="POST" action="<?= route("/admin/emails/{$email['id']}/send") ?>">
 				<div class="form-section">
 					<input type="hidden" name="enabled" value="1">
 					<input type="email" name="email" maxlength="50" required>
@@ -33,7 +33,7 @@
 		<div class="confirmation-box">
 			<span><?= insertVars(__('admin.confirmation_notice'), '<strong>' . strtolower($recipients[$email['recipient']]) . '</strong>') ?></span>
 
-			<form method="POST" action="<?= route("/admin/emails/{$email['id']}") ?>">
+			<form method="POST" action="<?= route("/admin/emails/{$email['id']}/send") ?>">
 				<div class="form-section">
 					<input type="hidden" name="enabled" value="0">
 					<input id="cb-confirmation" type="checkbox" name="enabled" value="1">

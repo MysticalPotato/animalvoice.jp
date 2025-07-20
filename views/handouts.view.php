@@ -48,6 +48,11 @@
 										<a href="<?= $card['ai'] ?>">AI</a>,
 
 									<?php endif; ?>
+									<?php if(isset($card['png'])) : ?>
+
+										<a href="<?= $card['png'] ?>">PNG</a>,
+
+									<?php endif; ?>
 									<a href="<?= $card['pdf'] ?>">PDF</a>
 								</p>
 								<a class="btn cta-btn" href="<?= $card['order_url'] ?>" target="up-t"><?= __('button.order') ?></a>

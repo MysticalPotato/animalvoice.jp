@@ -428,6 +428,10 @@
         min-width: initial;
         gap: 2rem;
     }
+    .flyer img { /* Dumb Apple only problem fix */
+        width: 100%;
+        height: auto;
+    }
     .business-card-info {
         height: initial;
     }

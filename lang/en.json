@@ -244,12 +244,16 @@
         "page_description": "Download or order cards and flyers with resources to give it out while doing outreach.",
         "header_description": "For your convenience, you can order most of these handouts directly from a print shop, but you're also free to download them to print them yourself or change them to your liking.",
         "information_cards": "Information cards",
+        "flyers": "Recruitment flyers",
         "on_the_back": "On the back",
         "download": "Download as",
         "main_title": "Animal Voice",
         "main_description": "Dominion, Seaspiracy, Cowspiracy, Okja, What The Health, Gary Yourofsky, Happy Cow, Vegemap, Vegan 21",
         "dominion_title": "Dominion",
-        "dominion_description": "What The Health, Cowspiracy, Seaspiracy, The Game Changers, Happy Cow, Bosh TV, Challenge 22"
+        "dominion_description": "What The Health, Cowspiracy, Seaspiracy, The Game Changers, Happy Cow, Bosh TV, Challenge 22",
+        "flyer_main_title": "Animal Voice",
+        "flyer_main_description": "This flyer is aimed at inspiring people to become active and join Animal Voice. It is best to distribute at vegan restaurants, vegan festivals and other places that attract people who share our cause.",
+        "size": "Size"
     },
     "unsubscribe": {
         "page_title": "Unsubscribe | Animal Voice",

@@ -238,12 +238,16 @@
         "page_description": "アウトリーチ活動中に配布するための情報が記載されたカードやチラシをダウンロードまたは注文します。",
         "header_description": "便宜上、これらの配布資料のほとんどは印刷店から直接注文できますが、ダウンロードして自分で印刷したり、好みに合わせて変更したりすることもできます。",
         "information_cards": "情報カード",
+        "flyers": "募集フライヤー",
         "on_the_back": "後",
         "download": "ダウンロード",
         "main_title": "アニマル・ボイス",
         "main_description": "ドミニオン, Seaspiracy, Okja, Cowspiracy, 健康って何？, ゲイリー・ユロフスキー, Happy Cow, Vegemap, ヴィーガン 21",
         "dominion_title": "ドミニオン",
-        "dominion_description": "What The Health, Cowspiracy, Seaspiracy, ゲームチェンジャー, Happy Cow, Bosh TV, Challenge 22"
+        "dominion_description": "What The Health, Cowspiracy, Seaspiracy, ゲームチェンジャー, Happy Cow, Bosh TV, Challenge 22",
+        "flyer_main_title": "アニマル・ボイス",
+        "flyer_main_description": "このチラシは、人々にアニマル・ボイスの活動への参加を促すことを目的としています。ヴィーガンレストラン、ヴィーガンフェスティバルなど、私たちの活動に共感してくれる人が集まる場所で配布するのが最適です。",
+        "size": "サイズ"
     },
     "unsubscribe": {
         "page_title": "配信停止 | アニマル・ボイス",

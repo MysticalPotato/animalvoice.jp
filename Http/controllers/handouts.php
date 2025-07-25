@@ -21,8 +21,20 @@ $cards = [
 	],
 ];
 
+$flyer = [
+	'title'			=> __('handouts.flyer_main_title'),
+	'description'	=> __('handouts.flyer_main_description'),
+	'img_front'		=> PATH['images'] . 'flyer-main-front.webp',
+	'img_back'		=> PATH['images'] . 'flyer-main-back.webp',
+	'ai'			=> PATH['files'] . 'animalvoice_flyer_ai.zip',
+	'pdf'			=> PATH['files'] . 'animalvoice_flyer_pdf.zip',
+	'png'			=> PATH['files'] . 'animalvoice_flyer_png.zip',
+	// 'order_url'		=> 'https://up-t.jp/market/680976937c7d4',
+];
+
 view('handouts.view.php', [
 	'meta_title' => __('handouts.page_title'),
 	'meta_description' => __('handouts.page_description'),
 	'cards' => $cards,
+	'flyer' => $flyer,
 ]);

@@ -114,7 +114,7 @@
     </url>
     <url>
         <loc>https://animalvoice.jp/handouts</loc>
-        <lastmod>2025-03-27</lastmod>
+        <lastmod>2025-07-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <xhtml:link rel="alternate" hreflang="ja" href="https://animalvoice.jp/handouts" />
@@ -122,6 +122,22 @@
         <image:image>
             <image:loc>https://animalvoice.jp/assets/images/hero-handouts.webp</image:loc>
             <image:caption>People doing outreach handing out cards</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/card-main-front.webp</image:loc>
+            <image:caption>Animal Voice information card front</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/card-main-back.webp</image:loc>
+            <image:caption>Animal Voice information card back</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/flyer-main-front.webp</image:loc>
+            <image:caption>Animal Voice recruitment flyer front</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://animalvoice.jp/assets/images/flyer-main-back.webp</image:loc>
+            <image:caption>Animal Voice recruitment flyer back</image:caption>
         </image:image>
     </url>
     <url>

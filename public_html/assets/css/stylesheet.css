@@ -34,7 +34,6 @@ picture {
 
 .card-container {
     perspective: 600px;
-    max-width: 340px;
 }
 .card {
     width: 100%;
@@ -216,7 +215,8 @@ hr {
     border: 0;
     opacity: 0.14;
 }
-hr.dark {
+hr.dark,
+section.dark hr {
     background-color: #f2f2f2;
     opacity: 0.07;
 }
@@ -298,6 +298,9 @@ section.after.alt:after {
 section.dark {
     background-color: #252a34;
     color: #fff;
+}
+section.dark:last-of-type {
+    border-bottom: 1px solid rgba(242, 242, 242, 0.07);
 }
 section.fullscreen {
     height: 100%;
@@ -393,6 +396,9 @@ section.bg-animals {
 }
 .content-wrapper .content .column-wrapper.social-previews a {
     position: relative;
+}
+.content-wrapper .content .column-wrapper.social-previews .card-container {
+    max-width: 340px;
 }
 .content-wrapper .content .column-wrapper.social-previews .card__face {
     border-radius: 10px;
@@ -618,6 +624,10 @@ section.bg-animals {
     font-family: "Noto Sans JP";
     margin-left: 0.5em;
     line-height: 1em;
+}
+.btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
 .empty-btn {
     color: #fff;
@@ -1349,26 +1359,29 @@ form.regular-form .hint {
     background-image: linear-gradient(0deg, rgba(42, 62, 102, 0.5) 20%, rgba(37, 42, 52, 0) 70%),
         url("../../assets/images/hero-handouts.webp");
 }
-#handouts .card-container {
-    height: 312px;
-    align-self: center;
+.business-cards {
+    flex-wrap: wrap;
 }
-#handouts .card-container:hover .card {
-    transform: rotateY(-180deg);
-}
-#handouts .business-card {
+.business-card {
     display: flex;
     flex-direction: row;
     gap: 3rem;
 }
-#handouts .card {
+.business-card .card-container {
+    height: 312px;
+    align-self: center;
+}
+.business-card .card {
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-#handouts .business-card img {
+.business-card .card-container:hover .card {
+    transform: rotateY(-180deg);
+}
+.business-card img {
     height: 312px;
 }
-#handouts .business-card-info {
+.business-card-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1376,18 +1389,34 @@ form.regular-form .hint {
     padding: 0.5em 0;
     box-sizing: border-box;
 }
-#handouts .business-card-info * {
+.business-card-info * {
     margin: 0;
 }
-#handouts .business-card-info .btns {
+.flyer {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: 100%;
+}
+.flyer img {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    border-radius: 10px;
+}
+.paper-size {
+    display: block;
+    margin-bottom: 1em;
+}
+.paper-size strong {
+    margin-right: 10px;
+}
+.handout-btns {
     margin-top: auto;
 }
-#handouts .business-card-info .btns .btn {
+.handout-btns .btn {
     display: inline-block;
     margin-top: 1em;
-}
-#handouts .business-cards {
-    flex-wrap: wrap;
 }
 
 /*MARKDOWN*/

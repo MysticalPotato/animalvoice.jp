@@ -6,9 +6,9 @@ $cards = [
 		'description'	=> __('handouts.main_description'),
 		'img_front'		=> PATH['images'] . 'card-main-front.webp',
 		'img_back'		=> PATH['images'] . 'card-main-back.webp',
-		'ai'			=> PATH['files'] . 'business-card-main.ai',
-		'pdf'			=> PATH['files'] . 'business-card-main-pdf.zip',
-		'png'			=> PATH['files'] . 'business-card-main-png.zip',
+		'ai'			=> PATH['files'] . 'animalvoice_card_ai.zip',
+		'pdf'			=> PATH['files'] . 'animalvoice_card_pdf.zip',
+		'png'			=> PATH['files'] . 'animalvoice_card_png.zip',
 		'order_url'		=> 'https://up-t.jp/market/680976937c7d4',
 	],
 	[
@@ -16,7 +16,7 @@ $cards = [
 		'description'	=> __('handouts.dominion_description'),
 		'img_front'		=> PATH['images'] . 'card-dominion-front.webp',
 		'img_back'		=> PATH['images'] . 'card-dominion-back.webp',
-		'pdf'			=> PATH['files'] . 'business-card-dominion.zip',
+		'pdf'			=> PATH['files'] . 'dominion_card_pdf.zip',
 		'order_url'		=> 'https://up-t.jp/market/6778da7e8c8f1',
 	],
 ];

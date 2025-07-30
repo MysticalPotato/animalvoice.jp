@@ -3,6 +3,7 @@
 namespace Core;
 
 use Core\App;
+use Core\Response;
 use Core\Localization;
 use Core\Middleware\Guest;
 use Core\Middleware\Auth;
@@ -97,16 +98,10 @@ class Router {
 			}
 		}
 		
-		$this->abort();
+		abort(Response::NOT_FOUND);
 	}
 
 	public function previousUrl() {
 		return $_SERVER['HTTP_REFERER'];
-	}
-	
-	protected function abort($code = 404) {
-		http_response_code($code);
-		require base_path("views/{$code}.php");
-		die();
 	}
 }

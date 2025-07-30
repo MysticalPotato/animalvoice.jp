@@ -29,9 +29,11 @@ function urlIs($value) {
 }
 
 function abort($code = Response::NOT_FOUND) {
-	// should check if file exists!
 	http_response_code($code);
-	require base_path("views/{$code}.php");
+	$response_name = getResponseName($code);
+	$meta_title = __('meta.website_name');
+	$meta_description = "Response code {$code}: {$response_name}";
+	require base_path("views/response.view.php");
 	die();
 }
 
@@ -373,6 +375,12 @@ function startJob(string $job, array $args = []): bool {
         shell_exec("php " . escapeshellarg($script) . " $argString > /dev/null 2>/dev/null &");
 	}
 	return true;
+}
+
+function getResponseName($code) {
+	$ref = new ReflectionClass(Response::class);
+    $map = array_flip($ref->getConstants());
+    return ucwords(strtolower(str_replace('_', ' ', $map[$code]))) ?? '';
 }
 
 function getRegion($prefecture) {

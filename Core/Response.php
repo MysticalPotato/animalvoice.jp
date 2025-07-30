@@ -14,4 +14,5 @@ class Response {
 	const NOT_FOUND = 404;
 	const REQUEST_TIMEOUT = 408;
 	const CONFLICT = 409;
+	const GONE = 410;
 }

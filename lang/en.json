@@ -9,7 +9,9 @@
         "newsletter_description": "Get notified about big events, workshops, lectures and when new groups are formed.",
         "newsletter_privacy": "Your data is in safe hands. Check out our [privacy policy] for more info.",
         "placeholder_email": "Email Address",
-        "placeholder_password": "Password"
+        "placeholder_password": "Password",
+        "response_code": "Response code",
+        "return_home": "Return to [home]"
     },
     "nav": {
         "resources": "Resources",
@@ -289,6 +291,10 @@
         "main_title": "Give a donation",
         "main_subtitle": "Help us",
         "main_description": "We don't yet have a system in place for receiving donations. If you'd like to help us out financially or have televisions or batteries you'd like to give away, please [contact] us."
+    },
+    "confirm": {
+        "main_title": "You are now subscribed",
+        "main_subtitle": "Thank you"
     },
     "admin": {
         "page_title": "Admin | Animal Voice",

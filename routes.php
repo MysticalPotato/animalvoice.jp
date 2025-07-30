@@ -16,6 +16,9 @@ $router->get(       '/captcha'                  , 'captcha.php'             );
 $router->get(       '/unsubscribe'              , 'unsubscribe.php'         );
 $router->post(      '/unsubscribe'              , 'unsubscribe.php'         );
 
+$router->post(      '/subscribe'                , 'subscribers/optin/store.php'     );
+$router->get(       '/confirm-subscription'     , 'subscribers/optin/confirm.php'   );
+
 $router->get(       '/contact'				    , 'contact.php'             );
 $router->post(      '/contact'				    , 'contact.php'             );
 

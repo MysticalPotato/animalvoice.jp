@@ -10,7 +10,7 @@ function submitEmail(formId) {
     form.classList.remove("error");
     submitBtn.classList.add("loading");
 
-    fetch("admin/subscribers", {
+    fetch("subscribe", {
         method: "POST",
         body: formData,
     })

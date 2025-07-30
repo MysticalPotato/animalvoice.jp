@@ -9,7 +9,9 @@
         "newsletter_description": "大きなイベント、ワークショップ、講義、またはお住まいの地域で新しいグループが開催される場合に通知を受け取ります。",
         "newsletter_privacy": "あなたのデータは安全に保管されます。詳細については、[プライバシーポリシー]をご覧ください。",
         "placeholder_email": "電子メールアドレス",
-        "placeholder_password": "パスワード"
+        "placeholder_password": "パスワード",
+        "response_code": "レスポンスコード",
+        "return_home": "[ホーム] にもどる"
     },
     "nav": {
         "resources": "リソース",
@@ -283,6 +285,10 @@
         "main_title": "寄付をする",
         "main_subtitle": "支援する",
         "main_description": "寄付金を受け取るシステムはまだ整っていません。金銭的に支援したい場合や、寄付したいテレビやポータブル充電器がある場合は、[問い合わせ] ください。"
+    },
+    "confirm": {
+        "main_title": "登録が完了しました",
+        "main_subtitle": "ありがとう御座います"
     },
     "admin": {
         "page_title": " アドミン | アニマル・ボイス",

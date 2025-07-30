@@ -9,8 +9,8 @@
 				<div class="column-wrapper">
 					<div class="column center space">
 						<div class="section-header">
-							<header class="sub-title center"><?= __('global.response_code') . ' ' . $code ?></header>
-							<h1><?= $response_name ?></h1>
+							<header class="sub-title center"><?= __('confirm.main_subtitle') ?></header>
+							<h1><?= __('confirm.main_title') ?></h1>
 						</div>
 						
 						<p><?= insertLinks(__('global.return_home'), '/') ?></p>

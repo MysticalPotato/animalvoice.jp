@@ -5,6 +5,9 @@ const PUBLIC_PATH = __DIR__ . '/../../public_html/';
 $directory = PUBLIC_PATH . 'assets/uploads/temp/';
 $files = scandir($directory);
 
+// set the default timezone to use.
+date_default_timezone_set('Asia/Tokyo');
+
 $now = time();
 $oneWeekAgo = $now - (7 * 24 * 60 * 60); // 7 days in seconds
 

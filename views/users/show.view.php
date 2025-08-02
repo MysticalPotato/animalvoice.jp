@@ -20,7 +20,7 @@
 		<form method="POST" action="<?= route("/admin/users/{$user['id']}") ?>">
 			<input type="hidden" name="password" value="<?= $password ?>">
 			<input type="hidden" name="_method" value="PATCH">
-			<button type="submit">Send new password</button>
+			<button type="submit"><?= __('button.send_password') ?></button>
 		</form>
 	</div>
 	

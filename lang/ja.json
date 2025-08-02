@@ -56,7 +56,8 @@
         "sign_in": "サインイン",
         "save": "保存",
         "preview": "プレビュー",
-        "unsubscribe": "配信停止"
+        "unsubscribe": "配信停止",
+        "send_password": "新しいパスワードを送る"
     },
     "form": {
         "name": "名前",
@@ -78,7 +79,7 @@
         "insta_account": "インスタのアカウント",
         "insta_post": "インスタのポスト",
         "insta_image": "インスタの写真",
-        "group_name": "Group name",
+        "group_name": "グループ名",
         "organizer_first_name": "主催者の名前",
         "organizer_last_name": "主催者の苗字",
         "organizer_email": "主催者のメールアドレス",
@@ -92,7 +93,11 @@
         "recover_password_hint": "新しいパスワードが記載されたメールが届きます。",
         "send_welcome_email": "ウェルカムメールを送信",
         "subscribers": "登録者",
-        "organizers": "主催者"
+        "organizers": "主催者",
+        "characters": "文字",
+        "contact_recipient": "問い合わせの送り先",
+        "enable_aws": "Amazon SES を有効にする",
+        "enable_aws_hint": "チェックを入れると、自動通知やニュースレターを含むすべてのメールが Amazon SES 経由で送信されます。エラーが発生しない限り、有効にすることをお勧めします。"
     },
     "home": {
         "page_title": "アニマル・ボイス",

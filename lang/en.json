@@ -56,7 +56,8 @@
         "sign_in": "Sign in",
         "save": "Save",
         "preview": "Preview",
-        "unsubscribe": "Unsubscribe"
+        "unsubscribe": "Unsubscribe",
+        "send_password": "Send new password"
     },
     "form": {
         "name": "Name",
@@ -92,7 +93,11 @@
         "recover_password_hint": "You will receive an email with a new password.",
         "send_welcome_email": "Send welcome email",
         "subscribers": "Subscribers",
-        "organizers": "Organizers"
+        "organizers": "Organizers",
+        "characters": "characters",
+        "contact_recipient": "Contact recipient",
+        "enable_aws": "Enable Amazon SES",
+        "enable_aws_hint": "If checked, all emails, including automated notices and newsletters will be sent via Amazon SES. It's recommended to enable this, unless it's causing errors."
     },
     "home": {
         "page_title": "Animal Voice",

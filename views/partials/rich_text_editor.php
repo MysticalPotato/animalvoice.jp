@@ -65,7 +65,7 @@
 </div>
 
 <div id="char-count" style="margin-top: 8px; font-size: 0.9em; color: #666;">
-    0 / <?= $maxlength ?> characters
+    0 / <?= $maxlength . ' ' . __('form.characters') ?>
 </div>
 
 <!-- Quill 1.3.7 -->
@@ -125,7 +125,7 @@
             const charCountEl = document.getElementById('char-count');
             const plainText = quill.getText().trim(); // Excludes formatting
             const length = plainText.length;
-            charCountEl.textContent = `${length} / ${maxlength} characters`;
+            charCountEl.textContent = `${length} / ${maxlength} <?= __('form.characters') ?>`;
 
             // Optional: Prevent typing beyond maxlength
             if (length > maxlength) {

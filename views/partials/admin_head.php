@@ -9,6 +9,7 @@ $result = App::resolve(Database::class)->query("SELECT * FROM applications WHERE
 ])->get();
 
 $new_applications = count($result);
+$alt_locale = locale() === 'en' ? 'ja' : 'en';
 
 ?>
 
@@ -45,6 +46,7 @@ $new_applications = count($result);
 			<div class="sidebar-top">
 				<div class="sidebar-header">
 					<span>Admin</span>
+					<a class="lang-btn" href="<?= route(uri(), $alt_locale) ?>" hreflang="<?= $alt_locale ?>"><?= strtoupper($alt_locale) ?></a>
 				</div>
 				
 				<?php if(isset($_SESSION['user'])) : ?>

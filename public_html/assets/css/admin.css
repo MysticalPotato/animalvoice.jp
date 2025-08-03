@@ -17,6 +17,8 @@ red shade:          #e03131
 
 purple:             #7048e8
 purple shade:       #5f3dc4
+purple tint:        #9775fa
+purple tint:        #b197fc
 white (purple):     #f3f0ff     filter: brightness(0) saturate(100%) invert(99%) sepia(88%) saturate(2561%) hue-rotate(181deg) brightness(110%) contrast(102%);
 
 */
@@ -163,6 +165,18 @@ textarea {
     font-family: "Inter", sans-serif;
     font-weight: bold;
     color: #f3f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lang-btn {
+    margin: 10px;
+    font-size: 1rem;
+    color: #9775fa;
+    transition: .2s;
+}
+.lang-btn:hover {
+    color: #b197fc;
 }
 .nav-btn-container {
     display: flex;

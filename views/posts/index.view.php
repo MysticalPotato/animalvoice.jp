@@ -1,6 +1,7 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="posts" class="content">
+	<p class="page-description"><?= __('admin.posts_description') ?></p>
 	<a href="<?= route('/admin/posts/create') ?>"><?= __('admin.create_post') ?></a>
 	<div class="list">
 	<?php foreach($posts as $post) : ?>

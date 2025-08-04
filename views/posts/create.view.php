@@ -8,6 +8,7 @@
 	<form method="POST" action="<?= route('/admin/posts') ?>" enctype="multipart/form-data">
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.insta_account') ?> <span class="required">*</span></span>
+			<span class="input-hint"><?= __('form.insta_account_hint') ?></span>
 			<input type="text" name="account" value="<?= old('account') ?>" maxlength="200" required>
 			<?php if(array_key_exists('account', $errors)) : ?>
 				<span class="input-error"><?= $errors['account'] ?></span>
@@ -16,6 +17,7 @@
 		
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.insta_post') ?> <span class="required">*</span></span>
+			<span class="input-hint"><?= __('form.insta_post_hint') ?></span>
 			<input type="text" name="url" value="<?= old('url') ?>" maxlength="200" required>
 			<?php if(array_key_exists('url', $errors)) : ?>
 				<span class="input-error"><?= $errors['url'] ?></span>

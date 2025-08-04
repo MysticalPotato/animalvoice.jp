@@ -1,6 +1,7 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div class="content">
+	<p class="page-description"><?= __('admin.emails_description') ?></p>
     <a href="<?= route('/admin/emails/create') ?>"><?= __('admin.create_email') ?></a>
 	<div class="list">
 	<?php foreach($emails as $email) : ?>

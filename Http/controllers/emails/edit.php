@@ -36,6 +36,8 @@ $recipients = [
 	],
 ];
 
+$editor_manual = 'https://docs.google.com/document/d/1tdx8GDxw_MSc4pkU8YmDzZavIICiOwwfORYcQiJX3jg/edit?usp=sharing';
+
 view('emails/edit.view.php', [
 	'meta_title' => __('admin.page_title'),
 	'meta_description' => __('admin.page_description'),
@@ -47,4 +49,5 @@ view('emails/edit.view.php', [
 	'errors' => Session::get('errors') ?? [],
 	'recipients' => $recipients,
 	'email' => $email,
+	'editor_manual' => $editor_manual,
 ]);

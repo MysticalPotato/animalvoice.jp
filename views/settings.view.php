@@ -1,6 +1,8 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="settings" class="content">
+	<p class="page-description"><?= __('admin.settings_description') ?></p>
+	
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>
@@ -12,6 +14,7 @@
 	<form method="POST" action="<?= route("/admin/settings") ?>" enctype="multipart/form-data">
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.contact_recipient') ?></span>
+			<span class="input-hint"><?= __('form.contact_recipient_hint') ?></span>
 			<input type="email" name="contact_email" value="<?= htmlspecialchars($settings['contact_email']) ?>" maxlength="50">
 			<?php if(array_key_exists('contact_email', $errors)) : ?>
 				<span class="input-error"><?= $errors['contact_email'] ?></span>

@@ -44,6 +44,11 @@
 				<span class="input-error"><?= $errors['content'] ?></span>
 			<?php endif; ?>
 		</div>
+
+		<div class="notice-info">
+			<span>⚠</span>
+			<span><?= insertLinks(__('admin.editor_manual_notice'), $editor_manual) ?></span>
+		</div>
 		
 		<input type="hidden" name="_method" value="PATCH">
 		<button class="btn btn--good submit-btn" type="submit"><?= __('button.update') ?></button>

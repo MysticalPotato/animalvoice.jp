@@ -16,6 +16,7 @@
 		
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.prefecture') ?> <span class="required">*</span></span>
+			<span class="input-hint"><?= __('form.prefecture_hint') ?></span>
 			<select name="prefecture" required>
 				<option disabled selected value><?= __('form.select_prefecture') ?></option>
 				<?php foreach(__('prefecture') as $key => $item) : ?>
@@ -34,6 +35,7 @@
 		
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.city') ?> <span class="required">*</span></span>
+			<span class="input-hint"><?= __('form.city_hint') ?></span>
 			<input type="text" name="city" value="<?= old('city') ?>" maxlength="50" required>
 			<?php if(array_key_exists('city', $errors)) : ?>
 				<span class="input-error"><?= $errors['city'] ?></span>
@@ -42,6 +44,7 @@
 		
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.homepage') ?></span>
+			<span class="input-hint"><?= __('form.homepage_hint') ?></span>
 			<input type="text" name="homepage" value="<?= old('homepage') ?>" maxlength="200">
 			<?php if(array_key_exists('homepage', $errors)) : ?>
 				<span class="input-error"><?= $errors['homepage'] ?></span>
@@ -74,6 +77,7 @@
 
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.send_welcome_email') ?></span>
+			<span class="input-hint"><?= __('form.send_welcome_email_hint') ?></span>
 			<input type="hidden" name="send_welcome_email" value="0">
 			<input type="checkbox" name="send_welcome_email" value="1" <?= old('send_welcome_email') === '1' ? 'checked' : '' ?>>
 		</div>

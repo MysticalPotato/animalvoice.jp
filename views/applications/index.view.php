@@ -1,6 +1,7 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="applications" class="content">
+	<p class="page-description"><?= __('admin.applications_description') ?></p>
 	<div class="list">
 	<?php foreach($applications as $application) : ?>
 		

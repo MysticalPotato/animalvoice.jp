@@ -1,6 +1,8 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="settings" class="content">
+	<p class="page-description"><?= __('admin.account_description') ?></p>
+
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>

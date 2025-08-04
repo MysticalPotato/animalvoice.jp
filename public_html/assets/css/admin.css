@@ -72,7 +72,7 @@ button[disabled] {
 a {
     word-wrap: break-word;
     text-decoration: none;
-    color: #868e96;
+    color: #7048e8;
 }
 .main form {
     display: flex;
@@ -199,6 +199,7 @@ textarea {
     color: #f3f0ff;
     transition: all 0.3s;
     position: relative;
+    font-weight: initial;
 }
 .nav-btn:hover,
 .nav-btn.active {
@@ -446,6 +447,18 @@ textarea {
 .confirmation-box .submit-btn {
     flex-shrink: 0;
 }
+.page-description {
+    padding-left: 20px;
+    border-left: 4px solid #ced4da;
+    color: #868e96;
+}
+.notice-info {
+    margin: 20px 0;
+    color: #868e96;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
 /* editorjs */
 .editor-container {
@@ -466,6 +479,13 @@ textarea {
 .ql-editor {
     padding: 10px 12px !important;
     min-height: 200px !important;
+}
+.ql-stroke {
+    fill: none;
+    stroke: #444;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
 }
 
 @media (max-width: 990px) {

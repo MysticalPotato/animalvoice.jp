@@ -15,4 +15,6 @@ class Response {
 	const REQUEST_TIMEOUT = 408;
 	const CONFLICT = 409;
 	const GONE = 410;
+
+	const INTERNAL_SERVER_ERROR = 500;
 }

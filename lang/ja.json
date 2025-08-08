@@ -102,7 +102,11 @@
         "contact_recipient": "問い合わせの送り先",
         "contact_recipient_hint": "ウェブサイトからの問い合わせを受け取るメールアドレスです。",
         "enable_aws": "Amazon SES を有効にする",
-        "enable_aws_hint": "チェックを入れると、自動通知やニュースレターを含むすべてのメールが Amazon SES 経由で送信されます。エラーが発生しない限り、有効にすることをお勧めします。"
+        "enable_aws_hint": "チェックを入れると、自動通知やニュースレターを含むすべてのメールが Amazon SES 経由で送信されます。エラーが発生しない限り、有効にすることをお勧めします。",
+        "organizer_manual": "主催者マニュアルのURL",
+        "organizer_manual_hint": "新しい主催者への歓迎メールにこのリンクが含まれます。",
+        "editor_manual": "メール編集マニュアルのURL",
+        "editor_manual_hint": "このリンクはメール編集の下に表示されます。"
     },
     "home": {
         "page_title": "アニマル・ボイス",

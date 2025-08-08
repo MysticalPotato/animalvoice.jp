@@ -3,6 +3,7 @@
 namespace Core;
 
 use PDO;
+use Core\Response;
 
 class Database {
 	public $connection;
@@ -31,7 +32,7 @@ class Database {
 		$result = $this->find();
 		
 		if(!$result) {
-			abort();
+			abort(Response::INTERNAL_SERVER_ERROR);
 		}
 		
 		return $result;
@@ -45,7 +46,7 @@ class Database {
 		$result = $this->get();
 		
 		if(!$result) {
-			abort();
+			abort(Response::INTERNAL_SERVER_ERROR);
 		}
 		
 		return $result;

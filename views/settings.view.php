@@ -21,6 +21,28 @@
 			<?php endif; ?>
 		</div>
 
+		<hr class="form-section-separator">
+
+		<div class="form-section">
+			<span class="input-tag"><?= __('form.organizer_manual') ?></span>
+			<span class="input-hint"><?= __('form.organizer_manual_hint') ?></span>
+			<input type="text" name="organizer_manual" value="<?= htmlspecialchars($settings['organizer_manual']) ?>" maxlength="200">
+			<?php if(array_key_exists('organizer_manual', $errors)) : ?>
+				<span class="input-error"><?= $errors['organizer_manual'] ?></span>
+			<?php endif; ?>
+		</div>
+
+		<div class="form-section">
+			<span class="input-tag"><?= __('form.editor_manual') ?></span>
+			<span class="input-hint"><?= __('form.editor_manual_hint') ?></span>
+			<input type="text" name="editor_manual" value="<?= htmlspecialchars($settings['editor_manual']) ?>" maxlength="200">
+			<?php if(array_key_exists('editor_manual', $errors)) : ?>
+				<span class="input-error"><?= $errors['editor_manual'] ?></span>
+			<?php endif; ?>
+		</div>
+
+		<hr class="form-section-separator">
+
 		<div class="form-section">
 			<span class="input-tag"><?= __('form.enable_aws') ?></span>
 			<span class="input-hint"><?= __('form.enable_aws_hint') ?></span>

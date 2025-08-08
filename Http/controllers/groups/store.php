@@ -39,6 +39,14 @@ $form = GroupForm::validate($attributes = [
 	'application_id'		=> $_POST['application_id'],
 ]);
 
+// send welcome email (must go before inserting into database, because of possible failure)
+if(isset($_POST['send_welcome_email']) && (int) $_POST['send_welcome_email'] === 1) {
+	$mailable = new NewGroupMailable($attributes);
+	Mail::to($attributes['organizer_email'])
+		->from(email('general'))
+		->send($mailable);
+}
+
 // insert into database
 $id = App::resolve(Database::class)->query('INSERT INTO groups(
 	name,
@@ -75,14 +83,6 @@ if(isset($_POST['application_id']) && is_numeric($_POST['application_id'])) {
 		'id'		=> (int) $_POST['application_id'],
 		'group_id'	=> $id,
 	]);
-}
-
-// send welcome email
-if(isset($_POST['send_welcome_email']) && (int) $_POST['send_welcome_email'] === 1) {
-	$mailable = new NewGroupMailable($attributes);
-	Mail::to($attributes['organizer_email'])
-		->from(email('general'))
-		->send($mailable);
 }
 
 // redirect if everything went right

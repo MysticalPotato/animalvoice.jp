@@ -32,7 +32,7 @@
 		<button class="btn btn--good submit-btn" type="submit"><?= __('button.update') ?></button>
 	</form>
 
-	<hr>
+	<hr class="form-separator">
 
 	<form method="POST" action="<?= route("/admin/users/{$user['id']}") ?>">
 		<div class="form-section">

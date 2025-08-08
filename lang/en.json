@@ -102,7 +102,11 @@
         "contact_recipient": "Contact recipient",
         "contact_recipient_hint": "Email address where contact requests from the website will be sent to.",
         "enable_aws": "Enable Amazon SES",
-        "enable_aws_hint": "If checked, all emails, including automated notices and newsletters will be sent via Amazon SES. It's recommended to enable this, unless it's causing errors."
+        "enable_aws_hint": "If checked, all emails, including automated notices and newsletters will be sent via Amazon SES. It's recommended to enable this, unless it's causing errors.",
+        "organizer_manual": "Organizer manual URL",
+        "organizer_manual_hint": "The welcome email to new organizers contain this link.",
+        "editor_manual": "Email editor manual URL",
+        "editor_manual_hint": "This link is shown below the email editor."
     },
     "home": {
         "page_title": "Animal Voice",

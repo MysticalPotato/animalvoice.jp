@@ -393,6 +393,13 @@ textarea {
     max-width: 320px;
     width: 100%;
 }
+.form-separator {
+    border-top: 1px dashed #ced4da;
+}
+.form-section-separator {
+    margin: 1rem 0;
+    border-top: 1px dashed #ced4da;
+}
 .form-response {
     display: block;
     padding: 10px;

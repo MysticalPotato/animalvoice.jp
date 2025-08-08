@@ -9,7 +9,7 @@ use Http\Forms\SettingsForm;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	// filter allowed keys
-	$allowed = ['contact_email', 'amazon_ses_enabled'];
+	$allowed = ['contact_email', 'organizer_manual', 'editor_manual', 'amazon_ses_enabled'];
 	$_POST = array_intersect_key($_POST, array_flip($allowed));
 
 	// filter empty values

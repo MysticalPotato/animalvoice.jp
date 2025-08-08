@@ -6,12 +6,12 @@ use Core\Session;
 
 $organizers_count = App::resolve(Database::class)->query(
 	"SELECT COUNT(DISTINCT organizer_email) FROM groups WHERE organizer_email IS NOT NULL AND organizer_email != ''"
-)->find();
+)->findOrFail();
 $organizers_count = $organizers_count[array_key_first($organizers_count)];
 
 $subscribers_count = App::resolve(Database::class)->query(
 	"SELECT COUNT(*) FROM subscribers"
-)->find();
+)->findOrFail();
 $subscribers_count = $subscribers_count[array_key_first($subscribers_count)];
 
 $recipients = [
@@ -25,7 +25,9 @@ $recipients = [
 	],
 ];
 
-$editor_manual = 'https://docs.google.com/document/d/1tdx8GDxw_MSc4pkU8YmDzZavIICiOwwfORYcQiJX3jg/edit?usp=sharing';
+$editor_manual = App::resolve(Database::class)->query("SELECT value FROM settings WHERE name = :name", [
+	'name' => 'editor_manual'
+])->findOrFail()['value'];
 
 view('emails/create.view.php', [
 	'meta_title' => __('admin.page_title'),

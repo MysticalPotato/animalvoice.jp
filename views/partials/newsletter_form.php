@@ -18,5 +18,5 @@
 		<div class="privacy-disclaimer"><?= insertLinks(__('global.newsletter_privacy'), route('/privacy')) ?></div>
 	</div>
 	
-	<h3 class="success-message"><?= __('response.thank_you') ?></h3>
+	<h3 class="success-message"><?= __('response.confirmation_sent') ?></h3>
 </form>

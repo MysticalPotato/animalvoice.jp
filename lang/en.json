@@ -350,6 +350,7 @@
     "response": {
         "invalid_value": "Invalid value.",
         "thank_you": "Thank you!",
+        "confirmation_sent": "Confirmation email sent!",
         "form_submitted": "Form submitted!",
         "changes_saved": "Changes saved!",
         "max_length": "A value of no more than %s characters is required.",

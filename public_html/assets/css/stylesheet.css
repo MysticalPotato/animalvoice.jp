@@ -780,12 +780,6 @@ form .privacy-disclaimer {
 .hide-privacy form .privacy-disclaimer {
     display: none;
 }
-form.newsletter {
-    position: relative;
-}
-form.newsletter p.small-print {
-    margin-top: 25px;
-}
 form .form-content .field-btn-wrapper {
     display: flex;
     gap: 1rem;
@@ -809,18 +803,36 @@ form .success-message {
     display: none;
 }
 form.success .success-message {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: block;
     width: 100%;
 }
 form.success .form-content {
-    visibility: hidden;
+    display: none;
 }
 input::placeholder {
     color: #252a34;
     opacity: 0.4; /* Firefox */
+}
+form.newsletter {
+    position: relative;
+}
+form.newsletter p.small-print {
+    margin-top: 25px;
+}
+form.newsletter .success-message {
+    background-color: #ffffff;
+    color: #252a34;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.3);
+}
+form.newsletter .success-message h3 {
+    margin-bottom: 1.5rem;
+}
+form.newsletter .success-message .spam-hint {
+    margin-top: 1rem;
+    opacity: 0.5;
 }
 form.regular-form {
     width: 100%;

@@ -182,7 +182,15 @@ function __(string $translationStr) {
 	$keys = explode('.', $translationStr, 2);
 	$messages = App::resolve(Localization::class)->messages();
 	$val = count($keys) > 1 ? $messages[$keys[0]][$keys[1]] : $messages[$keys[0]];
-	return is_string($val) ? htmlspecialchars($val) : $val;
+
+	if (is_string($val)) {
+		$text = htmlspecialchars($val, ENT_QUOTES, 'UTF-8');
+		$bold = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $text);
+		
+        return $bold;
+    }
+
+    return $val;
 }
 
 function insertVars(string $text, string|array $vars) {

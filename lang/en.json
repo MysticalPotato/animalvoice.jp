@@ -350,7 +350,6 @@
     "response": {
         "invalid_value": "Invalid value.",
         "thank_you": "Thank you!",
-        "confirmation_sent": "Confirmation email sent!",
         "form_submitted": "Form submitted!",
         "changes_saved": "Changes saved!",
         "max_length": "A value of no more than %s characters is required.",
@@ -372,7 +371,10 @@
         "email_size": "Content size is too large. Try to shorten it or use lower resolution images.",
         "email_sent": "Email sent!",
         "unsubscribed": "You're successfully unsubscribed from the newsletter.",
-        "already_subscribed": "You're already subscribed to our newsletter."
+        "already_subscribed": "You're already subscribed to our newsletter.",
+        "almost_there": "One more step!",
+        "confirm_email": "Check your inbox (or spam folder) and **click the confirmation link** to join the list.",
+        "spam_hint": "**Tip:** Mark our email as \"Not Spam\" so you don't miss future newsletters."
     },
     "region": {
         "hokkaido": "Hokkaido",

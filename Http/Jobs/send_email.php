@@ -1,5 +1,13 @@
 <?php
 
+/*
+
+Reads email data (sender, subject, body, recipients etc.) from storage/temp/newsletter_data.json
+Sends email to all recipients in chunks
+Deletes storage/temp/newsletter_data.json
+
+*/
+
 const BASE_PATH = __DIR__ . '/../../';
 
 require BASE_PATH . 'vendor/autoload.php';

@@ -1,5 +1,12 @@
 <?php
 
+/*
+
+Delete temporarily files older than a week
+Job should run every day
+
+*/
+
 const PUBLIC_PATH = __DIR__ . '/../../public_html/';
 
 $directory = PUBLIC_PATH . 'assets/uploads/temp/';

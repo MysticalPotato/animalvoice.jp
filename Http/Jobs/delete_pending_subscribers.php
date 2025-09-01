@@ -1,5 +1,12 @@
 <?php
 
+/*
+
+Delete pending subscribers after 24 hours
+Job should run every hour
+
+*/
+
 const BASE_PATH = __DIR__ . '/../../';
 const APP_LOCALE	= "ja";
 

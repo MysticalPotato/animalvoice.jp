@@ -7,9 +7,9 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 	<head>
 		<title><?= $meta_title ?></title>
 
-		<link rel="canonical" href="<?= url(route(uri(), 'ja')) ?>">
-		<link rel="alternate" hreflang="ja" href="<?= url(route(uri(), 'ja')) ?>" />
-		<link rel="alternate" hreflang="en" href="<?= url(route(uri(), 'en')) ?>" />
+		<link rel="canonical" href="<?= url(route(uri(), [], 'ja')) ?>">
+		<link rel="alternate" hreflang="ja" href="<?= url(route(uri(), [], 'ja')) ?>" />
+		<link rel="alternate" hreflang="en" href="<?= url(route(uri(), [], 'en')) ?>" />
 		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 		
 		<meta name="description" content="<?= $meta_description ?>">
@@ -80,7 +80,7 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 					</nav>
 					
 					<a class="cta-btn desktop" href="<?= route('/activism') ?>"><?= __('button.join_long') ?></a>
-					<a class="lang-btn" href="<?= route(uri(), $alt_locale) ?>" hreflang="<?= $alt_locale ?>"><?= strtoupper($alt_locale) ?></a>
+					<a class="lang-btn" href="<?= route(uri(), $_GET, $alt_locale) ?>" hreflang="<?= $alt_locale ?>"><?= strtoupper($alt_locale) ?></a>
 					
 					<!-- Hamburger menu -->
 					<a id="menu-toggle" class="menu-toggle mobile">

@@ -28,12 +28,18 @@ function urlIs($value) {
 	return parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH) === $value;
 }
 
-function abort($code = Response::NOT_FOUND) {
+function abort($code = Response::NOT_FOUND, ?string $title = null, ?string $message = null) {
 	http_response_code($code);
 	$response_name = getResponseName($code);
-	$meta_title = __('meta.website_name');
-	$meta_description = "Response code {$code}: {$response_name}";
-	require base_path("views/response.view.php");
+
+	view('response.view.php', [
+		'meta_title' => __('meta.website_name'),
+		'meta_description' => "Response code {$code}: {$response_name}",
+		'response_title' => is_string($title) ? $title : $response_name,
+		'response_message' => is_string($message) ? $message : null,
+		'response_code' => $code,
+	]);
+
 	die();
 }
 
@@ -155,27 +161,29 @@ function instaPostId(string $url) {
 	return substr($url, strlen('https://www.instagram.com/p/'), 11);
 }
 
-function route($uri, string|array $param = []) {
-	$locale = locale();
-	
-	if(is_string($param) && App::hasLocale($param)) {
-		$locale = $param;
+function route(string $uri, array $params = [], ?string $locale = null): string {
+	$locale = $locale ?? App::currentLocale();
 
-		$parts = explode('/', trim($uri, '/'));
-		if(strtolower($parts[0]) === App::currentLocale()) {
-			$uri = '/' . substr(implode('/', $parts), 3);
-		}
-	}
+	// Remove current locale from URI if present
+    $segments = explode('/', trim($uri, '/'));
+    if (App::hasLocale($segments[0])) {
+        array_shift($segments);
+    }
 
+    // Rebuild URI
+    $uri = '/' . implode('/', $segments);
+
+	// Prepend desired locale if not default
 	if(APP_LOCALE !== $locale) {
 		$uri = '/' . $locale . $uri;
 	}
-	
-	if(is_array($param) && count($param) > 0) {
-		$uri = $uri . '?' . http_build_query($param);
-	}
-	
-	return $uri;
+
+    // Append query parameters
+    if (!empty($params)) {
+        $uri .= '?' . http_build_query($params);
+    }
+
+    return $uri;
 }
 
 function __(string $translationStr) {

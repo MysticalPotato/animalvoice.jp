@@ -4,6 +4,10 @@ use Core\Session;
 use Core\ValidationException;
 use Core\MailException;
 
+// Default timezone
+date_default_timezone_set('Asia/Tokyo');
+
+// Start session
 session_start();
 
 const PUBLIC_PATH	= __DIR__ . '/';

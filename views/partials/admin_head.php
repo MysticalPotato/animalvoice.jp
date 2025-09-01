@@ -33,8 +33,8 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Rubik:wght@300..900&family=Source+Code+Pro:wght@200..900&display=swap" rel="stylesheet">
 
 		<!--Locales-->
-		<link rel="alternate" hreflang="ja" href="<?= route(uri(), 'ja') ?>" />
-		<link rel="alternate" hreflang="en" href="<?= route(uri(), 'en') ?>" />
+		<link rel="alternate" hreflang="ja" href="<?= route(uri(), [], 'ja') ?>" />
+		<link rel="alternate" hreflang="en" href="<?= route(uri(), [], 'en') ?>" />
 		
 		<!--CSS-->
 		<link href="<?= PATH['css'] ?>admin.css?v=<?= time() ?>" rel="stylesheet" type="text/css" media="screen">
@@ -46,7 +46,7 @@ $alt_locale = locale() === 'en' ? 'ja' : 'en';
 			<div class="sidebar-top">
 				<div class="sidebar-header">
 					<span>Admin</span>
-					<a class="lang-btn" href="<?= route(uri(), $alt_locale) ?>" hreflang="<?= $alt_locale ?>"><?= strtoupper($alt_locale) ?></a>
+					<a class="lang-btn" href="<?= route(uri(), [], $alt_locale) ?>" hreflang="<?= $alt_locale ?>"><?= strtoupper($alt_locale) ?></a>
 				</div>
 				
 				<?php if(isset($_SESSION['user'])) : ?>

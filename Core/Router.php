@@ -53,13 +53,23 @@ class Router {
 		}
 	}
 	
+	/*
+	Source: https://medium.com/@majdsoubh/implementing-php-routing-with-dynamic-parameters-18940bd80795
+	*/
 	public function route($uri, $method) {
-		// Source: https://medium.com/@majdsoubh/implementing-php-routing-with-dynamic-parameters-18940bd80795
+		// Extract the requested route.
+		$requestedRoute = trim($uri, '/');
+
+		// Try to extract the locale prefix from the URL.
+		$segments = explode('/', $requestedRoute);
+
+		// Set the locale from the first URL segment, or use default.
+		if ($segments[0] && is_string($segments[0]) && App::setLocale($segments[0])) {
+			array_shift($segments);
+        	$requestedRoute = implode('/', $segments);
+		}
 
 		foreach($this->routes as $route) {
-
-			// Get the requested route.
-			$requestedRoute = trim($uri, '/');
 
 			// Transform route to regex pattern.
 			$routeRegex = preg_replace_callback('/{\w+(:([^}]+))?}/', function ($matches) {
@@ -84,17 +94,12 @@ class Router {
 
 				// Combine between route parameter names and user provided parameter values.
                 $routeParams = array_combine($routeParamsNames, $routeParamsValues);
-
-				// Set language
-				$localeSet = App::setLocale($routeParams['locale'] ?? APP_LOCALE);
 			
-				if($localeSet) {
-					// Redirect if unauthorized
-					Middleware::resolve($route['middleware']);
+				// Redirect if unauthorized
+				Middleware::resolve($route['middleware']);
 
-					// Return path to matching controller
-					return require base_path('Http/controllers/' . $route['controller']);
-				}
+				// Return path to matching controller
+				return require base_path('Http/controllers/' . $route['controller']);
 			}
 		}
 		

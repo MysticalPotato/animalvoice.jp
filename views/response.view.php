@@ -9,10 +9,14 @@
 				<div class="column-wrapper">
 					<div class="column center space">
 						<div class="section-header">
-							<header class="sub-title center"><?= __('global.response_code') . ' ' . $code ?></header>
-							<h1><?= $response_name ?></h1>
+							<header class="sub-title center"><?= __('global.response_code') . ' ' . $response_code ?></header>
+							<h1><?= $response_title ?></h1>
 						</div>
 						
+						<?php if(!empty($response_message)) : ?>
+							<p><?= $response_message ?></p>
+						<?php endif; ?>
+
 						<p><?= insertLinks(__('global.return_home'), '/') ?></p>
 					</div>
 				</div>

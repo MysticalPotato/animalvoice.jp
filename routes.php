@@ -85,5 +85,3 @@ $router->get(       '/admin/account'            , 'account.php'             )->o
 
 $router->get(       '/admin/recover'            , 'recover.php'             )->only('guest');
 $router->post(      '/admin/recover'            , 'recover.php'             )->only('guest');
-
-$router->prefix('{locale}');

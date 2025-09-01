@@ -8,10 +8,27 @@
 			<div class="content">
 				<div class="column-wrapper">
 					<div class="column center space">
+					
+						<?php if(http_response_code() >= 200) : ?>
+
+						<div class="section-header">
+							<header class="sub-title center"><?= __('confirm.error_subtitle') ?></header>
+							<h1><?= __('confirm.error_title') ?></h1>
+						</div>
+
+						<div class="column center hide-privacy">
+							<p><?= __('confirm.error_message') ?></p>
+							<?php require base_path('views/partials/newsletter_form.php') ?>
+						</div>
+
+						<?php else: ?>
+
 						<div class="section-header">
 							<header class="sub-title center"><?= __('confirm.main_subtitle') ?></header>
 							<h1><?= __('confirm.main_title') ?></h1>
 						</div>
+
+						<?php endif; ?>
 						
 						<p><?= insertLinks(__('global.return_home'), '/') ?></p>
 					</div>

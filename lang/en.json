@@ -233,12 +233,6 @@
         "rules_content_2": "Volunteers standing in the Cube (holding TV screens) are required to wear masks, stand still and not interact with bystanders. If you need a break or go to the restroom, try to make eye contact with one of the other members and raise your hand. If nobody sees you, try to put the screen down yourself and let someone know you stepped out of the cube.",
         "rules_content_3": "When you join one of our groups, we ask you to be on time. If it's your first time, make sure you arrive at least 10 minutes beforehand, so you have some time to introduce yourself to the organizer(s) and get informed about the group's etiquette. Rules may vary slightly from group to group, so please ask your organizer about them.",
         "equipment_title": "About equipment",
-        "equipment_list": [
-            "We ask all our volunteers to wear black clothing as much as possible.",
-            "Volunteers standing in the cube are required to wear masks. We recommend the anonymous mask, but masks depicting farm animals are also appropriate. Masks can often be borrowed from other members, but not everyone is keen on sharing, so consider getting your own mask as well, by going here.",
-            "Cards and flyers are often given to you by the organizer(s), so you're not required to bring your own. However, handouts are not free, so please consider bringing your own after you joined a couple of times. Handouts can be found here and don't cost much to print.",
-            "If you happen to own a portable TV screen that you're willing to use for outreach, please let your organizer know about it. We can provide you the footage that we use."
-        ],
         "equipment_content_1": "We ask all our volunteers to wear black clothing as much as possible to maintain anonymity and allow the public to focus on the footage we're showing.",
         "equipment_content_2": "Volunteers standing in the cube are required to wear masks. They can be borrowed during the event or bought [here]. We prefer the anonymous mask, but if you want to use a different one, be sure to check with the organizer.",
         "equipment_content_3": "If you're going to do outreach, make sure you have some cards on you. They can be found [here] and they don't cost much to print. If you have a different card / flyer you'd like to give out, please discuss it with the organizer first.",
@@ -307,8 +301,11 @@
         "main_description": "We don't yet have a system in place for receiving donations. If you'd like to help us out financially or have televisions or batteries you'd like to give away, please [contact] us."
     },
     "confirm": {
-        "main_title": "You are now subscribed",
-        "main_subtitle": "Thank you"
+        "success_title": "You are now subscribed",
+        "success_subtitle": "Thank you",
+        "error_title": "This link is no longer valid",
+        "error_subtitle": "Expired",
+        "error_message": "Enter your email below to receive a new confirmation link."
     },
     "admin": {
         "page_title": "Admin | Animal Voice",

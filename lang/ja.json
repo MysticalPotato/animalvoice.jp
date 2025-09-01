@@ -301,8 +301,11 @@
         "main_description": "寄付金を受け取るシステムはまだ整っていません。金銭的に支援したい場合や、寄付したいテレビやポータブル充電器がある場合は、[問い合わせ] ください。"
     },
     "confirm": {
-        "main_title": "登録が完了しました",
-        "main_subtitle": "ありがとう御座います"
+        "success_title": "登録が完了しました",
+        "success_subtitle": "ありがとう御座います",
+        "error_title": "このリンクは無効です",
+        "error_subtitle": "有効期限切れ",
+        "error_message": "新しい確認リンクを受け取るには、下にメールアドレスを入力してください。"
     },
     "admin": {
         "page_title": " アドミン | アニマル・ボイス",

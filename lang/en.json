@@ -342,7 +342,10 @@
     },
     "warning": {
         "group_disabled": "In order for the group to show on the website, the group needs to be enabled and have a homepage!",
-        "post_disabled": "In order for the post to show on the website, the post needs to be enabled!"
+        "post_disabled": "In order for the post to show on the website, the post needs to be enabled!",
+        "group_prefill": "Please confirm that all the information is filled in correctly before adding the group. If multiple cities are filled in, create a separate group for each one.",
+        "application_approved": "This application was approved.",
+        "application_approved_by": "This application was approved by %s."
     },
     "response": {
         "invalid_value": "Invalid value.",

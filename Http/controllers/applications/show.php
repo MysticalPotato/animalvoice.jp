@@ -10,12 +10,20 @@ $application = App::resolve(Database::class)->query("SELECT * FROM applications 
 ])->findOrFail();
 
 // find group for group_id
-$result = App::resolve(Database::class)->query("SELECT * FROM groups WHERE id = :id", [
+$group = App::resolve(Database::class)->query("SELECT * FROM groups WHERE id = :id", [
 	'id' => $application['group_id']
 ])->find();
 
- // assume it has been approved if group with city exists
-$approved = $result ? true : false;
+ // the application is approved if a group exists for group_id
+$approved = $group ? true : false;
+
+// find user for approver_id
+$user = App::resolve(Database::class)->query("SELECT * FROM users WHERE id = :id", [
+	'id' => $application['approver_id']
+])->find();
+
+ // the id of the user who approved the application
+$approver = $approved && $user ? $user['username'] : null;
 
 // set viewed to true if opened for first time
 if(!$application['viewed']) {
@@ -35,4 +43,5 @@ view('applications/show.view.php', [
 	'current_tab' => 'applications',
 	'application' => $application,
 	'approved' => $approved,
+	'approver' => $approver,
 ]);

@@ -4,6 +4,13 @@
 	<?php if(array_key_exists('summary', $errors)) : ?>
 		<span class="form-response form-response--bad"><?= $errors['summary'] ?></span>
 	<?php endif; ?>
+
+	<?php if(old('application_id')) : ?>
+		<div class="warning">
+			<img src="<?= PATH['images'] ?>admin-icon-warning.png"/>
+			<span><?= __('warning.group_prefill') ?></span>
+		</div>
+	<?php endif; ?>
 	
 	<form method="POST" action="<?= route('/admin/groups') ?>" enctype="multipart/form-data">
 		<div class="form-section">

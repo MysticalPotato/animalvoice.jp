@@ -1,6 +1,13 @@
 <?php require base_path('views/partials/admin_head.php') ?>
 
 <div id="applications" class="content">
+	<?php if($approved) : ?>
+		<div class="warning">
+			<img src="<?= PATH['images'] ?>admin-icon-warning.png"/>
+			<span><?= $approver ? insertVars(__('warning.application_approved_by'), $approver) : __('warning.application_approved') ?></span>
+		</div>
+	<?php endif; ?>
+
 	<div>
 		<div class="field-tag"><?= __('form.first_name') ?></div>
 		<div><?= htmlspecialchars($application['first_name']) ?></div>

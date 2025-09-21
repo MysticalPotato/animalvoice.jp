@@ -13,7 +13,7 @@ class NewUserMailable extends Mailable {
         $email = $attributes['email'];
         $password = $attributes['password'];
 
-        // NO BEING USED
+        // NOT BEING USED
         $this->body = "{$username}様"
             . "\r\n"
             . "\r\n" . "アニマル・ボイスのログイン詳細は次のとおりです。"

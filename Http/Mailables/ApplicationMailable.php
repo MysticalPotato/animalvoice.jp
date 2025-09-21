@@ -7,7 +7,6 @@ use Http\Mailables\Mailable;
 class ApplicationMailable extends Mailable {
     
     public function __construct($attributes) {
-        // $this->subject = "Animal Voice - Organizer Application";
         $this->subject = "アニマル・ボイス - 主催者アプリケーション";
 
         $from_first_name = $attributes['first_name'];
@@ -23,7 +22,6 @@ class ApplicationMailable extends Mailable {
         ?>
 
         <div>
-            <!-- <em>Reply to this email to contact the applicant.</em> -->
             <em>応募者に連絡するには、このメールに返信してください。</em>
             <br>
             <br><strong><?= __('form.first_name') ?></strong>
@@ -52,7 +50,13 @@ class ApplicationMailable extends Mailable {
         </div>
 
         <?php
+        // NOT BEING USED
         $this->body = ob_get_contents();
         ob_end_clean();
+
+        // UPDATED METHOD
+        $file = file_get_contents(base_path('storage/application_notice_email_ja.md'));
+        $Parsedown = new \Parsedown();
+        $this->body = $Parsedown->text($file);
     }
 }

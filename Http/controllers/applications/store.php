@@ -89,8 +89,7 @@ foreach ($users as $user) {
 	
 // send email
 Mail::to($recipients)
-	->from(email('webform'))
-	->replyTo($attributes['email'])
+	->from(email('noreply'))
 	->send($mailable);
 
 // redirect if everything went right

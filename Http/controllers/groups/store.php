@@ -77,11 +77,17 @@ $id = App::resolve(Database::class)->query('INSERT INTO groups(
 	'organizer_email'		=> $attributes['organizer_email'],
 ])->id();
 
-// update group_id for application
+// update group_id and approver_id for application
 if(isset($_POST['application_id']) && is_numeric($_POST['application_id'])) {
-	App::resolve(Database::class)->query('UPDATE applications SET group_id = :group_id WHERE id = :id', [
-		'id'		=> (int) $_POST['application_id'],
-		'group_id'	=> $id,
+	$current_user_id = $_SESSION['user']['id'];
+
+	App::resolve(Database::class)->query('UPDATE applications SET
+		group_id		= :group_id,
+		approver_id		= :approver_id
+	WHERE id = :id', [
+		'id'			=> (int) $_POST['application_id'],
+		'group_id'		=> $id,
+		'approver_id'	=> $current_user_id,
 	]);
 }
 
